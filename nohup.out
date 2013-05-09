@@ -1,0 +1,2347 @@
+mongod --help for help and startup options
+Tue Apr 23 14:30:27 [initandlisten] MongoDB starting : pid=5053 port=27017 dbpath=/data/db/ 64-bit host=Sepands-MacBook-Air.local
+Tue Apr 23 14:30:27 [initandlisten] db version v2.0.6, pdfile version 4.5
+Tue Apr 23 14:30:27 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Tue Apr 23 14:30:27 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Tue Apr 23 14:30:27 [initandlisten] options: {}
+Tue Apr 23 14:30:27 [initandlisten] journal dir=/data/db/journal
+Tue Apr 23 14:30:27 [initandlisten] recover : no journal files present, no recovery needed
+Tue Apr 23 14:30:27 [websvr] admin web console waiting for connections on port 28017
+Tue Apr 23 14:30:27 [initandlisten] waiting for connections on port 27017
+Tue Apr 23 14:30:35 [initandlisten] connection accepted from 127.0.0.1:53017 #1
+Tue Apr 23 14:30:35 [initandlisten] connection accepted from 127.0.0.1:53018 #2
+Tue Apr 23 14:30:35 [initandlisten] connection accepted from 127.0.0.1:53019 #3
+Tue Apr 23 14:30:35 [initandlisten] connection accepted from 127.0.0.1:53020 #4
+Tue Apr 23 14:30:35 [initandlisten] connection accepted from 127.0.0.1:53021 #5
+Tue Apr 23 14:31:27 [clientcursormon] mem (MB) res:30 virt:2596 mapped:80
+Tue Apr 23 14:31:58 [initandlisten] connection accepted from 127.0.0.1:53114 #6
+Tue Apr 23 14:31:58 [conn6] command admin.$cmd command: { listDatabases: 1 } ntoreturn:1 reslen:403 448ms
+Tue Apr 23 14:32:27 [clientcursormon] mem (MB) res:95 virt:3237 mapped:400
+Tue Apr 23 14:35:00 [initandlisten] connection accepted from 127.0.0.1:53204 #7
+Tue Apr 23 14:37:30 [clientcursormon] mem (MB) res:95 virt:3269 mapped:400
+Tue Apr 23 14:37:32 [conn7] end connection 127.0.0.1:53204
+Tue Apr 23 14:37:32 [conn6] end connection 127.0.0.1:53114
+Tue Apr 23 14:38:12 [initandlisten] connection accepted from 127.0.0.1:53324 #8
+Tue Apr 23 14:42:30 [clientcursormon] mem (MB) res:95 virt:3269 mapped:400
+Tue Apr 23 14:47:30 [clientcursormon] mem (MB) res:95 virt:3269 mapped:400
+Tue Apr 23 14:49:58 [conn5] end connection 127.0.0.1:53021
+Tue Apr 23 14:49:58 [conn3] end connection 127.0.0.1:53019
+Tue Apr 23 14:49:58 [conn4] end connection 127.0.0.1:53020
+Tue Apr 23 14:49:58 [conn2] end connection 127.0.0.1:53018
+Tue Apr 23 14:49:58 [conn1] end connection 127.0.0.1:53017
+Tue Apr 23 14:50:15 [initandlisten] connection accepted from 127.0.0.1:53723 #9
+Tue Apr 23 14:50:15 [initandlisten] connection accepted from 127.0.0.1:53724 #10
+Tue Apr 23 14:50:15 [initandlisten] connection accepted from 127.0.0.1:53725 #11
+Tue Apr 23 14:50:15 [initandlisten] connection accepted from 127.0.0.1:53726 #12
+Tue Apr 23 14:50:15 [initandlisten] connection accepted from 127.0.0.1:53727 #13
+Tue Apr 23 14:52:30 [clientcursormon] mem (MB) res:95 virt:3269 mapped:400
+Tue Apr 23 14:53:33 [conn12] end connection 127.0.0.1:53726
+Tue Apr 23 14:53:33 [conn11] end connection 127.0.0.1:53725
+Tue Apr 23 14:53:33 [conn10] end connection 127.0.0.1:53724
+Tue Apr 23 14:53:33 [conn13] end connection 127.0.0.1:53727
+Tue Apr 23 14:53:33 [conn9] end connection 127.0.0.1:53723
+Tue Apr 23 14:53:36 [initandlisten] connection accepted from 127.0.0.1:53865 #14
+Tue Apr 23 14:53:36 [initandlisten] connection accepted from 127.0.0.1:53866 #15
+Tue Apr 23 14:53:36 [initandlisten] connection accepted from 127.0.0.1:53867 #16
+Tue Apr 23 14:53:36 [initandlisten] connection accepted from 127.0.0.1:53868 #17
+Tue Apr 23 14:53:36 [initandlisten] connection accepted from 127.0.0.1:53869 #18
+Tue Apr 23 14:57:30 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:00:18 [conn17] end connection 127.0.0.1:53868
+Tue Apr 23 15:00:18 [conn14] end connection 127.0.0.1:53865
+Tue Apr 23 15:00:18 [conn18] end connection 127.0.0.1:53869
+Tue Apr 23 15:00:18 [conn16] end connection 127.0.0.1:53867
+Tue Apr 23 15:00:18 [conn15] end connection 127.0.0.1:53866
+Tue Apr 23 15:00:19 [initandlisten] connection accepted from 127.0.0.1:54099 #19
+Tue Apr 23 15:00:19 [initandlisten] connection accepted from 127.0.0.1:54100 #20
+Tue Apr 23 15:00:19 [initandlisten] connection accepted from 127.0.0.1:54101 #21
+Tue Apr 23 15:00:19 [initandlisten] connection accepted from 127.0.0.1:54102 #22
+Tue Apr 23 15:00:19 [initandlisten] connection accepted from 127.0.0.1:54103 #23
+Tue Apr 23 15:02:30 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:04:16 [conn23] end connection 127.0.0.1:54103
+Tue Apr 23 15:04:16 [conn21] end connection 127.0.0.1:54101
+Tue Apr 23 15:04:16 [conn20] end connection 127.0.0.1:54100
+Tue Apr 23 15:04:16 [conn22] end connection 127.0.0.1:54102
+Tue Apr 23 15:04:16 [conn19] end connection 127.0.0.1:54099
+Tue Apr 23 15:07:17 [initandlisten] connection accepted from 127.0.0.1:54376 #24
+Tue Apr 23 15:07:17 [initandlisten] connection accepted from 127.0.0.1:54377 #25
+Tue Apr 23 15:07:17 [initandlisten] connection accepted from 127.0.0.1:54378 #26
+Tue Apr 23 15:07:17 [initandlisten] connection accepted from 127.0.0.1:54379 #27
+Tue Apr 23 15:07:17 [initandlisten] connection accepted from 127.0.0.1:54380 #28
+Tue Apr 23 15:07:30 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:10:49 [conn28] end connection 127.0.0.1:54380
+Tue Apr 23 15:10:49 [conn27] end connection 127.0.0.1:54379
+Tue Apr 23 15:10:49 [conn26] end connection 127.0.0.1:54378
+Tue Apr 23 15:10:49 [conn24] end connection 127.0.0.1:54376
+Tue Apr 23 15:10:49 [conn25] end connection 127.0.0.1:54377
+Tue Apr 23 15:10:50 [initandlisten] connection accepted from 127.0.0.1:54488 #29
+Tue Apr 23 15:10:50 [initandlisten] connection accepted from 127.0.0.1:54489 #30
+Tue Apr 23 15:10:50 [initandlisten] connection accepted from 127.0.0.1:54490 #31
+Tue Apr 23 15:10:50 [initandlisten] connection accepted from 127.0.0.1:54491 #32
+Tue Apr 23 15:10:50 [initandlisten] connection accepted from 127.0.0.1:54492 #33
+Tue Apr 23 15:12:19 [conn33] end connection 127.0.0.1:54492
+Tue Apr 23 15:12:19 [conn30] end connection 127.0.0.1:54489
+Tue Apr 23 15:12:19 [conn31] end connection 127.0.0.1:54490
+Tue Apr 23 15:12:19 [conn29] end connection 127.0.0.1:54488
+Tue Apr 23 15:12:19 [conn32] end connection 127.0.0.1:54491
+Tue Apr 23 15:12:22 [initandlisten] connection accepted from 127.0.0.1:54558 #34
+Tue Apr 23 15:12:22 [initandlisten] connection accepted from 127.0.0.1:54559 #35
+Tue Apr 23 15:12:22 [initandlisten] connection accepted from 127.0.0.1:54560 #36
+Tue Apr 23 15:12:22 [initandlisten] connection accepted from 127.0.0.1:54561 #37
+Tue Apr 23 15:12:22 [initandlisten] connection accepted from 127.0.0.1:54562 #38
+Tue Apr 23 15:12:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:13:05 [conn38] end connection 127.0.0.1:54562
+Tue Apr 23 15:13:05 [conn35] end connection 127.0.0.1:54559
+Tue Apr 23 15:13:05 [conn36] end connection 127.0.0.1:54560
+Tue Apr 23 15:13:05 [conn34] end connection 127.0.0.1:54558
+Tue Apr 23 15:13:05 [conn37] end connection 127.0.0.1:54561
+Tue Apr 23 15:14:12 [initandlisten] connection accepted from 127.0.0.1:54620 #39
+Tue Apr 23 15:14:12 [initandlisten] connection accepted from 127.0.0.1:54621 #40
+Tue Apr 23 15:14:12 [initandlisten] connection accepted from 127.0.0.1:54622 #41
+Tue Apr 23 15:14:12 [initandlisten] connection accepted from 127.0.0.1:54623 #42
+Tue Apr 23 15:14:12 [initandlisten] connection accepted from 127.0.0.1:54624 #43
+Tue Apr 23 15:14:57 [conn43] end connection 127.0.0.1:54624
+Tue Apr 23 15:14:57 [conn40] end connection 127.0.0.1:54621
+Tue Apr 23 15:14:57 [conn42] end connection 127.0.0.1:54623
+Tue Apr 23 15:14:57 [conn39] end connection 127.0.0.1:54620
+Tue Apr 23 15:14:57 [conn41] end connection 127.0.0.1:54622
+Tue Apr 23 15:15:59 [initandlisten] connection accepted from 127.0.0.1:54682 #44
+Tue Apr 23 15:16:00 [initandlisten] connection accepted from 127.0.0.1:54683 #45
+Tue Apr 23 15:16:00 [initandlisten] connection accepted from 127.0.0.1:54684 #46
+Tue Apr 23 15:16:00 [initandlisten] connection accepted from 127.0.0.1:54685 #47
+Tue Apr 23 15:16:00 [initandlisten] connection accepted from 127.0.0.1:54686 #48
+Tue Apr 23 15:17:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:22:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:27:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:32:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:37:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:42:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:47:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:52:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 15:57:31 [clientcursormon] mem (MB) res:96 virt:3269 mapped:400
+Tue Apr 23 16:00:39 [conn48] end connection 127.0.0.1:54686
+Tue Apr 23 16:00:39 [conn47] end connection 127.0.0.1:54685
+Tue Apr 23 16:00:39 [conn46] end connection 127.0.0.1:54684
+Tue Apr 23 16:00:39 [conn45] end connection 127.0.0.1:54683
+Tue Apr 23 16:00:39 [conn44] end connection 127.0.0.1:54682
+Tue Apr 23 16:00:41 [initandlisten] connection accepted from 127.0.0.1:57356 #49
+Tue Apr 23 16:00:41 [initandlisten] connection accepted from 127.0.0.1:57357 #50
+Tue Apr 23 16:00:41 [initandlisten] connection accepted from 127.0.0.1:57358 #51
+Tue Apr 23 16:00:41 [initandlisten] connection accepted from 127.0.0.1:57359 #52
+Tue Apr 23 16:00:41 [initandlisten] connection accepted from 127.0.0.1:57360 #53
+Tue Apr 23 16:01:06 [conn53] end connection 127.0.0.1:57360
+Tue Apr 23 16:01:06 [conn52] end connection 127.0.0.1:57359
+Tue Apr 23 16:01:06 [conn49] end connection 127.0.0.1:57356
+Tue Apr 23 16:01:06 [conn50] end connection 127.0.0.1:57357
+Tue Apr 23 16:01:06 [conn51] end connection 127.0.0.1:57358
+Tue Apr 23 16:02:07 [initandlisten] connection accepted from 127.0.0.1:57424 #54
+Tue Apr 23 16:02:07 [initandlisten] connection accepted from 127.0.0.1:57425 #55
+Tue Apr 23 16:02:07 [initandlisten] connection accepted from 127.0.0.1:57426 #56
+Tue Apr 23 16:02:07 [initandlisten] connection accepted from 127.0.0.1:57427 #57
+Tue Apr 23 16:02:07 [initandlisten] connection accepted from 127.0.0.1:57428 #58
+Tue Apr 23 16:02:10 [initandlisten] connection accepted from 127.0.0.1:57442 #59
+Tue Apr 23 16:02:10 [initandlisten] connection accepted from 127.0.0.1:57443 #60
+Tue Apr 23 16:02:10 [initandlisten] connection accepted from 127.0.0.1:57444 #61
+Tue Apr 23 16:02:10 [initandlisten] connection accepted from 127.0.0.1:57445 #62
+Tue Apr 23 16:02:10 [initandlisten] connection accepted from 127.0.0.1:57446 #63
+Tue Apr 23 16:02:10 [FileAllocator] allocating new datafile /data/db/vidtest2.ns, filling with zeroes...
+Tue Apr 23 16:02:10 [FileAllocator] creating directory /data/db/_tmp
+Tue Apr 23 16:02:10 [FileAllocator] done allocating datafile /data/db/vidtest2.ns, size: 16MB,  took 0.08 secs
+Tue Apr 23 16:02:10 [FileAllocator] allocating new datafile /data/db/vidtest2.0, filling with zeroes...
+Tue Apr 23 16:02:11 [FileAllocator] done allocating datafile /data/db/vidtest2.0, size: 64MB,  took 0.281 secs
+Tue Apr 23 16:02:11 [FileAllocator] allocating new datafile /data/db/vidtest2.1, filling with zeroes...
+Tue Apr 23 16:02:11 [conn55] build index vidtest2.videos { _id: 1 }
+Tue Apr 23 16:02:11 [conn55] build index done 0 records 0.022 secs
+Tue Apr 23 16:02:11 [conn55] insert vidtest2.videos 451ms
+Tue Apr 23 16:02:12 [FileAllocator] done allocating datafile /data/db/vidtest2.1, size: 128MB,  took 1.082 secs
+Tue Apr 23 16:02:17 [initandlisten] connection accepted from 127.0.0.1:57454 #64
+Tue Apr 23 16:02:31 [clientcursormon] mem (MB) res:108 virt:3432 mapped:480
+Tue Apr 23 16:07:31 [clientcursormon] mem (MB) res:108 virt:3432 mapped:480
+Tue Apr 23 16:12:31 [clientcursormon] mem (MB) res:108 virt:3432 mapped:480
+Tue Apr 23 16:17:31 [clientcursormon] mem (MB) res:108 virt:3432 mapped:480
+Tue Apr 23 16:22:31 [clientcursormon] mem (MB) res:108 virt:3432 mapped:480
+Tue Apr 23 16:27:31 [clientcursormon] mem (MB) res:106 virt:3432 mapped:480
+Tue Apr 23 16:32:31 [clientcursormon] mem (MB) res:44 virt:3432 mapped:480
+Tue Apr 23 16:37:31 [clientcursormon] mem (MB) res:44 virt:3432 mapped:480
+Tue Apr 23 16:42:32 [clientcursormon] mem (MB) res:44 virt:3432 mapped:480
+Tue Apr 23 16:45:49 [conn63] end connection 127.0.0.1:57446
+Tue Apr 23 16:45:49 [conn62] end connection 127.0.0.1:57445
+Tue Apr 23 16:45:49 [conn61] end connection 127.0.0.1:57444
+Tue Apr 23 16:45:49 [conn58] end connection 127.0.0.1:57428
+Tue Apr 23 16:45:49 [conn60] end connection 127.0.0.1:57443
+Tue Apr 23 16:45:49 [conn56] end connection 127.0.0.1:57426
+Tue Apr 23 16:45:49 [conn55] end connection 127.0.0.1:57425
+Tue Apr 23 16:45:49 [conn54] end connection 127.0.0.1:57424
+Tue Apr 23 16:45:49 [conn59] end connection 127.0.0.1:57442
+Tue Apr 23 16:45:49 [conn57] end connection 127.0.0.1:57427
+Tue Apr 23 16:45:51 [initandlisten] connection accepted from 127.0.0.1:59156 #65
+Tue Apr 23 16:45:51 [initandlisten] connection accepted from 127.0.0.1:59157 #66
+Tue Apr 23 16:45:51 [initandlisten] connection accepted from 127.0.0.1:59158 #67
+Tue Apr 23 16:45:51 [initandlisten] connection accepted from 127.0.0.1:59159 #68
+Tue Apr 23 16:45:51 [initandlisten] connection accepted from 127.0.0.1:59160 #69
+Tue Apr 23 16:45:52 [conn69] end connection 127.0.0.1:59160
+Tue Apr 23 16:45:52 [conn68] end connection 127.0.0.1:59159
+Tue Apr 23 16:45:52 [conn67] end connection 127.0.0.1:59158
+Tue Apr 23 16:45:52 [conn66] end connection 127.0.0.1:59157
+Tue Apr 23 16:45:52 [conn65] end connection 127.0.0.1:59156
+Tue Apr 23 16:45:56 [initandlisten] connection accepted from 127.0.0.1:59164 #70
+Tue Apr 23 16:46:06 [conn70] dropDatabase vidtest2
+Tue Apr 23 16:46:06 [conn70] removeJournalFiles
+Tue Apr 23 16:46:09 [initandlisten] connection accepted from 127.0.0.1:59172 #71
+Tue Apr 23 16:46:09 [initandlisten] connection accepted from 127.0.0.1:59173 #72
+Tue Apr 23 16:46:09 [initandlisten] connection accepted from 127.0.0.1:59174 #73
+Tue Apr 23 16:46:09 [initandlisten] connection accepted from 127.0.0.1:59175 #74
+Tue Apr 23 16:46:09 [initandlisten] connection accepted from 127.0.0.1:59176 #75
+Tue Apr 23 16:46:15 [initandlisten] connection accepted from 127.0.0.1:59193 #76
+Tue Apr 23 16:46:15 [initandlisten] connection accepted from 127.0.0.1:59194 #77
+Tue Apr 23 16:46:15 [initandlisten] connection accepted from 127.0.0.1:59195 #78
+Tue Apr 23 16:46:15 [initandlisten] connection accepted from 127.0.0.1:59196 #79
+Tue Apr 23 16:46:15 [initandlisten] connection accepted from 127.0.0.1:59197 #80
+Tue Apr 23 16:46:15 [FileAllocator] allocating new datafile /data/db/vidtest2.ns, filling with zeroes...
+Tue Apr 23 16:46:15 [FileAllocator] done allocating datafile /data/db/vidtest2.ns, size: 16MB,  took 0.082 secs
+Tue Apr 23 16:46:15 [FileAllocator] allocating new datafile /data/db/vidtest2.0, filling with zeroes...
+Tue Apr 23 16:46:15 [FileAllocator] done allocating datafile /data/db/vidtest2.0, size: 64MB,  took 0.255 secs
+Tue Apr 23 16:46:15 [FileAllocator] allocating new datafile /data/db/vidtest2.1, filling with zeroes...
+Tue Apr 23 16:46:15 [conn72] build index vidtest2.videos { _id: 1 }
+Tue Apr 23 16:46:15 [conn72] build index done 0 records 0.004 secs
+Tue Apr 23 16:46:15 [conn72] insert vidtest2.videos 400ms
+Tue Apr 23 16:46:16 [FileAllocator] done allocating datafile /data/db/vidtest2.1, size: 128MB,  took 0.656 secs
+Tue Apr 23 16:46:31 [initandlisten] connection accepted from 127.0.0.1:59208 #81
+Tue Apr 23 16:47:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 16:52:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 16:57:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 17:02:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 17:07:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 17:12:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 17:17:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 17:20:53 [conn81] dropDatabase vidtest2
+Tue Apr 23 17:20:53 [conn81] removeJournalFiles
+Tue Apr 23 17:20:56 [conn72] end connection 127.0.0.1:59173
+Tue Apr 23 17:20:56 [conn79] end connection 127.0.0.1:59196
+Tue Apr 23 17:20:56 [conn80] end connection 127.0.0.1:59197
+Tue Apr 23 17:20:56 [conn78] end connection 127.0.0.1:59195
+Tue Apr 23 17:20:56 [conn77] end connection 127.0.0.1:59194
+Tue Apr 23 17:20:56 [conn74] end connection 127.0.0.1:59175
+Tue Apr 23 17:20:56 [conn76] end connection 127.0.0.1:59193
+Tue Apr 23 17:20:56 [conn73] end connection 127.0.0.1:59174
+Tue Apr 23 17:20:56 [conn75] end connection 127.0.0.1:59176
+Tue Apr 23 17:20:56 [conn71] end connection 127.0.0.1:59172
+Tue Apr 23 17:20:58 [initandlisten] connection accepted from 127.0.0.1:60862 #82
+Tue Apr 23 17:20:58 [initandlisten] connection accepted from 127.0.0.1:60863 #83
+Tue Apr 23 17:20:58 [initandlisten] connection accepted from 127.0.0.1:60864 #84
+Tue Apr 23 17:20:58 [initandlisten] connection accepted from 127.0.0.1:60865 #85
+Tue Apr 23 17:20:58 [initandlisten] connection accepted from 127.0.0.1:60866 #86
+Tue Apr 23 17:21:42 [conn86] end connection 127.0.0.1:60866
+Tue Apr 23 17:21:42 [conn85] end connection 127.0.0.1:60865
+Tue Apr 23 17:21:42 [conn83] end connection 127.0.0.1:60864
+Tue Apr 23 17:21:42 [conn84] end connection 127.0.0.1:60863
+Tue Apr 23 17:21:42 [conn82] end connection 127.0.0.1:60862
+Tue Apr 23 17:21:44 [initandlisten] connection accepted from 127.0.0.1:60909 #87
+Tue Apr 23 17:21:44 [initandlisten] connection accepted from 127.0.0.1:60911 #88
+Tue Apr 23 17:21:44 [initandlisten] connection accepted from 127.0.0.1:60912 #89
+Tue Apr 23 17:21:44 [initandlisten] connection accepted from 127.0.0.1:60913 #90
+Tue Apr 23 17:21:44 [initandlisten] connection accepted from 127.0.0.1:60914 #91
+Tue Apr 23 17:21:52 [initandlisten] connection accepted from 127.0.0.1:60933 #92
+Tue Apr 23 17:21:52 [initandlisten] connection accepted from 127.0.0.1:60934 #93
+Tue Apr 23 17:21:52 [initandlisten] connection accepted from 127.0.0.1:60935 #94
+Tue Apr 23 17:21:52 [initandlisten] connection accepted from 127.0.0.1:60936 #95
+Tue Apr 23 17:21:52 [initandlisten] connection accepted from 127.0.0.1:60937 #96
+Tue Apr 23 17:21:52 [FileAllocator] allocating new datafile /data/db/vidtest2.ns, filling with zeroes...
+Tue Apr 23 17:21:52 [FileAllocator] done allocating datafile /data/db/vidtest2.ns, size: 16MB,  took 0.096 secs
+Tue Apr 23 17:21:52 [FileAllocator] allocating new datafile /data/db/vidtest2.0, filling with zeroes...
+Tue Apr 23 17:21:52 [FileAllocator] done allocating datafile /data/db/vidtest2.0, size: 64MB,  took 0.294 secs
+Tue Apr 23 17:21:52 [FileAllocator] allocating new datafile /data/db/vidtest2.1, filling with zeroes...
+Tue Apr 23 17:21:52 [conn88] build index vidtest2.videos { _id: 1 }
+Tue Apr 23 17:21:52 [conn88] build index done 0 records 0.015 secs
+Tue Apr 23 17:21:52 [conn88] insert vidtest2.videos 459ms
+Tue Apr 23 17:21:53 [FileAllocator] done allocating datafile /data/db/vidtest2.1, size: 128MB,  took 0.698 secs
+Tue Apr 23 17:22:32 [clientcursormon] mem (MB) res:44 virt:3433 mapped:480
+Tue Apr 23 17:23:01 [conn88] end connection 127.0.0.1:60911
+Tue Apr 23 17:23:01 [conn95] end connection 127.0.0.1:60936
+Tue Apr 23 17:23:01 [conn96] end connection 127.0.0.1:60937
+Tue Apr 23 17:23:01 [conn93] end connection 127.0.0.1:60934
+Tue Apr 23 17:23:01 [conn94] end connection 127.0.0.1:60935
+Tue Apr 23 17:23:01 [conn91] end connection 127.0.0.1:60914
+Tue Apr 23 17:23:01 [conn92] end connection 127.0.0.1:60933
+Tue Apr 23 17:23:01 [conn90] end connection 127.0.0.1:60913
+Tue Apr 23 17:23:01 [conn89] end connection 127.0.0.1:60912
+Tue Apr 23 17:23:01 [conn87] end connection 127.0.0.1:60909
+Tue Apr 23 17:27:32 [clientcursormon] mem (MB) res:44 virt:3428 mapped:480
+Tue Apr 23 18:29:02 [clientcursormon] mem (MB) res:44 virt:3428 mapped:480
+Tue Apr 23 18:33:43 [initandlisten] connection accepted from 127.0.0.1:61784 #97
+Tue Apr 23 18:33:43 [initandlisten] connection accepted from 127.0.0.1:61785 #98
+Tue Apr 23 18:33:43 [initandlisten] connection accepted from 127.0.0.1:61786 #99
+Tue Apr 23 18:33:43 [initandlisten] connection accepted from 127.0.0.1:61787 #100
+Tue Apr 23 18:33:43 [initandlisten] connection accepted from 127.0.0.1:61788 #101
+Tue Apr 23 18:34:02 [clientcursormon] mem (MB) res:44 virt:3431 mapped:480
+Tue Apr 23 18:36:16 [conn98] end connection 127.0.0.1:61785
+Tue Apr 23 18:36:16 [conn97] end connection 127.0.0.1:61784
+Tue Apr 23 18:36:16 [conn101] end connection 127.0.0.1:61788
+Tue Apr 23 18:36:16 [conn100] end connection 127.0.0.1:61787
+Tue Apr 23 18:36:16 [conn99] end connection 127.0.0.1:61786
+Tue Apr 23 18:37:05 [initandlisten] connection accepted from 127.0.0.1:61942 #102
+Tue Apr 23 18:37:05 [initandlisten] connection accepted from 127.0.0.1:61943 #103
+Tue Apr 23 18:37:05 [initandlisten] connection accepted from 127.0.0.1:61944 #104
+Tue Apr 23 18:37:05 [initandlisten] connection accepted from 127.0.0.1:61945 #105
+Tue Apr 23 18:37:05 [initandlisten] connection accepted from 127.0.0.1:61946 #106
+Tue Apr 23 18:37:10 [conn105] end connection 127.0.0.1:61945
+Tue Apr 23 18:37:10 [conn106] end connection 127.0.0.1:61946
+Tue Apr 23 18:37:10 [conn102] end connection 127.0.0.1:61942
+Tue Apr 23 18:37:10 [conn104] end connection 127.0.0.1:61944
+Tue Apr 23 18:37:10 [conn103] end connection 127.0.0.1:61943
+Tue Apr 23 18:38:17 [initandlisten] connection accepted from 127.0.0.1:61985 #107
+Tue Apr 23 18:38:17 [initandlisten] connection accepted from 127.0.0.1:61986 #108
+Tue Apr 23 18:38:17 [initandlisten] connection accepted from 127.0.0.1:61987 #109
+Tue Apr 23 18:38:17 [initandlisten] connection accepted from 127.0.0.1:61988 #110
+Tue Apr 23 18:38:17 [initandlisten] connection accepted from 127.0.0.1:61989 #111
+Tue Apr 23 18:38:23 [conn111] end connection 127.0.0.1:61989
+Tue Apr 23 18:38:23 [conn108] end connection 127.0.0.1:61986
+Tue Apr 23 18:38:23 [conn110] end connection 127.0.0.1:61988
+Tue Apr 23 18:38:23 [conn107] end connection 127.0.0.1:61985
+Tue Apr 23 18:38:23 [conn109] end connection 127.0.0.1:61987
+Tue Apr 23 18:38:49 [initandlisten] connection accepted from 127.0.0.1:62008 #112
+Tue Apr 23 18:39:02 [clientcursormon] mem (MB) res:44 virt:3429 mapped:480
+Tue Apr 23 18:40:23 [initandlisten] connection accepted from 127.0.0.1:62057 #113
+Tue Apr 23 18:40:23 [initandlisten] connection accepted from 127.0.0.1:62058 #114
+Tue Apr 23 18:40:23 [initandlisten] connection accepted from 127.0.0.1:62059 #115
+Tue Apr 23 18:40:23 [initandlisten] connection accepted from 127.0.0.1:62060 #116
+Tue Apr 23 18:40:23 [initandlisten] connection accepted from 127.0.0.1:62061 #117
+Tue Apr 23 18:44:02 [clientcursormon] mem (MB) res:44 virt:3431 mapped:480
+Tue Apr 23 18:44:19 [conn117] end connection 127.0.0.1:62061
+Tue Apr 23 18:44:19 [conn115] end connection 127.0.0.1:62059
+Tue Apr 23 18:44:19 [conn116] end connection 127.0.0.1:62060
+Tue Apr 23 18:44:19 [conn114] end connection 127.0.0.1:62058
+Tue Apr 23 18:44:19 [conn113] end connection 127.0.0.1:62057
+Tue Apr 23 18:44:38 [initandlisten] connection accepted from 127.0.0.1:62261 #118
+Tue Apr 23 18:44:38 [initandlisten] connection accepted from 127.0.0.1:62262 #119
+Tue Apr 23 18:44:38 [initandlisten] connection accepted from 127.0.0.1:62263 #120
+Tue Apr 23 18:44:38 [initandlisten] connection accepted from 127.0.0.1:62264 #121
+Tue Apr 23 18:44:38 [initandlisten] connection accepted from 127.0.0.1:62265 #122
+Tue Apr 23 18:46:01 [conn121] end connection 127.0.0.1:62264
+Tue Apr 23 18:46:01 [conn120] end connection 127.0.0.1:62263
+Tue Apr 23 18:46:01 [conn122] end connection 127.0.0.1:62265
+Tue Apr 23 18:46:01 [conn118] end connection 127.0.0.1:62261
+Tue Apr 23 18:46:01 [conn119] end connection 127.0.0.1:62262
+Tue Apr 23 18:46:02 [initandlisten] connection accepted from 127.0.0.1:62310 #123
+Tue Apr 23 18:46:02 [initandlisten] connection accepted from 127.0.0.1:62311 #124
+Tue Apr 23 18:46:02 [initandlisten] connection accepted from 127.0.0.1:62312 #125
+Tue Apr 23 18:46:02 [initandlisten] connection accepted from 127.0.0.1:62313 #126
+Tue Apr 23 18:46:02 [initandlisten] connection accepted from 127.0.0.1:62314 #127
+Tue Apr 23 18:47:22 [conn125] end connection 127.0.0.1:62312
+Tue Apr 23 18:47:22 [conn127] end connection 127.0.0.1:62314
+Tue Apr 23 18:47:22 [conn124] end connection 127.0.0.1:62311
+Tue Apr 23 18:47:22 [conn126] end connection 127.0.0.1:62313
+Tue Apr 23 18:47:22 [conn123] end connection 127.0.0.1:62310
+Tue Apr 23 18:47:23 [initandlisten] connection accepted from 127.0.0.1:62361 #128
+Tue Apr 23 18:47:23 [initandlisten] connection accepted from 127.0.0.1:62362 #129
+Tue Apr 23 18:47:23 [initandlisten] connection accepted from 127.0.0.1:62363 #130
+Tue Apr 23 18:47:23 [initandlisten] connection accepted from 127.0.0.1:62364 #131
+Tue Apr 23 18:47:23 [initandlisten] connection accepted from 127.0.0.1:62365 #132
+Tue Apr 23 18:49:02 [clientcursormon] mem (MB) res:44 virt:3431 mapped:480
+Tue Apr 23 18:50:02 [conn132] end connection 127.0.0.1:62365
+Tue Apr 23 18:50:02 [conn131] end connection 127.0.0.1:62364
+Tue Apr 23 18:50:02 [conn128] end connection 127.0.0.1:62361
+Tue Apr 23 18:50:02 [conn129] end connection 127.0.0.1:62362
+Tue Apr 23 18:50:02 [conn130] end connection 127.0.0.1:62363
+Tue Apr 23 18:50:03 [initandlisten] connection accepted from 127.0.0.1:62475 #133
+Tue Apr 23 18:50:03 [initandlisten] connection accepted from 127.0.0.1:62476 #134
+Tue Apr 23 18:50:03 [initandlisten] connection accepted from 127.0.0.1:62477 #135
+Tue Apr 23 18:50:03 [initandlisten] connection accepted from 127.0.0.1:62478 #136
+Tue Apr 23 18:50:03 [initandlisten] connection accepted from 127.0.0.1:62479 #137
+Tue Apr 23 18:50:06 [conn133] end connection 127.0.0.1:62475
+Tue Apr 23 18:50:06 [conn137] end connection 127.0.0.1:62479
+Tue Apr 23 18:50:06 [conn134] end connection 127.0.0.1:62476
+Tue Apr 23 18:50:06 [conn136] end connection 127.0.0.1:62478
+Tue Apr 23 18:50:06 [conn135] end connection 127.0.0.1:62477
+Tue Apr 23 18:52:15 [initandlisten] connection accepted from 127.0.0.1:62549 #138
+Tue Apr 23 18:52:15 [initandlisten] connection accepted from 127.0.0.1:62550 #139
+Tue Apr 23 18:52:15 [initandlisten] connection accepted from 127.0.0.1:62551 #140
+Tue Apr 23 18:52:15 [initandlisten] connection accepted from 127.0.0.1:62552 #141
+Tue Apr 23 18:52:15 [initandlisten] connection accepted from 127.0.0.1:62553 #142
+Tue Apr 23 18:52:19 [conn142] end connection 127.0.0.1:62553
+Tue Apr 23 18:52:19 [conn141] end connection 127.0.0.1:62552
+Tue Apr 23 18:52:19 [conn140] end connection 127.0.0.1:62551
+Tue Apr 23 18:52:19 [conn139] end connection 127.0.0.1:62550
+Tue Apr 23 18:52:19 [conn138] end connection 127.0.0.1:62549
+Tue Apr 23 18:53:15 [initandlisten] connection accepted from 127.0.0.1:62588 #143
+Tue Apr 23 18:54:02 [clientcursormon] mem (MB) res:44 virt:3429 mapped:480
+Tue Apr 23 18:55:17 [initandlisten] connection accepted from 127.0.0.1:62649 #144
+Tue Apr 23 18:55:39 [conn144] dropDatabase testvids2
+Tue Apr 23 18:55:39 [conn144] removeJournalFiles
+Tue Apr 23 18:55:56 [conn143] end connection 127.0.0.1:62588
+Tue Apr 23 18:56:01 [initandlisten] connection accepted from 127.0.0.1:62672 #145
+Tue Apr 23 18:59:02 [clientcursormon] mem (MB) res:44 virt:3430 mapped:480
+Tue Apr 23 18:59:26 [conn144] end connection 127.0.0.1:62649
+Tue Apr 23 18:59:26 [conn81] end connection 127.0.0.1:59208
+Tue Apr 23 18:59:26 [conn112] end connection 127.0.0.1:62008
+Tue Apr 23 18:59:26 [conn64] end connection 127.0.0.1:57454
+Tue Apr 23 18:59:26 [conn70] end connection 127.0.0.1:59164
+Tue Apr 23 18:59:26 [conn8] end connection 127.0.0.1:53324
+Tue Apr 23 18:59:32 [initandlisten] connection accepted from 127.0.0.1:62792 #146
+Tue Apr 23 19:01:36 [initandlisten] connection accepted from 127.0.0.1:62856 #147
+Tue Apr 23 19:01:36 [initandlisten] connection accepted from 127.0.0.1:62857 #148
+Tue Apr 23 19:01:36 [initandlisten] connection accepted from 127.0.0.1:62858 #149
+Tue Apr 23 19:01:36 [initandlisten] connection accepted from 127.0.0.1:62859 #150
+Tue Apr 23 19:01:36 [initandlisten] connection accepted from 127.0.0.1:62860 #151
+Tue Apr 23 19:01:39 [conn151] end connection 127.0.0.1:62860
+Tue Apr 23 19:01:39 [conn150] end connection 127.0.0.1:62859
+Tue Apr 23 19:01:39 [conn149] end connection 127.0.0.1:62858
+Tue Apr 23 19:01:39 [conn147] end connection 127.0.0.1:62856
+Tue Apr 23 19:01:39 [conn148] end connection 127.0.0.1:62857
+Tue Apr 23 19:04:02 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:09:03 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:14:00 [initandlisten] connection accepted from 127.0.0.1:63632 #152
+Tue Apr 23 19:14:00 [initandlisten] connection accepted from 127.0.0.1:63633 #153
+Tue Apr 23 19:14:00 [initandlisten] connection accepted from 127.0.0.1:63634 #154
+Tue Apr 23 19:14:00 [initandlisten] connection accepted from 127.0.0.1:63635 #155
+Tue Apr 23 19:14:00 [initandlisten] connection accepted from 127.0.0.1:63636 #156
+Tue Apr 23 19:14:03 [clientcursormon] mem (MB) res:44 virt:3430 mapped:480
+Tue Apr 23 19:15:37 [conn156] end connection 127.0.0.1:63636
+Tue Apr 23 19:15:37 [conn154] end connection 127.0.0.1:63634
+Tue Apr 23 19:15:37 [conn155] end connection 127.0.0.1:63635
+Tue Apr 23 19:15:37 [conn153] end connection 127.0.0.1:63633
+Tue Apr 23 19:15:37 [conn152] end connection 127.0.0.1:63632
+Tue Apr 23 19:15:39 [initandlisten] connection accepted from 127.0.0.1:63688 #157
+Tue Apr 23 19:15:39 [initandlisten] connection accepted from 127.0.0.1:63689 #158
+Tue Apr 23 19:15:39 [initandlisten] connection accepted from 127.0.0.1:63690 #159
+Tue Apr 23 19:15:39 [initandlisten] connection accepted from 127.0.0.1:63691 #160
+Tue Apr 23 19:15:39 [initandlisten] connection accepted from 127.0.0.1:63692 #161
+Tue Apr 23 19:15:42 [conn161] end connection 127.0.0.1:63692
+Tue Apr 23 19:15:42 [conn159] end connection 127.0.0.1:63690
+Tue Apr 23 19:15:42 [conn158] end connection 127.0.0.1:63689
+Tue Apr 23 19:15:42 [conn157] end connection 127.0.0.1:63688
+Tue Apr 23 19:15:42 [conn160] end connection 127.0.0.1:63691
+Tue Apr 23 19:16:17 [initandlisten] connection accepted from 127.0.0.1:63714 #162
+Tue Apr 23 19:16:17 [initandlisten] connection accepted from 127.0.0.1:63715 #163
+Tue Apr 23 19:16:17 [initandlisten] connection accepted from 127.0.0.1:63716 #164
+Tue Apr 23 19:16:17 [initandlisten] connection accepted from 127.0.0.1:63717 #165
+Tue Apr 23 19:16:17 [initandlisten] connection accepted from 127.0.0.1:63718 #166
+Tue Apr 23 19:16:21 [conn166] end connection 127.0.0.1:63718
+Tue Apr 23 19:16:21 [conn163] end connection 127.0.0.1:63715
+Tue Apr 23 19:16:21 [conn162] end connection 127.0.0.1:63714
+Tue Apr 23 19:16:21 [conn164] end connection 127.0.0.1:63716
+Tue Apr 23 19:16:21 [conn165] end connection 127.0.0.1:63717
+Tue Apr 23 19:17:31 [initandlisten] connection accepted from 127.0.0.1:63766 #167
+Tue Apr 23 19:17:31 [initandlisten] connection accepted from 127.0.0.1:63767 #168
+Tue Apr 23 19:17:31 [initandlisten] connection accepted from 127.0.0.1:63768 #169
+Tue Apr 23 19:17:31 [initandlisten] connection accepted from 127.0.0.1:63769 #170
+Tue Apr 23 19:17:31 [initandlisten] connection accepted from 127.0.0.1:63770 #171
+Tue Apr 23 19:17:35 [conn171] end connection 127.0.0.1:63770
+Tue Apr 23 19:17:35 [conn170] end connection 127.0.0.1:63769
+Tue Apr 23 19:17:35 [conn169] end connection 127.0.0.1:63768
+Tue Apr 23 19:17:35 [conn168] end connection 127.0.0.1:63767
+Tue Apr 23 19:17:35 [conn167] end connection 127.0.0.1:63766
+Tue Apr 23 19:19:03 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:19:06 [initandlisten] connection accepted from 127.0.0.1:63821 #172
+Tue Apr 23 19:19:06 [initandlisten] connection accepted from 127.0.0.1:63822 #173
+Tue Apr 23 19:19:06 [initandlisten] connection accepted from 127.0.0.1:63823 #174
+Tue Apr 23 19:19:06 [initandlisten] connection accepted from 127.0.0.1:63824 #175
+Tue Apr 23 19:19:06 [initandlisten] connection accepted from 127.0.0.1:63825 #176
+Tue Apr 23 19:19:10 [conn173] end connection 127.0.0.1:63822
+Tue Apr 23 19:19:10 [conn176] end connection 127.0.0.1:63825
+Tue Apr 23 19:19:10 [conn175] end connection 127.0.0.1:63824
+Tue Apr 23 19:19:10 [conn174] end connection 127.0.0.1:63823
+Tue Apr 23 19:19:10 [conn172] end connection 127.0.0.1:63821
+Tue Apr 23 19:22:04 [initandlisten] connection accepted from 127.0.0.1:63946 #177
+Tue Apr 23 19:22:04 [initandlisten] connection accepted from 127.0.0.1:63947 #178
+Tue Apr 23 19:22:04 [initandlisten] connection accepted from 127.0.0.1:63948 #179
+Tue Apr 23 19:22:04 [initandlisten] connection accepted from 127.0.0.1:63949 #180
+Tue Apr 23 19:22:04 [initandlisten] connection accepted from 127.0.0.1:63950 #181
+Tue Apr 23 19:22:07 [conn181] end connection 127.0.0.1:63950
+Tue Apr 23 19:22:07 [conn180] end connection 127.0.0.1:63949
+Tue Apr 23 19:22:07 [conn179] end connection 127.0.0.1:63948
+Tue Apr 23 19:22:07 [conn177] end connection 127.0.0.1:63946
+Tue Apr 23 19:22:07 [conn178] end connection 127.0.0.1:63947
+Tue Apr 23 19:24:03 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:28:35 [initandlisten] connection accepted from 127.0.0.1:64213 #182
+Tue Apr 23 19:28:35 [initandlisten] connection accepted from 127.0.0.1:64214 #183
+Tue Apr 23 19:28:35 [initandlisten] connection accepted from 127.0.0.1:64215 #184
+Tue Apr 23 19:28:35 [initandlisten] connection accepted from 127.0.0.1:64216 #185
+Tue Apr 23 19:28:35 [initandlisten] connection accepted from 127.0.0.1:64217 #186
+Tue Apr 23 19:28:38 [conn186] end connection 127.0.0.1:64217
+Tue Apr 23 19:28:38 [conn184] end connection 127.0.0.1:64215
+Tue Apr 23 19:28:38 [conn185] end connection 127.0.0.1:64216
+Tue Apr 23 19:28:38 [conn182] end connection 127.0.0.1:64213
+Tue Apr 23 19:28:38 [conn183] end connection 127.0.0.1:64214
+Tue Apr 23 19:29:03 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:34:04 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:37:52 [initandlisten] connection accepted from 127.0.0.1:64832 #187
+Tue Apr 23 19:37:52 [initandlisten] connection accepted from 127.0.0.1:64833 #188
+Tue Apr 23 19:37:52 [initandlisten] connection accepted from 127.0.0.1:64834 #189
+Tue Apr 23 19:37:52 [initandlisten] connection accepted from 127.0.0.1:64835 #190
+Tue Apr 23 19:37:52 [initandlisten] connection accepted from 127.0.0.1:64836 #191
+Tue Apr 23 19:38:21 [conn189] end connection 127.0.0.1:64834
+Tue Apr 23 19:38:21 [conn190] end connection 127.0.0.1:64835
+Tue Apr 23 19:38:21 [conn188] end connection 127.0.0.1:64833
+Tue Apr 23 19:38:21 [conn187] end connection 127.0.0.1:64832
+Tue Apr 23 19:38:21 [conn191] end connection 127.0.0.1:64836
+Tue Apr 23 19:39:04 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:40:34 [initandlisten] connection accepted from 127.0.0.1:64972 #192
+Tue Apr 23 19:40:34 [initandlisten] connection accepted from 127.0.0.1:64973 #193
+Tue Apr 23 19:40:34 [initandlisten] connection accepted from 127.0.0.1:64974 #194
+Tue Apr 23 19:40:34 [initandlisten] connection accepted from 127.0.0.1:64975 #195
+Tue Apr 23 19:40:34 [initandlisten] connection accepted from 127.0.0.1:64976 #196
+Tue Apr 23 19:40:38 [conn196] end connection 127.0.0.1:64976
+Tue Apr 23 19:40:38 [conn194] end connection 127.0.0.1:64974
+Tue Apr 23 19:40:38 [conn195] end connection 127.0.0.1:64975
+Tue Apr 23 19:40:38 [conn192] end connection 127.0.0.1:64972
+Tue Apr 23 19:40:38 [conn193] end connection 127.0.0.1:64973
+Tue Apr 23 19:41:18 [initandlisten] connection accepted from 127.0.0.1:65004 #197
+Tue Apr 23 19:41:18 [initandlisten] connection accepted from 127.0.0.1:65005 #198
+Tue Apr 23 19:41:18 [initandlisten] connection accepted from 127.0.0.1:65006 #199
+Tue Apr 23 19:41:18 [initandlisten] connection accepted from 127.0.0.1:65007 #200
+Tue Apr 23 19:41:18 [initandlisten] connection accepted from 127.0.0.1:65008 #201
+Tue Apr 23 19:41:23 [conn201] end connection 127.0.0.1:65008
+Tue Apr 23 19:41:23 [conn200] end connection 127.0.0.1:65007
+Tue Apr 23 19:41:23 [conn198] end connection 127.0.0.1:65005
+Tue Apr 23 19:41:23 [conn199] end connection 127.0.0.1:65006
+Tue Apr 23 19:41:23 [conn197] end connection 127.0.0.1:65004
+Tue Apr 23 19:41:32 [initandlisten] connection accepted from 127.0.0.1:65018 #202
+Tue Apr 23 19:41:32 [initandlisten] connection accepted from 127.0.0.1:65019 #203
+Tue Apr 23 19:41:32 [initandlisten] connection accepted from 127.0.0.1:65020 #204
+Tue Apr 23 19:41:32 [initandlisten] connection accepted from 127.0.0.1:65021 #205
+Tue Apr 23 19:41:32 [initandlisten] connection accepted from 127.0.0.1:65022 #206
+Tue Apr 23 19:41:36 [conn203] end connection 127.0.0.1:65019
+Tue Apr 23 19:41:36 [conn206] end connection 127.0.0.1:65022
+Tue Apr 23 19:41:36 [conn205] end connection 127.0.0.1:65021
+Tue Apr 23 19:41:36 [conn202] end connection 127.0.0.1:65018
+Tue Apr 23 19:41:36 [conn204] end connection 127.0.0.1:65020
+Tue Apr 23 19:43:03 [initandlisten] connection accepted from 127.0.0.1:65071 #207
+Tue Apr 23 19:43:03 [initandlisten] connection accepted from 127.0.0.1:65072 #208
+Tue Apr 23 19:43:03 [initandlisten] connection accepted from 127.0.0.1:65073 #209
+Tue Apr 23 19:43:03 [initandlisten] connection accepted from 127.0.0.1:65074 #210
+Tue Apr 23 19:43:03 [initandlisten] connection accepted from 127.0.0.1:65075 #211
+Tue Apr 23 19:43:07 [conn208] end connection 127.0.0.1:65072
+Tue Apr 23 19:43:07 [conn211] end connection 127.0.0.1:65075
+Tue Apr 23 19:43:07 [conn209] end connection 127.0.0.1:65073
+Tue Apr 23 19:43:07 [conn210] end connection 127.0.0.1:65074
+Tue Apr 23 19:43:07 [conn207] end connection 127.0.0.1:65071
+Tue Apr 23 19:43:52 [initandlisten] connection accepted from 127.0.0.1:65102 #212
+Tue Apr 23 19:43:52 [initandlisten] connection accepted from 127.0.0.1:65103 #213
+Tue Apr 23 19:43:52 [initandlisten] connection accepted from 127.0.0.1:65104 #214
+Tue Apr 23 19:43:52 [initandlisten] connection accepted from 127.0.0.1:65105 #215
+Tue Apr 23 19:43:52 [initandlisten] connection accepted from 127.0.0.1:65106 #216
+Tue Apr 23 19:43:56 [conn216] end connection 127.0.0.1:65106
+Tue Apr 23 19:43:56 [conn214] end connection 127.0.0.1:65104
+Tue Apr 23 19:43:56 [conn215] end connection 127.0.0.1:65105
+Tue Apr 23 19:43:56 [conn213] end connection 127.0.0.1:65103
+Tue Apr 23 19:43:56 [conn212] end connection 127.0.0.1:65102
+Tue Apr 23 19:44:04 [clientcursormon] mem (MB) res:44 virt:3427 mapped:480
+Tue Apr 23 19:49:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 19:54:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 19:59:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 20:04:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 20:09:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 20:14:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 20:19:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 20:24:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 20:29:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Tue Apr 23 20:34:04 [clientcursormon] mem (MB) res:41 virt:3427 mapped:480
+Wed Apr 24 10:51:32 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Wed Apr 24 10:57:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:02:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:07:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:12:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:17:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:22:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:27:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:32:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:37:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:42:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:47:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:52:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 11:57:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:02:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:07:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:12:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:17:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:22:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:27:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:32:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:37:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:42:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:48:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:53:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 12:58:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:03:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:08:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:13:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:18:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:23:15 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:28:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:33:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:38:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:43:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:48:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:53:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 13:58:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:03:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:08:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:13:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:18:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:23:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:28:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:33:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:38:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:43:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:48:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:53:16 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 14:58:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:03:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:08:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:13:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:18:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:23:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:28:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:33:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:38:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:43:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:48:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:53:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 15:58:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:03:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:08:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:13:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:18:17 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:23:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:28:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:33:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:38:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:43:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:48:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:53:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 16:58:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 17:03:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 17:08:18 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:01:07 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:06:07 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:11:07 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:16:07 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:21:07 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:26:07 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:42:44 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:47:44 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:52:44 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 18:57:44 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 19:02:44 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Wed Apr 24 19:09:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 19:14:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 19:19:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 19:24:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 19:29:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 19:34:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 19:39:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 20:02:09 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 20:26:42 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 20:36:50 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 20:42:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 20:47:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 20:52:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 20:57:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 21:02:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 21:07:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 21:12:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 21:17:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 21:22:14 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 23:27:52 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Wed Apr 24 23:32:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 23:37:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 23:42:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 23:47:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 23:52:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Wed Apr 24 23:57:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:02:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:07:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:12:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:17:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:22:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:27:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:32:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:37:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:42:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:47:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:52:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 00:57:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 01:02:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 01:07:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 01:12:54 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 01:17:54 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 02:28:55 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 11:24:37 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Thu Apr 25 11:29:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 11:34:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 11:39:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 11:44:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 11:49:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 11:54:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 11:59:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:04:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:09:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:14:37 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:19:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:24:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:29:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:34:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:39:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:44:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:49:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:54:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 12:59:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:04:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:09:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:14:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:19:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:24:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:29:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:34:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:39:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:44:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:49:38 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:54:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 13:59:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:04:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:09:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:14:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:19:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:24:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:29:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:34:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:39:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:44:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:49:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:54:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 14:59:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:04:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:09:39 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:19:20 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:24:20 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:29:20 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:34:20 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:39:20 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:44:20 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:49:21 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 15:54:21 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 19:02:44 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Thu Apr 25 19:46:32 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Thu Apr 25 20:10:27 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Thu Apr 25 20:15:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:02:34 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:07:34 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:12:34 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:17:35 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:22:35 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:27:35 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:32:35 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:37:35 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 21:56:53 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 22:59:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:04:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:09:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:14:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:19:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:24:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:29:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:34:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:39:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:44:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:49:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:54:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Thu Apr 25 23:59:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:04:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:09:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:14:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:19:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:24:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:29:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:34:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:39:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 00:44:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:08:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:13:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:18:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:23:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:28:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:33:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:38:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:43:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:48:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 01:53:03 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:15:25 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:20:25 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:25:25 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:30:25 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:35:25 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:40:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:45:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:50:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 05:55:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:00:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:05:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:10:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:15:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:20:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:25:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:30:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:35:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:40:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:45:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 06:50:26 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 08:05:27 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 11:22:49 [clientcursormon] mem (MB) res:0 virt:3427 mapped:480
+Fri Apr 26 11:27:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 11:32:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 11:37:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 11:42:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 11:47:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 11:52:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 11:57:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:02:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:07:49 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:12:50 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:17:50 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:22:50 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:27:50 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:32:50 [clientcursormon] mem (MB) res:1 virt:3427 mapped:480
+Fri Apr 26 12:37:10 [initandlisten] connection accepted from 127.0.0.1:53510 #217
+Fri Apr 26 12:37:10 [initandlisten] connection accepted from 127.0.0.1:53511 #218
+Fri Apr 26 12:37:10 [initandlisten] connection accepted from 127.0.0.1:53512 #219
+Fri Apr 26 12:37:10 [initandlisten] connection accepted from 127.0.0.1:53513 #220
+Fri Apr 26 12:37:10 [initandlisten] connection accepted from 127.0.0.1:53514 #221
+Fri Apr 26 12:37:50 [clientcursormon] mem (MB) res:1 virt:3430 mapped:480
+Fri Apr 26 12:38:01 [conn218] end connection 127.0.0.1:53512
+Fri Apr 26 12:38:01 [conn218] end connection 127.0.0.1:53513
+Fri Apr 26 12:38:01 [conn219] end connection 127.0.0.1:53514
+Fri Apr 26 12:38:01 [conn217] end connection 127.0.0.1:53511
+Fri Apr 26 12:38:01 [conn217] end connection 127.0.0.1:53510
+Fri Apr 26 12:38:50 [clientcursormon] mem (MB) res:2 virt:3427 mapped:480
+Fri Apr 26 12:43:50 [clientcursormon] mem (MB) res:2 virt:3427 mapped:480
+Fri Apr 26 12:48:50 [clientcursormon] mem (MB) res:2 virt:3427 mapped:480
+Fri Apr 26 12:53:50 [clientcursormon] mem (MB) res:2 virt:3427 mapped:480
+Fri Apr 26 12:56:27 [initandlisten] connection accepted from 127.0.0.1:54216 #222
+Fri Apr 26 12:56:27 [initandlisten] connection accepted from 127.0.0.1:54217 #223
+Fri Apr 26 12:56:27 [initandlisten] connection accepted from 127.0.0.1:54218 #224
+Fri Apr 26 12:56:27 [initandlisten] connection accepted from 127.0.0.1:54219 #225
+Fri Apr 26 12:56:27 [initandlisten] connection accepted from 127.0.0.1:54220 #226
+Fri Apr 26 12:57:37 [initandlisten] connection accepted from 127.0.0.1:54273 #227
+Fri Apr 26 12:57:38 [conn225] command vidtest2.$cmd command: { dbstats: 1 } ntoreturn:1 reslen:207 155ms
+Fri Apr 26 12:57:50 [clientcursormon] mem (MB) res:18 virt:3430 mapped:480
+Fri Apr 26 13:02:50 [clientcursormon] mem (MB) res:18 virt:3430 mapped:480
+Fri Apr 26 13:05:09 [conn224] end connection 127.0.0.1:54220
+Fri Apr 26 13:05:09 [conn222] end connection 127.0.0.1:54218
+Fri Apr 26 13:05:09 [conn223] end connection 127.0.0.1:54219
+Fri Apr 26 13:05:09 [conn220] end connection 127.0.0.1:54216
+Fri Apr 26 13:05:09 [conn221] end connection 127.0.0.1:54217
+Fri Apr 26 13:05:12 [initandlisten] connection accepted from 127.0.0.1:54504 #228
+Fri Apr 26 13:05:12 [initandlisten] connection accepted from 127.0.0.1:54505 #229
+Fri Apr 26 13:05:12 [initandlisten] connection accepted from 127.0.0.1:54506 #230
+Fri Apr 26 13:05:12 [initandlisten] connection accepted from 127.0.0.1:54507 #231
+Fri Apr 26 13:05:12 [initandlisten] connection accepted from 127.0.0.1:54508 #232
+Fri Apr 26 13:05:44 [initandlisten] connection accepted from 127.0.0.1:54528 #233
+Fri Apr 26 13:07:50 [clientcursormon] mem (MB) res:18 virt:3431 mapped:480
+Fri Apr 26 13:12:50 [clientcursormon] mem (MB) res:18 virt:3431 mapped:480
+Fri Apr 26 13:17:50 [clientcursormon] mem (MB) res:18 virt:3431 mapped:480
+Fri Apr 26 13:17:50 [initandlisten] connection accepted from 127.0.0.1:54971 #234
+Fri Apr 26 13:18:00 [conn232] command vidtest.$cmd command: { dbstats: 1 } ntoreturn:1 reslen:206 104ms
+Fri Apr 26 13:18:18 [conn230] end connection 127.0.0.1:54508
+Fri Apr 26 13:18:18 [conn229] end connection 127.0.0.1:54507
+Fri Apr 26 13:18:18 [conn228] end connection 127.0.0.1:54506
+Fri Apr 26 13:18:18 [conn227] end connection 127.0.0.1:54505
+Fri Apr 26 13:18:18 [conn226] end connection 127.0.0.1:54504
+Fri Apr 26 13:18:21 [initandlisten] connection accepted from 127.0.0.1:54984 #235
+Fri Apr 26 13:18:21 [initandlisten] connection accepted from 127.0.0.1:54985 #236
+Fri Apr 26 13:18:21 [initandlisten] connection accepted from 127.0.0.1:54986 #237
+Fri Apr 26 13:18:21 [initandlisten] connection accepted from 127.0.0.1:54987 #238
+Fri Apr 26 13:18:21 [initandlisten] connection accepted from 127.0.0.1:54988 #239
+Fri Apr 26 13:18:50 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 13:23:50 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 13:28:50 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 13:30:30 [conn237] end connection 127.0.0.1:54988
+Fri Apr 26 13:30:30 [conn236] end connection 127.0.0.1:54987
+Fri Apr 26 13:30:30 [conn235] end connection 127.0.0.1:54986
+Fri Apr 26 13:30:30 [conn233] end connection 127.0.0.1:54984
+Fri Apr 26 13:30:30 [conn234] end connection 127.0.0.1:54985
+Fri Apr 26 13:30:33 [initandlisten] connection accepted from 127.0.0.1:55373 #240
+Fri Apr 26 13:30:33 [initandlisten] connection accepted from 127.0.0.1:55374 #241
+Fri Apr 26 13:30:33 [initandlisten] connection accepted from 127.0.0.1:55375 #242
+Fri Apr 26 13:30:33 [initandlisten] connection accepted from 127.0.0.1:55376 #243
+Fri Apr 26 13:30:33 [initandlisten] connection accepted from 127.0.0.1:55377 #244
+Fri Apr 26 13:31:43 [conn242] end connection 127.0.0.1:55377
+Fri Apr 26 13:31:43 [conn241] end connection 127.0.0.1:55376
+Fri Apr 26 13:31:43 [conn240] end connection 127.0.0.1:55375
+Fri Apr 26 13:31:43 [conn238] end connection 127.0.0.1:55373
+Fri Apr 26 13:31:43 [conn239] end connection 127.0.0.1:55374
+Fri Apr 26 13:31:46 [initandlisten] connection accepted from 127.0.0.1:55414 #245
+Fri Apr 26 13:31:46 [initandlisten] connection accepted from 127.0.0.1:55415 #246
+Fri Apr 26 13:31:46 [initandlisten] connection accepted from 127.0.0.1:55416 #247
+Fri Apr 26 13:31:46 [initandlisten] connection accepted from 127.0.0.1:55417 #248
+Fri Apr 26 13:31:46 [initandlisten] connection accepted from 127.0.0.1:55418 #249
+Fri Apr 26 13:33:43 [conn247] end connection 127.0.0.1:55418
+Fri Apr 26 13:33:43 [conn245] end connection 127.0.0.1:55416
+Fri Apr 26 13:33:43 [conn243] end connection 127.0.0.1:55414
+Fri Apr 26 13:33:43 [conn244] end connection 127.0.0.1:55415
+Fri Apr 26 13:33:43 [conn246] end connection 127.0.0.1:55417
+Fri Apr 26 13:33:45 [initandlisten] connection accepted from 127.0.0.1:55474 #250
+Fri Apr 26 13:33:45 [initandlisten] connection accepted from 127.0.0.1:55475 #251
+Fri Apr 26 13:33:45 [initandlisten] connection accepted from 127.0.0.1:55476 #252
+Fri Apr 26 13:33:45 [initandlisten] connection accepted from 127.0.0.1:55477 #253
+Fri Apr 26 13:33:45 [initandlisten] connection accepted from 127.0.0.1:55478 #254
+Fri Apr 26 13:33:51 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 13:33:56 [conn251] end connection 127.0.0.1:55477
+Fri Apr 26 13:33:56 [conn248] end connection 127.0.0.1:55474
+Fri Apr 26 13:33:56 [conn250] end connection 127.0.0.1:55476
+Fri Apr 26 13:33:56 [conn249] end connection 127.0.0.1:55475
+Fri Apr 26 13:33:56 [conn252] end connection 127.0.0.1:55478
+Fri Apr 26 13:38:55 [clientcursormon] mem (MB) res:50 virt:3429 mapped:480
+Fri Apr 26 13:39:59 [initandlisten] connection accepted from 127.0.0.1:55648 #255
+Fri Apr 26 13:39:59 [initandlisten] connection accepted from 127.0.0.1:55649 #256
+Fri Apr 26 13:39:59 [initandlisten] connection accepted from 127.0.0.1:55650 #257
+Fri Apr 26 13:39:59 [initandlisten] connection accepted from 127.0.0.1:55651 #258
+Fri Apr 26 13:39:59 [initandlisten] connection accepted from 127.0.0.1:55652 #259
+Fri Apr 26 13:43:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 13:48:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 13:53:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 13:58:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:03:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:08:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:13:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:18:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:23:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:28:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:33:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:38:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:43:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:48:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:53:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 14:58:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:03:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:09:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:14:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:19:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:24:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:29:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:34:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:39:55 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:44:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:49:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:54:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 15:59:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:04:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:09:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:14:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:19:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:24:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:29:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:34:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:39:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:44:06 [conn257] end connection 127.0.0.1:55652
+Fri Apr 26 16:44:06 [conn253] end connection 127.0.0.1:55648
+Fri Apr 26 16:44:06 [conn255] end connection 127.0.0.1:55650
+Fri Apr 26 16:44:06 [conn256] end connection 127.0.0.1:55651
+Fri Apr 26 16:44:06 [conn254] end connection 127.0.0.1:55649
+Fri Apr 26 16:44:27 [initandlisten] connection accepted from 127.0.0.1:61074 #260
+Fri Apr 26 16:44:27 [initandlisten] connection accepted from 127.0.0.1:61075 #261
+Fri Apr 26 16:44:27 [initandlisten] connection accepted from 127.0.0.1:61076 #262
+Fri Apr 26 16:44:27 [initandlisten] connection accepted from 127.0.0.1:61077 #263
+Fri Apr 26 16:44:56 [clientcursormon] mem (MB) res:50 virt:3431 mapped:480
+Fri Apr 26 16:45:15 [conn261] end connection 127.0.0.1:61077
+Fri Apr 26 16:45:15 [conn260] end connection 127.0.0.1:61076
+Fri Apr 26 16:45:15 [conn259] end connection 127.0.0.1:61075
+Fri Apr 26 16:45:15 [conn258] end connection 127.0.0.1:61074
+Fri Apr 26 16:46:17 [initandlisten] connection accepted from 127.0.0.1:61128 #264
+Fri Apr 26 16:46:17 [initandlisten] connection accepted from 127.0.0.1:61129 #265
+Fri Apr 26 16:46:17 [initandlisten] connection accepted from 127.0.0.1:61130 #266
+Fri Apr 26 16:46:17 [initandlisten] connection accepted from 127.0.0.1:61131 #267
+Fri Apr 26 16:46:50 [conn263] end connection 127.0.0.1:61129
+Fri Apr 26 16:46:50 [conn264] end connection 127.0.0.1:61130
+Fri Apr 26 16:46:50 [conn262] end connection 127.0.0.1:61128
+Fri Apr 26 16:46:50 [conn265] end connection 127.0.0.1:61131
+Fri Apr 26 16:47:15 [initandlisten] connection accepted from 127.0.0.1:61181 #268
+Fri Apr 26 16:47:15 [initandlisten] connection accepted from 127.0.0.1:61182 #269
+Fri Apr 26 16:47:15 [initandlisten] connection accepted from 127.0.0.1:61183 #270
+Fri Apr 26 16:47:15 [initandlisten] connection accepted from 127.0.0.1:61184 #271
+Fri Apr 26 16:47:51 [conn267] end connection 127.0.0.1:61182
+Fri Apr 26 16:47:51 [conn266] end connection 127.0.0.1:61181
+Fri Apr 26 16:47:51 [conn269] end connection 127.0.0.1:61184
+Fri Apr 26 16:47:51 [conn268] end connection 127.0.0.1:61183
+Fri Apr 26 16:47:53 [initandlisten] connection accepted from 127.0.0.1:61217 #272
+Fri Apr 26 16:47:53 [initandlisten] connection accepted from 127.0.0.1:61218 #273
+Fri Apr 26 16:47:53 [initandlisten] connection accepted from 127.0.0.1:61219 #274
+Fri Apr 26 16:47:53 [initandlisten] connection accepted from 127.0.0.1:61220 #275
+Fri Apr 26 16:47:53 [initandlisten] connection accepted from 127.0.0.1:61221 #276
+Fri Apr 26 16:49:00 [conn274] end connection 127.0.0.1:61221
+Fri Apr 26 16:49:00 [conn273] end connection 127.0.0.1:61220
+Fri Apr 26 16:49:00 [conn272] end connection 127.0.0.1:61219
+Fri Apr 26 16:49:00 [conn270] end connection 127.0.0.1:61217
+Fri Apr 26 16:49:00 [conn271] end connection 127.0.0.1:61218
+Fri Apr 26 16:49:01 [initandlisten] connection accepted from 127.0.0.1:61274 #277
+Fri Apr 26 16:49:01 [initandlisten] connection accepted from 127.0.0.1:61275 #278
+Fri Apr 26 16:49:01 [initandlisten] connection accepted from 127.0.0.1:61276 #279
+Fri Apr 26 16:49:01 [initandlisten] connection accepted from 127.0.0.1:61277 #280
+Fri Apr 26 16:49:01 [initandlisten] connection accepted from 127.0.0.1:61278 #281
+Fri Apr 26 16:49:05 [conn279] end connection 127.0.0.1:61278
+Fri Apr 26 16:49:05 [conn278] end connection 127.0.0.1:61277
+Fri Apr 26 16:49:05 [conn276] end connection 127.0.0.1:61275
+Fri Apr 26 16:49:05 [conn275] end connection 127.0.0.1:61274
+Fri Apr 26 16:49:05 [conn277] end connection 127.0.0.1:61276
+Fri Apr 26 16:49:26 [initandlisten] connection accepted from 127.0.0.1:61290 #282
+Fri Apr 26 16:49:26 [initandlisten] connection accepted from 127.0.0.1:61291 #283
+Fri Apr 26 16:49:26 [initandlisten] connection accepted from 127.0.0.1:61292 #284
+Fri Apr 26 16:49:26 [initandlisten] connection accepted from 127.0.0.1:61293 #285
+Fri Apr 26 16:49:26 [initandlisten] connection accepted from 127.0.0.1:61294 #286
+Fri Apr 26 16:49:31 [conn284] end connection 127.0.0.1:61294
+Fri Apr 26 16:49:31 [conn282] end connection 127.0.0.1:61292
+Fri Apr 26 16:49:31 [conn280] end connection 127.0.0.1:61290
+Fri Apr 26 16:49:31 [conn283] end connection 127.0.0.1:61293
+Fri Apr 26 16:49:31 [conn281] end connection 127.0.0.1:61291
+Fri Apr 26 16:49:56 [clientcursormon] mem (MB) res:50 virt:3429 mapped:480
+Fri Apr 26 16:54:56 [clientcursormon] mem (MB) res:50 virt:3429 mapped:480
+Fri Apr 26 16:59:56 [clientcursormon] mem (MB) res:50 virt:3429 mapped:480
+Fri Apr 26 17:00:32 [initandlisten] connection accepted from 127.0.0.1:61595 #287
+Fri Apr 26 17:00:32 [initandlisten] connection accepted from 127.0.0.1:61596 #288
+Fri Apr 26 17:00:32 [initandlisten] connection accepted from 127.0.0.1:61597 #289
+Fri Apr 26 17:00:32 [initandlisten] connection accepted from 127.0.0.1:61598 #290
+Fri Apr 26 17:00:32 [initandlisten] connection accepted from 127.0.0.1:61599 #291
+Fri Apr 26 17:00:36 [conn289] end connection 127.0.0.1:61599
+Fri Apr 26 17:00:36 [conn286] end connection 127.0.0.1:61596
+Fri Apr 26 17:00:36 [conn288] end connection 127.0.0.1:61598
+Fri Apr 26 17:00:36 [conn287] end connection 127.0.0.1:61597
+Fri Apr 26 17:00:36 [conn285] end connection 127.0.0.1:61595
+Fri Apr 26 17:00:55 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:01:02 [initandlisten] connection accepted from 127.0.0.1:61617 #292
+Fri Apr 26 17:01:02 [initandlisten] connection accepted from 127.0.0.1:61618 #293
+Fri Apr 26 17:01:02 [initandlisten] connection accepted from 127.0.0.1:61619 #294
+Fri Apr 26 17:01:02 [initandlisten] connection accepted from 127.0.0.1:61620 #295
+Fri Apr 26 17:01:02 [initandlisten] connection accepted from 127.0.0.1:61621 #296
+Fri Apr 26 17:01:14 [conn291] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:01:14 [conn291] build index done 0 records 0.004 secs
+Fri Apr 26 17:02:06 [conn294] end connection 127.0.0.1:61621
+Fri Apr 26 17:02:06 [conn293] end connection 127.0.0.1:61620
+Fri Apr 26 17:02:06 [conn292] end connection 127.0.0.1:61619
+Fri Apr 26 17:02:06 [conn291] end connection 127.0.0.1:61618
+Fri Apr 26 17:02:06 [conn290] end connection 127.0.0.1:61617
+Fri Apr 26 17:02:30 [initandlisten] connection accepted from 127.0.0.1:61690 #297
+Fri Apr 26 17:02:30 [initandlisten] connection accepted from 127.0.0.1:61691 #298
+Fri Apr 26 17:02:30 [initandlisten] connection accepted from 127.0.0.1:61692 #299
+Fri Apr 26 17:02:30 [initandlisten] connection accepted from 127.0.0.1:61693 #300
+Fri Apr 26 17:02:30 [initandlisten] connection accepted from 127.0.0.1:61694 #301
+Fri Apr 26 17:02:43 [conn299] end connection 127.0.0.1:61694
+Fri Apr 26 17:02:43 [conn298] end connection 127.0.0.1:61693
+Fri Apr 26 17:02:43 [conn296] end connection 127.0.0.1:61691
+Fri Apr 26 17:02:43 [conn297] end connection 127.0.0.1:61692
+Fri Apr 26 17:02:43 [conn295] end connection 127.0.0.1:61690
+Fri Apr 26 17:03:01 [initandlisten] connection accepted from 127.0.0.1:61713 #302
+Fri Apr 26 17:03:01 [initandlisten] connection accepted from 127.0.0.1:61714 #303
+Fri Apr 26 17:03:01 [initandlisten] connection accepted from 127.0.0.1:61715 #304
+Fri Apr 26 17:03:01 [initandlisten] connection accepted from 127.0.0.1:61716 #305
+Fri Apr 26 17:03:01 [initandlisten] connection accepted from 127.0.0.1:61717 #306
+Fri Apr 26 17:03:25 [conn304] end connection 127.0.0.1:61717
+Fri Apr 26 17:03:25 [conn302] end connection 127.0.0.1:61715
+Fri Apr 26 17:03:25 [conn301] end connection 127.0.0.1:61714
+Fri Apr 26 17:03:25 [conn300] end connection 127.0.0.1:61713
+Fri Apr 26 17:03:25 [conn303] end connection 127.0.0.1:61716
+Fri Apr 26 17:04:03 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:04:07 [initandlisten] connection accepted from 127.0.0.1:61748 #307
+Fri Apr 26 17:04:07 [initandlisten] connection accepted from 127.0.0.1:61749 #308
+Fri Apr 26 17:04:07 [initandlisten] connection accepted from 127.0.0.1:61750 #309
+Fri Apr 26 17:04:07 [initandlisten] connection accepted from 127.0.0.1:61751 #310
+Fri Apr 26 17:04:07 [initandlisten] connection accepted from 127.0.0.1:61752 #311
+Fri Apr 26 17:04:13 [conn306] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:04:13 [conn306] build index done 0 records 0.001 secs
+Fri Apr 26 17:04:56 [clientcursormon] mem (MB) res:51 virt:3431 mapped:480
+Fri Apr 26 17:05:19 [conn309] end connection 127.0.0.1:61752
+Fri Apr 26 17:05:19 [conn308] end connection 127.0.0.1:61751
+Fri Apr 26 17:05:19 [conn305] end connection 127.0.0.1:61748
+Fri Apr 26 17:05:19 [conn307] end connection 127.0.0.1:61750
+Fri Apr 26 17:05:19 [conn306] end connection 127.0.0.1:61749
+Fri Apr 26 17:05:36 [initandlisten] connection accepted from 127.0.0.1:61820 #312
+Fri Apr 26 17:05:36 [initandlisten] connection accepted from 127.0.0.1:61821 #313
+Fri Apr 26 17:05:36 [initandlisten] connection accepted from 127.0.0.1:61822 #314
+Fri Apr 26 17:05:36 [initandlisten] connection accepted from 127.0.0.1:61823 #315
+Fri Apr 26 17:05:36 [initandlisten] connection accepted from 127.0.0.1:61824 #316
+Fri Apr 26 17:05:40 [conn313] end connection 127.0.0.1:61823
+Fri Apr 26 17:05:40 [conn314] end connection 127.0.0.1:61824
+Fri Apr 26 17:05:40 [conn311] end connection 127.0.0.1:61821
+Fri Apr 26 17:05:40 [conn310] end connection 127.0.0.1:61820
+Fri Apr 26 17:05:40 [conn312] end connection 127.0.0.1:61822
+Fri Apr 26 17:05:51 [initandlisten] connection accepted from 127.0.0.1:61838 #317
+Fri Apr 26 17:05:51 [initandlisten] connection accepted from 127.0.0.1:61839 #318
+Fri Apr 26 17:05:51 [initandlisten] connection accepted from 127.0.0.1:61840 #319
+Fri Apr 26 17:05:51 [initandlisten] connection accepted from 127.0.0.1:61841 #320
+Fri Apr 26 17:05:51 [initandlisten] connection accepted from 127.0.0.1:61842 #321
+Fri Apr 26 17:05:57 [conn319] end connection 127.0.0.1:61842
+Fri Apr 26 17:05:57 [conn315] end connection 127.0.0.1:61838
+Fri Apr 26 17:05:57 [conn318] end connection 127.0.0.1:61841
+Fri Apr 26 17:05:57 [conn317] end connection 127.0.0.1:61840
+Fri Apr 26 17:05:57 [conn316] end connection 127.0.0.1:61839
+Fri Apr 26 17:06:08 [initandlisten] connection accepted from 127.0.0.1:61851 #322
+Fri Apr 26 17:06:08 [initandlisten] connection accepted from 127.0.0.1:61852 #323
+Fri Apr 26 17:06:08 [initandlisten] connection accepted from 127.0.0.1:61853 #324
+Fri Apr 26 17:06:08 [initandlisten] connection accepted from 127.0.0.1:61854 #325
+Fri Apr 26 17:06:08 [initandlisten] connection accepted from 127.0.0.1:61855 #326
+Fri Apr 26 17:06:11 [conn324] end connection 127.0.0.1:61855
+Fri Apr 26 17:06:11 [conn323] end connection 127.0.0.1:61854
+Fri Apr 26 17:06:11 [conn322] end connection 127.0.0.1:61853
+Fri Apr 26 17:06:11 [conn320] end connection 127.0.0.1:61851
+Fri Apr 26 17:06:11 [conn321] end connection 127.0.0.1:61852
+Fri Apr 26 17:06:28 [initandlisten] connection accepted from 127.0.0.1:61864 #327
+Fri Apr 26 17:06:28 [initandlisten] connection accepted from 127.0.0.1:61865 #328
+Fri Apr 26 17:06:28 [initandlisten] connection accepted from 127.0.0.1:61866 #329
+Fri Apr 26 17:06:28 [initandlisten] connection accepted from 127.0.0.1:61867 #330
+Fri Apr 26 17:06:28 [initandlisten] connection accepted from 127.0.0.1:61868 #331
+Fri Apr 26 17:06:31 [conn329] end connection 127.0.0.1:61868
+Fri Apr 26 17:06:31 [conn328] end connection 127.0.0.1:61867
+Fri Apr 26 17:06:31 [conn327] end connection 127.0.0.1:61866
+Fri Apr 26 17:06:31 [conn326] end connection 127.0.0.1:61865
+Fri Apr 26 17:06:31 [conn325] end connection 127.0.0.1:61864
+Fri Apr 26 17:07:01 [initandlisten] connection accepted from 127.0.0.1:61889 #332
+Fri Apr 26 17:07:01 [initandlisten] connection accepted from 127.0.0.1:61890 #333
+Fri Apr 26 17:07:01 [initandlisten] connection accepted from 127.0.0.1:61891 #334
+Fri Apr 26 17:07:01 [initandlisten] connection accepted from 127.0.0.1:61892 #335
+Fri Apr 26 17:07:01 [initandlisten] connection accepted from 127.0.0.1:61893 #336
+Fri Apr 26 17:09:07 [conn334] end connection 127.0.0.1:61893
+Fri Apr 26 17:09:07 [conn332] end connection 127.0.0.1:61891
+Fri Apr 26 17:09:07 [conn333] end connection 127.0.0.1:61892
+Fri Apr 26 17:09:07 [conn330] end connection 127.0.0.1:61889
+Fri Apr 26 17:09:07 [conn331] end connection 127.0.0.1:61890
+Fri Apr 26 17:09:23 [initandlisten] connection accepted from 127.0.0.1:61970 #337
+Fri Apr 26 17:09:23 [initandlisten] connection accepted from 127.0.0.1:61971 #338
+Fri Apr 26 17:09:23 [initandlisten] connection accepted from 127.0.0.1:61972 #339
+Fri Apr 26 17:09:23 [initandlisten] connection accepted from 127.0.0.1:61973 #340
+Fri Apr 26 17:09:23 [initandlisten] connection accepted from 127.0.0.1:61974 #341
+Fri Apr 26 17:09:56 [clientcursormon] mem (MB) res:51 virt:3431 mapped:480
+Fri Apr 26 17:12:32 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:12:39 [conn336] end connection 127.0.0.1:61971
+Fri Apr 26 17:12:39 [conn339] end connection 127.0.0.1:61974
+Fri Apr 26 17:12:39 [conn338] end connection 127.0.0.1:61973
+Fri Apr 26 17:12:39 [conn337] end connection 127.0.0.1:61972
+Fri Apr 26 17:12:39 [conn335] end connection 127.0.0.1:61970
+Fri Apr 26 17:12:41 [initandlisten] connection accepted from 127.0.0.1:62065 #342
+Fri Apr 26 17:12:41 [initandlisten] connection accepted from 127.0.0.1:62066 #343
+Fri Apr 26 17:12:41 [initandlisten] connection accepted from 127.0.0.1:62067 #344
+Fri Apr 26 17:12:41 [initandlisten] connection accepted from 127.0.0.1:62068 #345
+Fri Apr 26 17:12:41 [initandlisten] connection accepted from 127.0.0.1:62069 #346
+Fri Apr 26 17:12:46 [conn341] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:12:46 [conn341] build index done 0 records 0.001 secs
+Fri Apr 26 17:13:11 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:13:25 [conn344] end connection 127.0.0.1:62069
+Fri Apr 26 17:13:25 [conn343] end connection 127.0.0.1:62068
+Fri Apr 26 17:13:25 [conn341] end connection 127.0.0.1:62066
+Fri Apr 26 17:13:25 [conn342] end connection 127.0.0.1:62067
+Fri Apr 26 17:13:25 [conn340] end connection 127.0.0.1:62065
+Fri Apr 26 17:13:56 [initandlisten] connection accepted from 127.0.0.1:62119 #347
+Fri Apr 26 17:13:56 [initandlisten] connection accepted from 127.0.0.1:62120 #348
+Fri Apr 26 17:13:56 [initandlisten] connection accepted from 127.0.0.1:62121 #349
+Fri Apr 26 17:13:56 [initandlisten] connection accepted from 127.0.0.1:62122 #350
+Fri Apr 26 17:13:56 [initandlisten] connection accepted from 127.0.0.1:62123 #351
+Fri Apr 26 17:13:59 [conn346] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:13:59 [conn346] build index done 0 records 0 secs
+Fri Apr 26 17:14:57 [clientcursormon] mem (MB) res:51 virt:3431 mapped:480
+Fri Apr 26 17:19:37 [conn349] end connection 127.0.0.1:62123
+Fri Apr 26 17:19:37 [conn348] end connection 127.0.0.1:62122
+Fri Apr 26 17:19:37 [conn346] end connection 127.0.0.1:62120
+Fri Apr 26 17:19:37 [conn347] end connection 127.0.0.1:62121
+Fri Apr 26 17:19:37 [conn345] end connection 127.0.0.1:62119
+Fri Apr 26 17:19:46 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:19:57 [clientcursormon] mem (MB) res:52 virt:3429 mapped:480
+Fri Apr 26 17:24:57 [clientcursormon] mem (MB) res:52 virt:3429 mapped:480
+Fri Apr 26 17:25:40 [initandlisten] connection accepted from 127.0.0.1:62543 #352
+Fri Apr 26 17:25:40 [initandlisten] connection accepted from 127.0.0.1:62544 #353
+Fri Apr 26 17:25:40 [initandlisten] connection accepted from 127.0.0.1:62545 #354
+Fri Apr 26 17:25:40 [initandlisten] connection accepted from 127.0.0.1:62546 #355
+Fri Apr 26 17:25:40 [initandlisten] connection accepted from 127.0.0.1:62547 #356
+Fri Apr 26 17:25:44 [conn351] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:25:44 [conn351] build index done 0 records 0.003 secs
+Fri Apr 26 17:27:18 [conn353] end connection 127.0.0.1:62546
+Fri Apr 26 17:27:18 [conn351] end connection 127.0.0.1:62544
+Fri Apr 26 17:27:18 [conn354] end connection 127.0.0.1:62547
+Fri Apr 26 17:27:18 [conn352] end connection 127.0.0.1:62545
+Fri Apr 26 17:27:18 [conn350] end connection 127.0.0.1:62543
+Fri Apr 26 17:27:19 [initandlisten] connection accepted from 127.0.0.1:62619 #357
+Fri Apr 26 17:27:19 [initandlisten] connection accepted from 127.0.0.1:62620 #358
+Fri Apr 26 17:27:19 [initandlisten] connection accepted from 127.0.0.1:62621 #359
+Fri Apr 26 17:27:19 [initandlisten] connection accepted from 127.0.0.1:62622 #360
+Fri Apr 26 17:27:19 [initandlisten] connection accepted from 127.0.0.1:62623 #361
+Fri Apr 26 17:27:45 [conn358] end connection 127.0.0.1:62622
+Fri Apr 26 17:27:45 [conn356] end connection 127.0.0.1:62620
+Fri Apr 26 17:27:45 [conn359] end connection 127.0.0.1:62623
+Fri Apr 26 17:27:45 [conn355] end connection 127.0.0.1:62619
+Fri Apr 26 17:27:45 [conn357] end connection 127.0.0.1:62621
+Fri Apr 26 17:28:09 [initandlisten] connection accepted from 127.0.0.1:62651 #362
+Fri Apr 26 17:28:09 [initandlisten] connection accepted from 127.0.0.1:62652 #363
+Fri Apr 26 17:28:09 [initandlisten] connection accepted from 127.0.0.1:62653 #364
+Fri Apr 26 17:28:09 [initandlisten] connection accepted from 127.0.0.1:62654 #365
+Fri Apr 26 17:28:09 [initandlisten] connection accepted from 127.0.0.1:62655 #366
+Fri Apr 26 17:29:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 17:34:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 17:39:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 17:40:18 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:40:23 [conn364] end connection 127.0.0.1:62655
+Fri Apr 26 17:40:23 [conn363] end connection 127.0.0.1:62654
+Fri Apr 26 17:40:23 [conn361] end connection 127.0.0.1:62652
+Fri Apr 26 17:40:23 [conn362] end connection 127.0.0.1:62653
+Fri Apr 26 17:40:23 [conn360] end connection 127.0.0.1:62651
+Fri Apr 26 17:41:27 [initandlisten] connection accepted from 127.0.0.1:63016 #367
+Fri Apr 26 17:41:27 [initandlisten] connection accepted from 127.0.0.1:63017 #368
+Fri Apr 26 17:41:27 [initandlisten] connection accepted from 127.0.0.1:63018 #369
+Fri Apr 26 17:41:27 [initandlisten] connection accepted from 127.0.0.1:63019 #370
+Fri Apr 26 17:41:27 [initandlisten] connection accepted from 127.0.0.1:63020 #371
+Fri Apr 26 17:41:33 [conn367] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:41:33 [conn367] build index done 0 records 0.001 secs
+Fri Apr 26 17:41:33 [conn368] end connection 127.0.0.1:63019
+Fri Apr 26 17:41:33 [conn369] end connection 127.0.0.1:63020
+Fri Apr 26 17:41:33 [conn367] end connection 127.0.0.1:63018
+Fri Apr 26 17:41:33 [conn366] end connection 127.0.0.1:63017
+Fri Apr 26 17:41:33 [conn365] end connection 127.0.0.1:63016
+Fri Apr 26 17:41:54 [initandlisten] connection accepted from 127.0.0.1:63047 #372
+Fri Apr 26 17:41:54 [initandlisten] connection accepted from 127.0.0.1:63048 #373
+Fri Apr 26 17:41:54 [initandlisten] connection accepted from 127.0.0.1:63049 #374
+Fri Apr 26 17:41:54 [initandlisten] connection accepted from 127.0.0.1:63050 #375
+Fri Apr 26 17:41:54 [initandlisten] connection accepted from 127.0.0.1:63051 #376
+Fri Apr 26 17:44:46 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:44:51 [conn374] end connection 127.0.0.1:63051
+Fri Apr 26 17:44:51 [conn370] end connection 127.0.0.1:63047
+Fri Apr 26 17:44:51 [conn373] end connection 127.0.0.1:63050
+Fri Apr 26 17:44:51 [conn372] end connection 127.0.0.1:63049
+Fri Apr 26 17:44:51 [conn371] end connection 127.0.0.1:63048
+Fri Apr 26 17:44:52 [initandlisten] connection accepted from 127.0.0.1:63157 #377
+Fri Apr 26 17:44:52 [initandlisten] connection accepted from 127.0.0.1:63158 #378
+Fri Apr 26 17:44:52 [initandlisten] connection accepted from 127.0.0.1:63159 #379
+Fri Apr 26 17:44:52 [initandlisten] connection accepted from 127.0.0.1:63160 #380
+Fri Apr 26 17:44:52 [initandlisten] connection accepted from 127.0.0.1:63161 #381
+Fri Apr 26 17:44:57 [conn377] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:44:57 [conn377] build index done 0 records 0.004 secs
+Fri Apr 26 17:44:57 [conn378] end connection 127.0.0.1:63160
+Fri Apr 26 17:44:57 [conn377] end connection 127.0.0.1:63159
+Fri Apr 26 17:44:57 [conn376] end connection 127.0.0.1:63158
+Fri Apr 26 17:44:57 [conn379] end connection 127.0.0.1:63161
+Fri Apr 26 17:44:57 [conn375] end connection 127.0.0.1:63157
+Fri Apr 26 17:44:57 [clientcursormon] mem (MB) res:52 virt:3429 mapped:480
+Fri Apr 26 17:46:12 [initandlisten] connection accepted from 127.0.0.1:63212 #382
+Fri Apr 26 17:46:12 [initandlisten] connection accepted from 127.0.0.1:63213 #383
+Fri Apr 26 17:46:12 [initandlisten] connection accepted from 127.0.0.1:63214 #384
+Fri Apr 26 17:46:12 [initandlisten] connection accepted from 127.0.0.1:63215 #385
+Fri Apr 26 17:46:12 [initandlisten] connection accepted from 127.0.0.1:63216 #386
+Fri Apr 26 17:46:31 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:46:35 [conn381] end connection 127.0.0.1:63213
+Fri Apr 26 17:46:35 [conn384] end connection 127.0.0.1:63216
+Fri Apr 26 17:46:35 [conn383] end connection 127.0.0.1:63215
+Fri Apr 26 17:46:35 [conn382] end connection 127.0.0.1:63214
+Fri Apr 26 17:46:35 [conn380] end connection 127.0.0.1:63212
+Fri Apr 26 17:46:36 [initandlisten] connection accepted from 127.0.0.1:63235 #387
+Fri Apr 26 17:46:36 [initandlisten] connection accepted from 127.0.0.1:63236 #388
+Fri Apr 26 17:46:36 [initandlisten] connection accepted from 127.0.0.1:63237 #389
+Fri Apr 26 17:46:36 [initandlisten] connection accepted from 127.0.0.1:63238 #390
+Fri Apr 26 17:46:36 [initandlisten] connection accepted from 127.0.0.1:63239 #391
+Fri Apr 26 17:46:38 [conn387] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:46:38 [conn387] build index done 0 records 0.002 secs
+Fri Apr 26 17:46:38 [conn389] end connection 127.0.0.1:63239
+Fri Apr 26 17:46:38 [conn388] end connection 127.0.0.1:63238
+Fri Apr 26 17:46:38 [conn387] end connection 127.0.0.1:63237
+Fri Apr 26 17:46:38 [conn386] end connection 127.0.0.1:63236
+Fri Apr 26 17:46:38 [conn385] end connection 127.0.0.1:63235
+Fri Apr 26 17:48:36 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:48:47 [initandlisten] connection accepted from 127.0.0.1:63306 #392
+Fri Apr 26 17:48:47 [initandlisten] connection accepted from 127.0.0.1:63307 #393
+Fri Apr 26 17:48:47 [initandlisten] connection accepted from 127.0.0.1:63308 #394
+Fri Apr 26 17:48:47 [initandlisten] connection accepted from 127.0.0.1:63309 #395
+Fri Apr 26 17:48:47 [initandlisten] connection accepted from 127.0.0.1:63310 #396
+Fri Apr 26 17:48:49 [conn392] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:48:49 [conn392] build index done 0 records 0.002 secs
+Fri Apr 26 17:48:49 [conn394] end connection 127.0.0.1:63310
+Fri Apr 26 17:48:49 [conn393] end connection 127.0.0.1:63309
+Fri Apr 26 17:48:49 [conn392] end connection 127.0.0.1:63308
+Fri Apr 26 17:48:49 [conn391] end connection 127.0.0.1:63307
+Fri Apr 26 17:48:49 [conn390] end connection 127.0.0.1:63306
+Fri Apr 26 17:49:06 [initandlisten] connection accepted from 127.0.0.1:63337 #397
+Fri Apr 26 17:49:06 [initandlisten] connection accepted from 127.0.0.1:63338 #398
+Fri Apr 26 17:49:06 [initandlisten] connection accepted from 127.0.0.1:63339 #399
+Fri Apr 26 17:49:06 [initandlisten] connection accepted from 127.0.0.1:63340 #400
+Fri Apr 26 17:49:06 [initandlisten] connection accepted from 127.0.0.1:63341 #401
+Fri Apr 26 17:49:13 [conn399] end connection 127.0.0.1:63341
+Fri Apr 26 17:49:13 [conn398] end connection 127.0.0.1:63340
+Fri Apr 26 17:49:13 [conn395] end connection 127.0.0.1:63337
+Fri Apr 26 17:49:13 [conn396] end connection 127.0.0.1:63338
+Fri Apr 26 17:49:13 [conn397] end connection 127.0.0.1:63339
+Fri Apr 26 17:49:57 [clientcursormon] mem (MB) res:36 virt:3429 mapped:480
+Fri Apr 26 17:52:37 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:52:48 [initandlisten] connection accepted from 127.0.0.1:63440 #402
+Fri Apr 26 17:52:48 [initandlisten] connection accepted from 127.0.0.1:63441 #403
+Fri Apr 26 17:52:48 [initandlisten] connection accepted from 127.0.0.1:63442 #404
+Fri Apr 26 17:52:48 [initandlisten] connection accepted from 127.0.0.1:63443 #405
+Fri Apr 26 17:52:48 [initandlisten] connection accepted from 127.0.0.1:63444 #406
+Fri Apr 26 17:52:51 [conn402] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:52:51 [conn402] build index done 0 records 0.001 secs
+Fri Apr 26 17:52:51 [conn403] end connection 127.0.0.1:63443
+Fri Apr 26 17:52:51 [conn401] end connection 127.0.0.1:63441
+Fri Apr 26 17:52:51 [conn404] end connection 127.0.0.1:63444
+Fri Apr 26 17:52:51 [conn402] end connection 127.0.0.1:63442
+Fri Apr 26 17:52:51 [conn400] end connection 127.0.0.1:63440
+Fri Apr 26 17:52:57 [clientcursormon] mem (MB) res:52 virt:3429 mapped:480
+Fri Apr 26 17:53:22 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:53:39 [initandlisten] connection accepted from 127.0.0.1:63469 #407
+Fri Apr 26 17:53:39 [initandlisten] connection accepted from 127.0.0.1:63470 #408
+Fri Apr 26 17:53:39 [initandlisten] connection accepted from 127.0.0.1:63471 #409
+Fri Apr 26 17:53:39 [initandlisten] connection accepted from 127.0.0.1:63472 #410
+Fri Apr 26 17:53:39 [initandlisten] connection accepted from 127.0.0.1:63473 #411
+Fri Apr 26 17:53:41 [conn407] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:53:41 [conn407] build index done 0 records 0 secs
+Fri Apr 26 17:53:41 [conn408] end connection 127.0.0.1:63472
+Fri Apr 26 17:53:41 [conn407] end connection 127.0.0.1:63471
+Fri Apr 26 17:53:41 [conn406] end connection 127.0.0.1:63470
+Fri Apr 26 17:53:41 [conn405] end connection 127.0.0.1:63469
+Fri Apr 26 17:53:41 [conn409] end connection 127.0.0.1:63473
+Fri Apr 26 17:55:42 [initandlisten] connection accepted from 127.0.0.1:63532 #412
+Fri Apr 26 17:55:42 [initandlisten] connection accepted from 127.0.0.1:63533 #413
+Fri Apr 26 17:55:42 [initandlisten] connection accepted from 127.0.0.1:63534 #414
+Fri Apr 26 17:55:42 [initandlisten] connection accepted from 127.0.0.1:63535 #415
+Fri Apr 26 17:55:42 [initandlisten] connection accepted from 127.0.0.1:63536 #416
+Fri Apr 26 17:55:54 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:56:29 [conn413] end connection 127.0.0.1:63535
+Fri Apr 26 17:56:29 [conn414] end connection 127.0.0.1:63536
+Fri Apr 26 17:56:29 [conn412] end connection 127.0.0.1:63534
+Fri Apr 26 17:56:29 [conn410] end connection 127.0.0.1:63532
+Fri Apr 26 17:56:29 [conn411] end connection 127.0.0.1:63533
+Fri Apr 26 17:56:30 [initandlisten] connection accepted from 127.0.0.1:63559 #417
+Fri Apr 26 17:56:30 [initandlisten] connection accepted from 127.0.0.1:63560 #418
+Fri Apr 26 17:56:30 [initandlisten] connection accepted from 127.0.0.1:63561 #419
+Fri Apr 26 17:56:30 [initandlisten] connection accepted from 127.0.0.1:63562 #420
+Fri Apr 26 17:56:30 [initandlisten] connection accepted from 127.0.0.1:63563 #421
+Fri Apr 26 17:56:35 [conn417] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:56:35 [conn417] build index done 0 records 0.001 secs
+Fri Apr 26 17:56:35 [conn419] end connection 127.0.0.1:63563
+Fri Apr 26 17:56:35 [conn418] end connection 127.0.0.1:63562
+Fri Apr 26 17:56:35 [conn417] end connection 127.0.0.1:63561
+Fri Apr 26 17:56:35 [conn415] end connection 127.0.0.1:63559
+Fri Apr 26 17:56:35 [conn416] end connection 127.0.0.1:63560
+Fri Apr 26 17:57:46 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 17:57:55 [initandlisten] connection accepted from 127.0.0.1:63605 #422
+Fri Apr 26 17:57:55 [initandlisten] connection accepted from 127.0.0.1:63606 #423
+Fri Apr 26 17:57:55 [initandlisten] connection accepted from 127.0.0.1:63607 #424
+Fri Apr 26 17:57:55 [initandlisten] connection accepted from 127.0.0.1:63608 #425
+Fri Apr 26 17:57:55 [initandlisten] connection accepted from 127.0.0.1:63609 #426
+Fri Apr 26 17:57:57 [conn422] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 17:57:57 [conn422] build index done 0 records 0.001 secs
+Fri Apr 26 17:57:57 [conn423] end connection 127.0.0.1:63608
+Fri Apr 26 17:57:57 [conn424] end connection 127.0.0.1:63609
+Fri Apr 26 17:57:57 [conn422] end connection 127.0.0.1:63607
+Fri Apr 26 17:57:57 [conn421] end connection 127.0.0.1:63606
+Fri Apr 26 17:57:57 [conn420] end connection 127.0.0.1:63605
+Fri Apr 26 17:57:57 [clientcursormon] mem (MB) res:52 virt:3429 mapped:480
+Fri Apr 26 18:02:38 [initandlisten] connection accepted from 127.0.0.1:63735 #427
+Fri Apr 26 18:02:38 [initandlisten] connection accepted from 127.0.0.1:63736 #428
+Fri Apr 26 18:02:38 [initandlisten] connection accepted from 127.0.0.1:63737 #429
+Fri Apr 26 18:02:38 [initandlisten] connection accepted from 127.0.0.1:63738 #430
+Fri Apr 26 18:02:38 [initandlisten] connection accepted from 127.0.0.1:63739 #431
+Fri Apr 26 18:02:45 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 18:02:48 [conn427] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 18:02:48 [conn427] build index done 0 records 0.002 secs
+Fri Apr 26 18:02:48 [conn429] end connection 127.0.0.1:63739
+Fri Apr 26 18:02:48 [conn425] end connection 127.0.0.1:63735
+Fri Apr 26 18:02:48 [conn428] end connection 127.0.0.1:63738
+Fri Apr 26 18:02:48 [conn427] end connection 127.0.0.1:63737
+Fri Apr 26 18:02:48 [conn426] end connection 127.0.0.1:63736
+Fri Apr 26 18:02:57 [clientcursormon] mem (MB) res:52 virt:3429 mapped:480
+Fri Apr 26 18:05:17 [initandlisten] connection accepted from 127.0.0.1:63813 #432
+Fri Apr 26 18:05:17 [initandlisten] connection accepted from 127.0.0.1:63814 #433
+Fri Apr 26 18:05:17 [initandlisten] connection accepted from 127.0.0.1:63815 #434
+Fri Apr 26 18:05:17 [initandlisten] connection accepted from 127.0.0.1:63816 #435
+Fri Apr 26 18:05:17 [initandlisten] connection accepted from 127.0.0.1:63817 #436
+Fri Apr 26 18:06:53 [conn434] end connection 127.0.0.1:63817
+Fri Apr 26 18:06:53 [conn433] end connection 127.0.0.1:63816
+Fri Apr 26 18:06:53 [conn432] end connection 127.0.0.1:63815
+Fri Apr 26 18:06:53 [conn431] end connection 127.0.0.1:63814
+Fri Apr 26 18:06:53 [conn430] end connection 127.0.0.1:63813
+Fri Apr 26 18:07:01 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 18:07:10 [initandlisten] connection accepted from 127.0.0.1:63873 #437
+Fri Apr 26 18:07:10 [initandlisten] connection accepted from 127.0.0.1:63874 #438
+Fri Apr 26 18:07:10 [initandlisten] connection accepted from 127.0.0.1:63875 #439
+Fri Apr 26 18:07:10 [initandlisten] connection accepted from 127.0.0.1:63876 #440
+Fri Apr 26 18:07:10 [initandlisten] connection accepted from 127.0.0.1:63877 #441
+Fri Apr 26 18:07:14 [conn436] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 18:07:14 [conn436] build index done 0 records 0.003 secs
+Fri Apr 26 18:07:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 18:12:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 18:17:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 18:22:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 18:27:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 18:32:47 [conn232] CMD: drop vidtest2.videos
+Fri Apr 26 18:32:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 18:33:01 [conn437] end connection 127.0.0.1:63875
+Fri Apr 26 18:33:01 [conn439] end connection 127.0.0.1:63877
+Fri Apr 26 18:33:01 [conn438] end connection 127.0.0.1:63876
+Fri Apr 26 18:33:01 [conn436] end connection 127.0.0.1:63874
+Fri Apr 26 18:33:01 [conn435] end connection 127.0.0.1:63873
+Fri Apr 26 18:33:04 [initandlisten] connection accepted from 127.0.0.1:64695 #442
+Fri Apr 26 18:33:04 [initandlisten] connection accepted from 127.0.0.1:64696 #443
+Fri Apr 26 18:33:04 [initandlisten] connection accepted from 127.0.0.1:64697 #444
+Fri Apr 26 18:33:04 [initandlisten] connection accepted from 127.0.0.1:64698 #445
+Fri Apr 26 18:33:04 [initandlisten] connection accepted from 127.0.0.1:64699 #446
+Fri Apr 26 18:33:09 [conn441] build index vidtest2.videos { _id: 1 }
+Fri Apr 26 18:33:09 [conn441] build index done 0 records 0.001 secs
+Fri Apr 26 18:37:57 [clientcursormon] mem (MB) res:52 virt:3431 mapped:480
+Fri Apr 26 18:41:08 [conn442] end connection 127.0.0.1:64697
+Fri Apr 26 18:41:08 [conn444] end connection 127.0.0.1:64699
+Fri Apr 26 18:41:08 [conn443] end connection 127.0.0.1:64698
+Fri Apr 26 18:41:08 [conn440] end connection 127.0.0.1:64695
+Fri Apr 26 18:41:08 [conn441] end connection 127.0.0.1:64696
+Fri Apr 26 18:42:58 [clientcursormon] mem (MB) res:51 virt:3429 mapped:480
+Fri Apr 26 18:47:58 [clientcursormon] mem (MB) res:51 virt:3429 mapped:480
+Fri Apr 26 18:52:58 [clientcursormon] mem (MB) res:51 virt:3429 mapped:480
+Fri Apr 26 18:56:21 [initandlisten] connection accepted from 127.0.0.1:49465 #447
+Fri Apr 26 18:56:21 [initandlisten] connection accepted from 127.0.0.1:49466 #448
+Fri Apr 26 18:56:21 [initandlisten] connection accepted from 127.0.0.1:49467 #449
+Fri Apr 26 18:56:21 [initandlisten] connection accepted from 127.0.0.1:49468 #450
+Fri Apr 26 18:56:21 [initandlisten] connection accepted from 127.0.0.1:49469 #451
+Fri Apr 26 18:57:00 [conn447] end connection 127.0.0.1:49467
+Fri Apr 26 18:57:00 [conn449] end connection 127.0.0.1:49469
+Fri Apr 26 18:57:00 [conn448] end connection 127.0.0.1:49468
+Fri Apr 26 18:57:00 [conn446] end connection 127.0.0.1:49466
+Fri Apr 26 18:57:00 [conn445] end connection 127.0.0.1:49465
+Fri Apr 26 18:57:58 [clientcursormon] mem (MB) res:51 virt:3429 mapped:480
+Fri Apr 26 18:58:27 [initandlisten] connection accepted from 127.0.0.1:49550 #452
+Fri Apr 26 18:58:27 [initandlisten] connection accepted from 127.0.0.1:49551 #453
+Fri Apr 26 18:58:27 [initandlisten] connection accepted from 127.0.0.1:49552 #454
+Fri Apr 26 18:58:27 [initandlisten] connection accepted from 127.0.0.1:49553 #455
+Fri Apr 26 18:58:27 [initandlisten] connection accepted from 127.0.0.1:49554 #456
+Fri Apr 26 19:02:58 [clientcursormon] mem (MB) res:51 virt:3431 mapped:480
+Fri Apr 26 19:07:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:12:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:17:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:22:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:27:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:32:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:37:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:42:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:47:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:52:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 19:57:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 20:02:58 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 20:07:59 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 20:12:59 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 20:38:50 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Fri Apr 26 23:27:13 [clientcursormon] mem (MB) res:35 virt:3431 mapped:480
+Sat Apr 27 01:18:41 [clientcursormon] mem (MB) res:0 virt:3431 mapped:480
+Sat Apr 27 01:23:41 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 01:28:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 01:33:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 01:38:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 01:43:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 01:48:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 01:53:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 01:58:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:03:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:08:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:13:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:18:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:23:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:28:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:33:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:38:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:43:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:48:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:53:42 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 02:58:43 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 03:03:43 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 03:08:43 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 03:13:43 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 03:18:43 [clientcursormon] mem (MB) res:1 virt:3431 mapped:480
+Sat Apr 27 11:04:24 [clientcursormon] mem (MB) res:0 virt:3431 mapped:480
+Sat Apr 27 11:05:03 [conn454] end connection 127.0.0.1:49554
+Sat Apr 27 11:05:03 [conn451] end connection 127.0.0.1:49551
+Sat Apr 27 11:05:03 [conn450] end connection 127.0.0.1:49550
+Sat Apr 27 11:05:03 [conn452] end connection 127.0.0.1:49552
+Sat Apr 27 11:05:03 [conn453] end connection 127.0.0.1:49553
+Sat Apr 27 11:09:24 [clientcursormon] mem (MB) res:1 virt:3429 mapped:480
+Sat Apr 27 11:13:31 [conn145] end connection 127.0.0.1:62672
+Sat Apr 27 11:14:24 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sat Apr 27 11:14:34 [initandlisten] connection accepted from 127.0.0.1:58488 #457
+Sat Apr 27 11:14:34 [conn455] end connection 127.0.0.1:58488
+Sat Apr 27 11:15:24 [clientcursormon] mem (MB) res:2 virt:3428 mapped:480
+Sat Apr 27 11:19:40 [initandlisten] connection accepted from 127.0.0.1:58663 #458
+Sat Apr 27 11:19:40 [conn456] end connection 127.0.0.1:58663
+Sat Apr 27 11:20:24 [initandlisten] connection accepted from 127.0.0.1:58687 #459
+Sat Apr 27 11:20:24 [conn457] end connection 127.0.0.1:58687
+Sat Apr 27 11:20:24 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 11:25:24 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 11:30:24 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 11:35:24 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 11:40:24 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 11:45:25 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 11:50:25 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 11:55:25 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:00:25 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:05:25 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:10:25 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:15:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:20:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:25:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:30:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:35:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:40:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:45:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:50:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 12:55:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:00:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:05:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:10:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:15:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:20:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:25:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:30:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:35:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:40:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:45:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:50:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 13:55:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:00:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:05:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:10:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:15:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:20:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:25:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:30:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:35:36 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:40:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:45:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:50:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 14:55:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 15:00:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 15:05:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 15:10:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 15:15:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 15:20:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 15:25:37 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:10:02 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:15:02 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:20:02 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:25:02 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:30:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:35:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:40:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:45:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:50:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 16:55:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:00:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:05:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:10:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:15:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:20:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:25:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:30:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:35:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:40:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:45:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:50:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 17:55:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 18:00:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 18:05:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 18:10:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 18:15:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 18:20:03 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 18:25:04 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 18:30:04 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 19:28:51 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 19:45:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 19:50:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 19:55:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:00:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:05:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:10:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:15:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:20:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:25:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:30:10 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:35:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:40:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:45:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:50:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 20:55:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:00:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:05:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:10:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:15:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:20:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:25:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:30:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:35:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:40:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:45:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:50:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 21:55:33 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:00:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:05:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:10:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:15:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:20:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:25:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:30:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:35:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:40:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:45:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:50:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 22:55:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:00:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:05:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:10:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:15:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:20:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:25:34 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:30:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:35:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:40:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:45:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:50:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sat Apr 27 23:55:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:00:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:05:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:10:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:15:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:20:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:25:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:30:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:35:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:40:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:45:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 00:50:35 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 01:50:07 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 01:55:07 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 02:00:07 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 02:05:07 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 02:10:07 [clientcursormon] mem (MB) res:2 virt:3428 mapped:480
+Sun Apr 28 02:11:07 [clientcursormon] mem (MB) res:3 virt:3428 mapped:480
+Sun Apr 28 02:16:07 [clientcursormon] mem (MB) res:2 virt:3428 mapped:480
+Sun Apr 28 02:21:07 [clientcursormon] mem (MB) res:2 virt:3428 mapped:480
+Sun Apr 28 02:26:07 [clientcursormon] mem (MB) res:2 virt:3428 mapped:480
+Sun Apr 28 02:31:07 [clientcursormon] mem (MB) res:2 virt:3428 mapped:480
+Sun Apr 28 02:36:07 [clientcursormon] mem (MB) res:2 virt:3428 mapped:480
+Sun Apr 28 16:02:04 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Sun Apr 28 16:07:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:12:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:17:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:22:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:27:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:32:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:37:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:43:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:48:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:53:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 16:58:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:03:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:08:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:13:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:18:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:23:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:28:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:33:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:38:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:43:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:48:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:53:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 17:58:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 18:03:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 19:47:49 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Sun Apr 28 19:52:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 19:57:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:02:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:07:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:12:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:17:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:22:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:27:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:32:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:37:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:42:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:47:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:52:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 20:57:49 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:02:50 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:07:50 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:12:50 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:17:55 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:22:55 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:27:55 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:32:55 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:37:55 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:42:55 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:47:55 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:52:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 21:57:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:02:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:07:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:12:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:17:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:22:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:27:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:32:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:37:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:42:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:47:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:52:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 22:57:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:02:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:07:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:12:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:17:56 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:22:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:27:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:32:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:37:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:42:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:47:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:52:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Sun Apr 28 23:57:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:02:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:07:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:12:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:17:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:22:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:27:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:32:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:37:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:42:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:47:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 00:52:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 11:36:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 11:41:53 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 11:46:53 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 11:51:53 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 11:56:53 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:01:53 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:06:53 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:11:53 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:19:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:24:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:29:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:34:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:39:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:44:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:49:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:54:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 12:59:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:04:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:09:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:14:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:19:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:24:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:29:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:34:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:39:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:44:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:49:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:54:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 13:59:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 14:04:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 14:09:03 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Mon Apr 29 14:14:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 14:19:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 14:24:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 14:29:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 14:34:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 15:10:42 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 15:15:42 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 15:20:42 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 15:25:42 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:01:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:06:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:11:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:16:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:21:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:26:59 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:47:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:52:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 16:57:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 17:02:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 17:07:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 17:12:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 17:17:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 17:22:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 17:27:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 18:02:17 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 18:07:17 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 18:12:17 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 18:56:50 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:01:50 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:06:50 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:11:50 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:16:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:21:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:26:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:31:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:36:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:41:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:46:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:51:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 19:56:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:01:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:06:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:11:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:16:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:21:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:26:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:31:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:36:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:41:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:46:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:51:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 20:56:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:01:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:06:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:11:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:16:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:21:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:26:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:31:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:36:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:41:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 21:46:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:07:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:12:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:17:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:22:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:27:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:32:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:37:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:42:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:47:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:52:00 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 22:57:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:02:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:07:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:12:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:17:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:22:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:27:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:32:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:37:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:42:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:47:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:52:01 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Mon Apr 29 23:57:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:02:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:07:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:12:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:17:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:22:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:27:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:32:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:37:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:42:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:47:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:52:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 00:57:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:02:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:07:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:12:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:17:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:22:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:27:02 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:32:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:37:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:42:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:47:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:52:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 01:57:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:02:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:07:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:12:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:17:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:22:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:27:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:32:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:37:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:42:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:47:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:52:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 02:57:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 03:02:03 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 03:07:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 03:12:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 03:17:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 03:22:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 03:27:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 03:32:04 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 16:41:26 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Tue Apr 30 16:46:26 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 16:51:26 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 16:56:26 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 17:01:26 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 17:06:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 17:11:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 17:16:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 17:21:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 17:26:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 17:31:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 19:59:07 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Tue Apr 30 20:04:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:09:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:14:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:19:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:24:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:29:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:34:07 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Tue Apr 30 20:39:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:44:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:49:07 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:54:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 20:59:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:04:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:09:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:14:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:19:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:24:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:29:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:34:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:39:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:44:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:49:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:54:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 21:59:08 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:04:09 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:09:09 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:14:09 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:19:09 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:24:09 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:29:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:34:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:39:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:44:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:49:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:54:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 22:59:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:04:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:09:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:14:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:19:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:24:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:29:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:34:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:39:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:44:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:49:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:54:10 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Tue Apr 30 23:59:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:04:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:09:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:14:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:19:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:24:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:29:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:34:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:39:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:44:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:49:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:54:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 00:59:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 01:04:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 01:09:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 01:14:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 01:19:11 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 09:48:33 [PeriodicTask::Runner] task: WriteBackManager::cleaner took: 17ms
+Wed May  1 09:48:35 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Wed May  1 09:53:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 09:58:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 10:03:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 10:08:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 10:13:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 10:18:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 10:23:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 10:28:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:03:31 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:08:31 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:13:31 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:18:31 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:23:31 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:28:31 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:33:36 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:38:36 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:43:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:48:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:53:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 11:58:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:03:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:08:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:13:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:18:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:23:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:28:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:33:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:38:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:43:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:48:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:53:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 12:58:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:03:37 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:08:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:13:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:18:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:23:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:28:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:33:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:38:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:43:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:48:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:53:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 13:58:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:03:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:08:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:13:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:18:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:23:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:28:38 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:33:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:38:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:43:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:48:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:53:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 14:58:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:03:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:08:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:13:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:18:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:23:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:28:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:33:39 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:38:40 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:43:40 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 15:48:40 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 16:39:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 16:44:27 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 17:40:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 17:45:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 17:50:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 17:55:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:00:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:05:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:10:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:15:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:20:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:25:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:30:28 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:35:29 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:40:29 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:45:29 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:50:29 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 18:55:29 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:00:29 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:05:30 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:10:30 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:15:30 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:20:30 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:25:30 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:30:30 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:35:30 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 19:58:57 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 20:03:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 20:08:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 20:13:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 20:18:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 20:23:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 20:28:58 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 21:43:59 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:15:47 [clientcursormon] mem (MB) res:0 virt:3428 mapped:480
+Wed May  1 23:20:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:25:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:30:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:35:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:40:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:45:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:50:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Wed May  1 23:55:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:00:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:05:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:10:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:15:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:20:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:25:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:30:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:35:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:40:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 00:45:52 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 01:59:51 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:18:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:23:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:28:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:33:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:38:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:43:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:48:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:53:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 10:58:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:03:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:08:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:13:45 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:18:46 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:23:46 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:28:46 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:33:46 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 11:43:32 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 12:46:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 12:51:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 12:56:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 13:01:35 [clientcursormon] mem (MB) res:1 virt:3428 mapped:480
+Thu May  2 13:02:19 [conn225] end connection 127.0.0.1:54273
+Thu May  2 13:02:19 [conn232] end connection 127.0.0.1:54971
+Thu May  2 13:02:19 [conn146] end connection 127.0.0.1:62792
+Thu May  2 13:02:19 [conn231] end connection 127.0.0.1:54528
+Thu May  2 13:06:35 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:11:35 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:16:35 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:21:35 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:26:35 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:31:35 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:36:35 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:41:36 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 13:46:36 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 14:19:18 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 14:24:18 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 14:29:19 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 14:34:19 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 14:39:19 [clientcursormon] mem (MB) res:1 virt:3426 mapped:480
+Thu May  2 14:41:20 got kill or ctrl c or hup signal 1 (Hangup: 1), will terminate after current cmd ends
+Thu May  2 14:41:20 [interruptThread] now exiting
+Thu May  2 14:41:20 dbexit: 
+Thu May  2 14:41:20 [interruptThread] shutdown: going to close listening sockets...
+Thu May  2 14:41:20 [interruptThread] closing listening socket: 7
+Thu May  2 14:41:20 [interruptThread] closing listening socket: 8
+Thu May  2 14:41:20 [interruptThread] closing listening socket: 9
+Thu May  2 14:41:20 [interruptThread] removing socket file: /tmp/mongodb-27017.sock
+Thu May  2 14:41:20 [interruptThread] shutdown: going to flush diaglog...
+Thu May  2 14:41:20 [interruptThread] shutdown: going to close sockets...
+Thu May  2 14:41:20 [interruptThread] shutdown: waiting for fs preallocator...
+Thu May  2 14:41:20 [interruptThread] shutdown: lock for final commit...
+Thu May  2 14:41:20 [interruptThread] shutdown: final commit...
+Thu May  2 14:41:20 [interruptThread] shutdown: closing all files...
+Thu May  2 14:41:20 [interruptThread] closeAllFiles() finished
+Thu May  2 14:41:20 [interruptThread] journalCleanup...
+Thu May  2 14:41:20 [interruptThread] removeJournalFiles
+Thu May  2 14:41:20 [interruptThread] shutdown: removing fs lock...
+Thu May  2 14:41:20 dbexit: really exiting now
+nohup: mongoid: No such file or directory
+mongod --help for help and startup options
+Tue May  7 17:21:05 [initandlisten] MongoDB starting : pid=6803 port=27017 dbpath=/data/db/ 64-bit host=172-30-8-16.dynapool.nyu.edu
+Tue May  7 17:21:05 [initandlisten] db version v2.0.6, pdfile version 4.5
+Tue May  7 17:21:05 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Tue May  7 17:21:05 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Tue May  7 17:21:05 [initandlisten] options: {}
+Tue May  7 17:21:05 [initandlisten] journal dir=/data/db/journal
+Tue May  7 17:21:05 [initandlisten] recover : no journal files present, no recovery needed
+Tue May  7 17:21:05 [websvr] admin web console waiting for connections on port 28017
+Tue May  7 17:21:05 [initandlisten] waiting for connections on port 27017
+Tue May  7 17:21:35 [initandlisten] connection accepted from 127.0.0.1:52386 #1
+Tue May  7 17:21:35 [initandlisten] connection accepted from 127.0.0.1:52387 #2
+Tue May  7 17:21:35 [initandlisten] connection accepted from 127.0.0.1:52388 #3
+Tue May  7 17:21:35 [initandlisten] connection accepted from 127.0.0.1:52389 #4
+Tue May  7 17:21:35 [initandlisten] connection accepted from 127.0.0.1:52390 #5
+Tue May  7 17:22:05 [clientcursormon] mem (MB) res:31 virt:2628 mapped:80
+Tue May  7 17:27:05 [clientcursormon] mem (MB) res:31 virt:2628 mapped:80
+Tue May  7 17:32:05 [clientcursormon] mem (MB) res:31 virt:2628 mapped:80
+Tue May  7 17:37:05 [clientcursormon] mem (MB) res:31 virt:2628 mapped:80
+Tue May  7 17:42:05 [clientcursormon] mem (MB) res:31 virt:2628 mapped:80
+Tue May  7 17:47:05 [clientcursormon] mem (MB) res:29 virt:2628 mapped:80
+Tue May  7 17:52:05 [clientcursormon] mem (MB) res:27 virt:2628 mapped:80
+Tue May  7 19:17:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:22:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:27:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:32:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:37:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:42:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:47:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:52:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 19:57:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:02:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:07:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:12:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:17:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:22:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:27:02 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:32:03 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:37:03 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:42:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:47:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:52:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 20:57:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:02:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:07:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:12:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:17:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:22:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:27:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:32:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:37:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:42:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:47:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:52:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 21:57:04 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Tue May  7 22:02:04 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:07:05 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:12:05 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:17:05 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:22:05 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:29:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:34:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:39:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:44:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:49:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:54:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 22:59:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 23:04:17 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 23:09:18 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Tue May  7 23:14:18 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 00:27:18 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 10:42:07 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 10:47:07 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 10:52:07 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 11:58:08 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:19:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:24:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:29:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:34:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:40:55 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:45:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:50:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 12:55:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:00:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:05:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:10:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:15:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:20:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:25:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:30:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:35:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:40:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:45:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:50:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 13:55:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:00:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:05:56 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:10:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:15:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:20:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:25:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:30:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:35:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:40:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:45:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:50:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 14:55:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:00:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:05:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:10:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:15:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:20:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:25:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:30:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:35:57 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:40:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:45:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:50:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 15:55:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:00:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:05:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:10:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:15:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:20:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:25:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:30:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:35:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:40:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:45:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:50:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 16:55:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:00:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:05:58 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:10:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:15:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:20:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:25:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:30:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:35:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:40:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:45:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:50:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 17:55:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 18:00:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 18:05:59 [clientcursormon] mem (MB) res:0 virt:2628 mapped:80
+Wed May  8 18:10:59 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:15:59 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:20:59 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:25:59 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:30:59 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:35:59 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:41:00 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:46:00 [clientcursormon] mem (MB) res:1 virt:2628 mapped:80
+Wed May  8 18:48:00 [clientcursormon] mem (MB) res:2 virt:2628 mapped:80
+Wed May  8 18:48:59 [conn3] end connection 127.0.0.1:52388
+Wed May  8 18:48:59 [conn4] end connection 127.0.0.1:52389
+Wed May  8 18:48:59 [conn2] end connection 127.0.0.1:52387
+Wed May  8 18:48:59 [conn1] end connection 127.0.0.1:52386
+Wed May  8 18:48:59 [conn5] end connection 127.0.0.1:52390
+Wed May  8 18:53:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 18:58:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:03:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:08:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:13:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:18:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:23:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:28:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:33:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:38:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:43:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:48:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:53:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 19:58:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:03:00 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:08:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:13:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:18:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:23:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:28:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:33:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:38:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:43:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:48:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:53:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 20:58:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:03:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:08:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:13:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:18:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:23:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:28:01 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:33:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:38:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:43:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:48:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:53:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 21:58:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:03:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:08:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:13:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:18:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:23:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:28:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:33:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:38:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:38:35 [initandlisten] connection accepted from 127.0.0.1:52314 #6
+Wed May  8 22:38:35 [initandlisten] connection accepted from 127.0.0.1:52315 #7
+Wed May  8 22:38:35 [initandlisten] connection accepted from 127.0.0.1:52316 #8
+Wed May  8 22:38:35 [initandlisten] connection accepted from 127.0.0.1:52317 #9
+Wed May  8 22:38:35 [initandlisten] connection accepted from 127.0.0.1:52318 #10
+Wed May  8 22:39:02 [clientcursormon] mem (MB) res:3 virt:2628 mapped:80
+Wed May  8 22:40:29 [conn10] end connection 127.0.0.1:52318
+Wed May  8 22:40:29 [conn9] end connection 127.0.0.1:52317
+Wed May  8 22:40:29 [conn8] end connection 127.0.0.1:52316
+Wed May  8 22:40:29 [conn7] end connection 127.0.0.1:52315
+Wed May  8 22:40:29 [conn6] end connection 127.0.0.1:52314
+Wed May  8 22:44:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:49:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:54:02 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 22:59:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:04:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:09:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:14:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:19:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:24:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:29:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:34:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:39:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80
+Wed May  8 23:44:03 [clientcursormon] mem (MB) res:2 virt:2626 mapped:80

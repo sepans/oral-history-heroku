@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Hyper-Links prototype 2</title>
+		
+	<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+	<script type="text/javascript" src="js/jquery.window.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.22.min.js"></script>
+	<script type="text/javascript" src="js/froogaloop.js"></script>
+
+	<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+
+	<!--<script type="text/javascript" src="js/data.js"></script> --> <!-- to be replaced by data driven data-->
+	
+	
+	<script id="related_video_list_item_template" type="text/x-jquery-tmpl">
+			<li class="related_list_item" id="video_${rel_video_id}"  >
+			<a href="#" onclick="openVideo('${rel_video_id}',${seek_point})">
+				<span class="prim-info">
+					<img class='rel-thumb' src='${thumbnail}'>					
+					<span class="rel-title">${title}</span>
+				</span>
+				<span class="sec-info">
+					 Some highlight of the transcript or word cloud of the related video or keywords which both videos share
+				</span>
+				<span class="rel-rel">${relatedness_percent}%</span>					
+				<span class="rel_bar" style="width: 0;"></span>
+			</a>
+		</li>	
+	</script>
+
+
+	<script id="video_box_template" type="text/x-jquery-tmpl">
+		<div id="video-box" style="display: none;">
+				<h2 style="width: 200px;">${title}</h2>
+				<div class="main-video-container">
+					<video width="600" height="400" controls="controls">
+						 <source src="${url}" type="video/mp4">
+					</video>
+				</div>
+				<a href="#" class="reg-link right-btn">open this video in main window</a>
+				<a href="#" class="reg-link right-btn">open this video in a new tab</a>
+		
+		</div>
+	</script>
+
+	
+	<link rel="stylesheet" href="css/jquery.window.css" type="text/css">
+
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.22.custom.css" type="text/css">
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>-->
+	
+
+	
+	<style type="text/css">
+
+	
+	</style>
+	<script type="text/javascript">
+
+    //var currentlyPlayingId; using history is enough?
+	
+	var iframe,player,stat;
+	
+	var history = [];
+	var step = 0;
+	
+	var pendingSeektoTime = 0;
+	
+	var playTime=0;
+	
+	var videoInfo = {};
+	
+	
+	
+
+ 
+ 
+ window.navigator.sayswho= (function(){
+  var N= window.navigator.appName, ua= window.navigator.userAgent, tem;
+  var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+  if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+  M= M? [M[1], M[2]]: [N, window.navigator.appVersion,'-?'];
+  return M;
+ })();
+ 
+ 
+// alert('saywho '+window.navigator.sayswho[0]);
+
+ 
+
+	$(document).ready(function() {
+	
+	    // just for testing mongodb/nodejs integration
+	    
+	    $( "#event-tabs" ).tabs({ selected: 2 });
+	    
+	    $("#event-tabs").bind("tabsselect", function(event, ui) {
+	        var tab_list = ['comment','bookmark','transcript','link'];
+	        $('#event-type').val(tab_list[ui.index]);
+        });
+	    
+		console.log('doc/ready');
+		$.getJSON('getAllVideoInfo?p1=1', function(data) {
+           console.log('data');
+           console.log(data);
+           videoInfo = turnToKeydMap(data.videoInfo);
+            
+           console.log(videoInfo);
+            
+            var initialVideo;// = videoInfo.first();
+           // for (first in videoInfo) break;
+           
+            initialVideo = videoInfo['517b00a50c98266a20000003'];
+            
+            
+            
+           
+            console.log(initialVideo);
+            
+            $('.stat-bar').progressbar({value: false,max:100});
+            
+            //currentlyPlayingId = 'vid1';
+            $('#iframe-container').html('<iframe id="player1" src="'+initialVideo.vimeo_url+'?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1" width="600px" height="400px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+           // history[step]={'step':step,'id':'vid1','title':'Jean-Daniel Nicoud', 'vimeo_url':'http://player.vimeo.com/video/45371204'};
+           history[step]={'step':step,'_id':initialVideo['_id'],'title':initialVideo.title, 'vimeo_url':initialVideo.vimeo_url};
+           
+            step++;
+    
+           iframe = $('#player1')[0];
+            console.log(iframe);
+            player = $f(iframe);
+            stat = $('.stat');
+    
+            console.log(player);
+            console.log(stat);
+            
+            
+            console.log(history);
+    
+    // When the player is ready, add listeners for pause, finish, and playProgress
+            player.addEvent('ready', function() {
+                console.log('player ready');
+                stat.text('ready');
+                
+                player.addEvent('pause', onPause);
+                player.addEvent('finish', onFinish);
+                player.addEvent("seek",onSeek);
+                player.addEvent('playProgress', onPlayProgress);
+                
+                console.log('seek? '+pendingSeektoTime);
+                if(pendingSeektoTime!=0) {
+                    console.log('seeking '+pendingSeektoTime);
+                    player.api('seekTo',pendingSeektoTime);
+                    pendingSeektoTime = 0;
+                }
+                
+                
+                var currentId = history[step-1]._id;
+                var events = getVideoByVideoId(currentId).events;
+                
+                // for marking events on .stat-bar not working.
+                
+                /*
+                for(var i=0;i<events.length;i++ ) {
+                    var event = events[i];
+                    
+                    
+                    var left = i*i*20;
+                    var eventHtml = '<div id="event-'+event._id+'" class="event" style="left:'+left+'"></div>';
+                    $('.stat-bar').append(eventHtml);
+                }
+                */
+                
+                
+                
+                
+                
+                
+            });
+
+
+        });  // get json 
+        
+		
+
+	}); // ready
+	
+	
+	function openSearchResults() {
+	    
+		$.window({
+			showModal: false,
+			content: "<div></div>",
+			title: 'Related videos to ...',
+			x: 780,
+			y: 105,
+			width: 400,
+			height: 500,
+			scrollable: false,
+			showFooter: false,
+			maximizable: false,
+			minimizable: false
+			
+		});
+		return false;
+	
+	}
+
+// Call the API when a button is pressed
+$('button').bind('click', function() {
+    player.api($(this).text().toLowerCase());
+});
+
+function onPause(id) {
+  //  stat.text('paused');
+}
+
+function onFinish(id) {
+   // stat.text('finished');
+}
+
+var previousTime = 0;
+var currentTime = 0;
+var INTERVAL = 1;  //seconds
+
+function addRelatedVideoToHtmlList(relatedObject) {
+	
+	//console.log(relatedObject);
+	$( "#related_video_list_item_template" ).tmpl( relatedObject )
+        .appendTo( ".ralated-video-list" );
+	//console.log($('.ralated-video-list').html());
+		
+		
+
+
+}
+
+function onSeek(timeInfo, id) {
+
+    console.log('on seek');
+
+    var currentId = history[step-1]._id;
+    var events = getVideoByVideoId(currentId).events;
+
+    console.log(timeInfo);
+    console.log(currentId);
+    
+    var progress = timeInfo.percent*100;
+           
+    $('.stat-bar').progressbar( "option", { value: progress });
+
+    
+    processEvents(events,timeInfo.seconds, previousTime,false);
+    
+    playTime = parseFloat(timeInfo.seconds);
+
+    
+    
+}
+function toMinAndSec(secs,decimal) {
+  return Math.floor(parseFloat(secs)/60)+'m '+ ((parseFloat(secs)%60).toFixed(decimal))+ 's';
+}
+
+function onPlayProgress(data, id) {
+   		stat.text(toMinAndSec(data.seconds,1));
+   		currentTime = data.seconds;
+   		//console.log(data);
+   		
+   		playTime = parseFloat(data.seconds);
+   		
+   		
+   		var thisInterval = currentTime-previousTime;
+   		if(thisInterval>INTERVAL) {
+
+          
+            
+            
+            var progress = data.percent*100;
+           
+            $('.stat-bar').progressbar( "option", { value: progress });
+
+
+   		    var currentId = history[step-1]._id;
+   			var events = getVideoByVideoId(currentId).events;
+   		/*	
+   			console.log(currentId);
+   			console.log(getVideoByVideoId(currentId));
+   			
+   			console.log('events');
+   			console.log(getVideoByVideoId(currentId).events);
+        */
+
+   		//	for(var event in events) { 
+   		
+   		    processEvents(events,currentTime, previousTime,true);
+   		    
+	   		previousTime= currentTime;
+   		}
+//   		console.log(previousTime);
+    	
+    
+}
+
+function processEvents(events,currentTime, previousTime, animate) {
+
+   			for(var i=0;i<events.length;i++) {
+   				var event = events[i];
+   				var timestamp = Math.round(event.timestamp);
+	   			if(previousTime<=timestamp && timestamp<currentTime) {
+	   				//console.log('processing event cur '+currentTime+' timestamp '+ event.timestamp+' prev '+previousTime);
+	   				
+	   				//$('.ralated-video-list').html('');  //empty list?
+					
+					for(var j=0;j<event.related_objects.length;j++) {
+						var rel_object = event.related_objects[j];
+						
+						console.log('j '+j);
+						console.log(rel_object);
+						console.log(rel_object._id);
+						console.log(rel_object._type);
+						if(rel_object._type=='video') {
+						
+                                                        //console.log(rel_object.id);
+                            //var relatedVideo = getVideoByOldVideoId(rel_object.temp_rel_video);
+    
+                            var relatedVideo = videoInfo[rel_object._related_video];
+                            console.log(relatedVideo);
+    
+                            var listId= 'video_'+relatedVideo._id;
+                            var listElement = $('.ralated-video-list #'+listId);
+                            
+                            var listWidth =$('.ralated-video-list').width();
+    
+                            rel_object.width = rel_object.relatedness*listWidth ;
+                            rel_object.relatedness_percent = rel_object.relatedness * 100;
+                            
+                            console.log(relatedVideo);
+                            rel_object.title = relatedVideo.title;
+    
+                            rel_object.thumbnail = relatedVideo.thumbnail;
+    
+                            if(listElement.length==0) {
+                                console.log('rel_object');
+                                console.log(rel_object);
+                                rel_object.rel_video_id = relatedVideo._id;
+                                addRelatedVideoToHtmlList(rel_object);	   				
+                            }
+                            
+                            
+                            if( rel_object.relatedness==0) {
+                                console.log('removing');
+    //							setTimeout(function() {removeElement(listElement);} , 500);
+                                if(animate) {
+                                    
+                                    $('.ralated-video-list #'+listId+' .rel_bar').animate({'opacity':0}, 1000, function() {
+                                                
+                                                var listItem = $(this).parents('.related_list_item');
+                                                listItem.remove();
+                                                //console.log(element);
+        
+                                    });
+                                }
+                                else {
+                                    if(listItem!=undefined) {
+                                        listItem.remove();
+                                    }
+                                
+                                }
+                                
+                            }
+                            else {
+    
+                            }
+                            if(animate) {
+                                $('.ralated-video-list #'+listId+' .rel_bar').animate({'width':rel_object.width});
+                                $('.ralated-video-list #'+listId+' .rel-rel').animate({'left':rel_object.width-12});
+                            }
+                            else {
+                            
+                                $('.ralated-video-list #'+listId+' .rel_bar').css('width',rel_object.width);
+                                $('.ralated-video-list #'+listId+' .rel-rel').css('left',rel_object.width-12);
+                            
+                            }
+                            $('.ralated-video-list #'+listId+' .rel-rel').text(rel_object.relatedness_percent+'%');
+                            
+
+						    
+						}
+						else if(rel_object._type=='transcript') {
+						    $('.transcript-section').text(rel_object.text);
+						
+						}
+
+					
+	   				}
+	   				
+	   			}
+	   		}
+}
+	
+	var videoWindowCount = 0;
+	
+	function removeElement(element) {
+		console.log(element);
+		console.log('remove');
+		element.remove();
+		console.log(element);
+	}
+	
+	var vimeo_params = '?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1';
+
+	function openVideo(id,seek_point) {
+	
+		console.log(id);
+		var info =videoInfo[id];
+		console.log(info);
+	
+        
+        history[step-1].last_time=currentTime; 
+        console.log(currentTime);    
+        console.log(history);   
+        history[step]={'step':step,'_id':info._id,'title': info.title,'vimeo_url':info.vimeo_url};
+        //console.log('-------history');
+        //console.log(history);
+        step++;
+
+     //   $('.navigation a.prev').css('color','#000');
+     //   $('.navigation a.prev').css('cursor','auto');
+        $('.navigation a.prev').addClass('active');
+        
+        console.log(history);
+
+		switchToVideo(info.title,info.vimeo_url+vimeo_params);
+		
+		console.log('seek_point '+seek_point);
+		if(seek_point!=0) {
+		    pendingSeektoTime = seek_point;
+		}
+		
+        
+
+        
+     //   console.log(player);
+        
+
+
+
+		// for opening in new window
+		/*
+		var content = $( "#video_box_template" ).tmpl( info );
+		console.log(content);
+		
+		$.window({
+			showModal: false,
+			title: 'video preview',
+			modalOpacity: 0.4,
+			content: $("#video-box").html(),
+			x: 150+videoWindowCount*5,
+			y: 50+videoWindowCount*5,
+			width: 620,
+			height: 500,
+			scrollable: false,
+			showFooter: false,
+			maximizable: false
+		});
+		videoWindowCount++;
+		
+		*/
+		
+		return false;
+		
+		
+	
+	}
+	
+	function switchToVideo(title, vimeo_url) {
+	
+    	console.log('title '+title);
+
+	    if(window.navigator.sayswho[0]=='Firefox') {   // firefox needs this to restart flash and do player initialization // or maybe not?!
+	    
+		    $('#player1').attr('src',vimeo_url);
+	    // $('#iframe-container').html('<iframe id="player1" src="'+vimeo_url+'?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1" width="600px" height="400px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+        }
+        else if(window.navigator.sayswho[0]=='Chrome') {  // chrome works with HTML5 and has a bug when redoing iframe
+	
+		    $('#player1').attr('src',vimeo_url);
+		
+		}
+		
+		iframe = $('#player1')[0];
+        player = $f(iframe);
+        
+        // this is also done in ready function but when back button is clicked the player may not get initialized in html5 player?      
+        console.log('switch seek? '+pendingSeektoTime);
+		if(pendingSeektoTime!=0) {
+			    console.log('seeking '+pendingSeektoTime);
+			    player.api('seekTo',pendingSeektoTime);
+			    pendingSeektoTime = 0;
+		}
+
+        
+        // needed? 
+       
+        /*
+        console.log(player);
+        
+        player.addEvent('ready', function() {
+			stat.text('ready');
+			
+			player.addEvent('pause', onPause);
+			player.addEvent('finish', onFinish);
+			player.addEvent('playProgress', onPlayProgress);
+		});
+        */
+        
+        $('.ralated-video-list').html('');
+        
+        previousTime = 0;
+		currentTime = 0;
+		
+		$('#video_title').text(title);
+
+	}
+	
+	function prevVideo() {
+		console.log(history);
+		if(history.length>1 && step>1) {
+			history[step-1].last_time=currentTime; 
+			step--;  
+			
+			console.log(history[step-1]);
+			
+            pendingSeektoTime = history[step-1].last_time;
+
+			switchToVideo(history[step-1].title,history[step-1].vimeo_url);  
+
+           // console.log('before settimeout');
+         
+            
+            var events = videoInfo[history[step-1]._id].events;
+
+    			
+    		processEvents(events,history[step-1].last_time, 0,false);
+			
+		
+			
+			if(step==1) {
+			//		$('.navigation a.prev').css('color','#BBB');
+			 //       $('.navigation a.prev').css('cursor','default');
+			    $('.navigation a.prev').removeClass('active');
+			}
+
+			
+
+		}
+		return false;
+	
+	}
+	
+	function nextVideo() {
+		if(step>history.length) {
+		
+		}
+		return false;
+	
+	}
+	
+	function forwardRewind(seconds) {
+	    console.log(playTime);
+	    console.log(seconds);
+	    console.log(playTime+seconds);
+	
+		player.api('seekTo',playTime+seconds);
+
+	
+	}
+	
+	function create_event() {
+	
+	    $('.create-controls').slideToggle();
+	     $('.create-controls #start-time').val(playTime);
+	
+	}
+	
+	function captureTime(position) {
+	
+	    $(position).val(playTime);
+	}
+	
+	
+		function turnToKeydMap(videos) {
+        var obj = {};
+        var len = videos.length;
+        for (var i = 0; i < len; i++) {
+            obj[videos[i]._id]=videos[i];
+        }
+        
+        return obj;
+
+
+    }
+
+	
+	function getVideoByVideoId(id) {
+	    // not optimal at all!!!!! todo
+	   //return findById(videoInfo,id);
+	   return videoInfo[id];
+	    
+	}
+
+    // for temp_rel_video only will be removed
+
+//    var vidToMongoMapping = null;
+    
+	function getVideoByOldVideoId(id) {
+	    return videoInfo[id];
+	/*
+	    if(vidToMongoMapping==null)
+	        makevidToMongoMapping();
+	   console.log(vidToMongoMapping[id]);
+	   console.log(videoInfo[vidToMongoMapping[id]]);
+	   return videoInfo[vidToMongoMapping[id]];
+	   
+	*/
+	    
+	}
+/*	
+	function makevidToMongoMapping() {
+	    vidToMongoMapping = {};
+	    var i = 1;
+	    for(key in videoInfo) {
+	        vidToMongoMapping['vid'+i]= key;
+	        i++;
+	    }
+	    console.log(vidToMongoMapping);
+	}
+
+*/	
+	// not being used
+	function findById(source, id) {
+      for (var i = 0; i < source.length; i++) {
+        if (source[i]['id'] === id) {
+          return source[i];
+        }
+      }
+      return null;
+      //throw "Couldn't find object with id: " + id;
+    }
+	
+	
+	function saveEvent() {
+	
+//	    console.log(history[step-1]._id);
+//	    console.log('#'+$('#event-type').val()+'-tab .tab-text');
+//	    console.log($('#'+$('#event-type').val()+'-tab .tab-text'));
+//	    console.log($('#'+$('#event-type').val()+'-tab .tab-text').val());
+	    var text_content = $('#'+$('#event-type').val()+'-tab .tab-text').val();
+	    var eventData = { 'vid_id': history[step-1]._id,'vid_title': history[step-1].title,'start-time': $('#start-time').val(), 'end-time': $('#end-time').val(), 'text': text_content, //$('#text-comments').val(),
+	                 'event-type': $('#event-type').val()};
+	                 
+        validateEventData(eventData);    	
+	    console.log(eventData);
+	    
+	    $.post("addcomment", eventData ,function(data) {
+            console.log('data saved');
+            console.log(data);
+            
+            $('.create-controls').slideToggle(); 
+            
+        });
+        
+	    
+	}
+	
+	function validateEventData() {
+	
+	}
+
+	
+	
+	
+
+
+	</script>
+</head>
+<body>
+	<div id="container">
+	    <div id="header">
+    	    <h1 class="page-title">ORAL HISTORY OF ROBOTICS</h1>
+    	    <div class="neh-logos">
+    	        <!--Sponsored by:-->
+    	        <img class="neh" src="images/neh_logo.jpg" title="National Endowment for Humanities">
+    	       <!-- <img class="odh" src="images/odh.gif" title="National Endowment for Humanities ODH">-->
+    	    </div>
+        </div>    	    
+		<div class="main-video-section">
+			<h2 id="video_title">Jean-Daniel Nicoud</h2>
+			<div class="navigation"><a class="prev" href="#" onclick="prevVideo()"> < </a>
+									<a class="next" href="#" onclick="nextVideo()"> > </a>
+			</div>
+			<div class="main-video-container">
+				<div id="iframe-container">
+				   
+				</div>
+                <ul class="ralated-video-list">
+
+
+        
+                </ul>
+                <div id="edit-controls">
+                    <div class="stat-bar">
+                            <div type="text" class="stat">no stat</div>
+                    </div>
+                    <button type="button" class="sm-button back-30" onclick="forwardRewind(-30); return false;"><30s</button>
+                    <button type="button" class="sm-button back-10" onclick="forwardRewind(-10); return false;"><10s</button>
+                    <button type="button" class="sm-button back-1" onclick="forwardRewind(-1); return false;"><1s</button>
+
+                    <button type="button" class="md-button" onclick="create_event(); return false;">create event</button>
+                    
+                    <button type="button" class="sm-button forward-1" onclick="forwardRewind(1); return false;">1s></button>
+                    <button type="button" class="sm-button forward-10" onclick="forwardRewind(10); return false;">10s></button>
+                    <button type="button" class="sm-button forward-30" onclick="forwardRewind(30); return false;">30s></button>
+                    
+                    <div class="create-controls">
+                        <button type="button" class="md-button" onclick="saveEvent();return false;">save</button>    
+                        <button type="button" class="md-button" onclick="$('.create-controls').slideToggle(); return false;">discard</button>    
+                        
+                        <label>start time:</label><input type="text" id="start-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#start-time'); return false;" label="capture time">capture</button>
+                        <label>end time:</label><input type="text" id="end-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#end-time'); return false;" label="capture time">capture</button>
+                        <br/><br/>
+                        <label>categories:</label>
+                        <input type="checkbox" name="category" value="robot">Robots</input>
+                        <input type="checkbox" name="category" value="institution">Institutions</input>
+                        <input type="checkbox" name="category" value="people">People</input>
+                        <br/><br/>
+                        <label>tags:</label><input type="text" id="tags"/>
+                        <br/><br/>
+
+                        <input type="hidden" id="event-type" value="transcript"/>    
+                    
+
+                        <div id="event-tabs">
+                             <ul>
+                                <li><a href="#comment-tab">Comment</a></li>
+                                <li><a href="#bookmark-tab">Bookmark</a></li>
+                                <li><a href="#transcript-tab">Transcript</a></li>
+                                <li><a href="#link-tab">Link</a></li>
+                            </ul>
+                            <div id="comment-tab">
+                                <!--
+                                <label>type:</label>
+                                <select id="event-type"/>
+                                    <option value="comment">comment</option>
+                                    <option value="comment">bookmark</option>
+                                    <option value="transcript">transcript</option>
+                                    <option value="link">link</option>
+                                </select>
+                                -->
+                                <label>comment:</label><br/>
+                                <textarea id="text-comments" class="tab-text"></textarea>                       
+                            </div>
+                            <div id="bookmark-tab">
+                                <label>bookmark note:</label><br/>
+                                <textarea id="text-bookmark" class="tab-text"></textarea>                       
+                            </div>
+                            <div id="transcript-tab">
+                                <label>transcript text:</label><br/>
+                                <textarea id="text-transcript" class="tab-text"></textarea>                       
+                            </div>
+                            <div id="link-tab">
+                                <label>input:</label><br/>
+                                <textarea id="text-link" class="tab-text"></textarea>                       
+                            </div>
+                        </div>
+                        
+                            
+
+                    </div>
+    			</div>
+                <div class="transcript-section">
+                    Transcript
+                    <!--The <a href="#" onclick="openSearchResults();">transcript</a> of the current section of the video with some keywords <a href="#" onclick="openSearchResults();">highlighted</a>. Clicking on the words brings videos that are most relevant to that word.-->
+                </div>
+    		</div>
+		</div>
+	</div>
+	
+	
+	<!--
+	<span id="related_template_container" style="display: none;">
+	
+		<li class="related_list_item">
+			<a href="#" onclick="openVideo()">
+				<span class="prim-info">
+					<div class="rel-thumb"></div>					
+					<span class="rel-title">Related Vid 1</span>
+					<span class="rel-rel">80%</span>					
+				</span>
+				<span class="sec-info">
+					Some highlight of the transcript or word cloud of the related video or keywords which both videos share
+				</span>
+			</a>
+		</li>
+
+	
+	
+	
+	</span>
+	
+	
+	
+	<div id="video-search-result" style="display: none">
+	
+				<ul class="ralated-video-list">
+				<li style="margin-left: 50px; ">
+					<a href="#" onclick="openVideo()">
+						<span class="prim-info">
+							<div class="rel-thumb"></div>					
+							<span class="rel-title">Related Vid 1</span>
+							<span class="rel-rel">80%</span>					
+						</span>
+						<span class="sec-info">
+							Some highlight of the transcript or word cloud of the related video or keywords which both videos share
+						</span>
+					</a>
+				</li>
+			
+				
+			</ul>
+	</div>
+	
+-->
+	
+	
+
+</body>
+	
