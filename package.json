@@ -11,6 +11,6 @@
     "mongoose": "*",
     "mongoose-schema-extend": "*",
     "ejs": "*",
-    "mongodb" : "*"
+    "mongodb" : "1.1.11"
   }
 }
