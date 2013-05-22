@@ -18,6 +18,8 @@ var express = require('express')
 
 var app = express();
 
+require('./config/environment.js');//(app, express);  working?!
+
 app.configure(function(){
   app.set('port', process.env.PORT || 8080);
   app.set('views', __dirname + '/views');
@@ -55,7 +57,18 @@ app.get('/', function(req, res) {
     res.render('index.html');
 });
 */
-    var mongodb_url = 'mongodb://127.0.0.1:27017/vidtest2';
+ //   var mongodb_url = 'mongodb://heroku_app15571931:t0ac8164lheeds7i8io9ijept0@ds027308.mongolab.com:27308/heroku_app1557193';
+
+//    var mongodb_url ='mongodb://127.0.0.1:27017/vidtest2';
+
+//process.env.MONGOLAB_URI= 'mongodb://sepans:sepans@ds027308.mongolab.com:27308/heroku_app1557193';
+process.env.MONGOLAB_URI= 'mongodb://sepans:sepans@alex.mongohq.com:10058/app15571931'; //'mongodb://heroku:29c490d2588c7ffdc4a8945f069597ca@alex.mongohq.com:10058/app15571931';
+
+
+var mongodb_url = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL;// || 
+//'mongodb://127.0.0.1:27017/vidtest2';
+
+console.log(mongodb_url);
    
     mongoose.connect(mongodb_url,{db: { safe: true }});
     

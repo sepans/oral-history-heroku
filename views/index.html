@@ -114,7 +114,7 @@
             var initialVideo;// = videoInfo.first();
            // for (first in videoInfo) break;
            
-            initialVideo = videoInfo['517b00a50c98266a20000003'];
+            initialVideo = firstVideo(); //videoInfo['517b00a50c98266a20000003'];
             
             
             
@@ -679,6 +679,22 @@ function processEvents(events,currentTime, previousTime, animate) {
 	
 	function validateEventData() {
 	
+	}
+	
+	// for the time being
+	function firstVideo() {
+	       
+	        console.log('fv'+videoInfo);
+	        
+	    for (key in videoInfo) {
+           // console.log(videoInfo[key]);
+	        if(videoInfo[key].title=='Jean-Daniel Nicoud') {
+	            console.log(videoInfo[key]);
+	            return videoInfo[key];
+	        }            //if (obj.hasOwnProperty(key)) size++;
+        }
+	
+	   
 	}
 
 	
