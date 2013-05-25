@@ -61,12 +61,16 @@
 		
 		/*.stat-bar-cont { display: inline;}*/
 		
-		.stat-bar {  height: 20px; margin-top: 10px; position: relative; height: 40px; width: 1000px; }
+		.stat-bar {  height: 20px; margin-top: 10px; position: relative; height: 40px; width: 1000px; background-color: rgba(248,181,74,0.3) !important; }
 		.stat { position: absolute; right: 0; padding: 10px 2px;}
-		.stat-common .event { position: absolute; width: 2px; height: 95%;background-color: rgb(255,255,255);
+		
+		
+		.stat-common .event { position: absolute; width: 2px; height: 100%;background-color: rgb(255,255,255);
 		     background-color: rgba(255,255,255,0.7); z-index: 10; cursor: pointer;}
 		     
-		.event-video {border: 1px solid #F00;}
+		.event-video {border-left: 1px solid #F00;border-right: 1px solid #F00;}
+		
+		.event-transcript {height: 20%; top: 0;}
 		
 		.big-stat-bar { width: 5000px; height: 100px; border: 1px solid #888; position: absolute; top: 500px; left: 0px;}
 		
@@ -83,7 +87,7 @@
 		.ui-widget-header {background: none;}
 		
 		*/
-		.ui-progressbar .ui-progressbar-value {background-color:rgb(248,181,74); background-color:rgba(248,181,74,0.5);}
+		.ui-progressbar .ui-progressbar-value {background-color:rgb(248,181,74); background-color:rgba(248,181,74,0.7);}
 		
 		.ui-progressbar .ui-progressbar-value { position: absolute;}
 		

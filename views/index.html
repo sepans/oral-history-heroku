@@ -47,8 +47,8 @@
 
 	<script id="event_tooltip_template" type="text/x-jquery-tmpl">
 		<div class='event_tooltip_cont' class="tooltip_${related_objects[0]._type}">
-		    <div>timestamp: ${timestamp}</div> 
-		    <div>duration: ${duration}</div> 
+		    <div>timestamp: ${Math.round(timestamp)}</div> 
+		    <div>duration: ${Math.round(duration)}</div> 
 		    <div>type: ${related_objects[0]._type}</div>
 		    <div>${related_objects[0].text}</div>
 		
@@ -252,6 +252,8 @@
 	
 	
 	function drawEvents() {
+	
+	    $('.stat-bar .event').remove();
 	
         var currentId = history[step-1]._id;
         var events = getVideoByVideoId(currentId).events;
@@ -784,9 +786,11 @@ function processEvents(events,currentTime, previousTime, animate) {
         validateEventData(eventData);    	
 	    console.log(eventData);
 	    
-	    $.post("addcomment", eventData ,function(data) {
+	    $.post("addcomment", eventData ,function(video) {
             console.log('data saved');
-            console.log(data);
+            console.log(video);
+            videoInfo[video._id].events= video.events;
+            drawEvents();
             
             $('.create-controls').slideToggle(); 
             
