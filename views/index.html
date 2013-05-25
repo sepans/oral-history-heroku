@@ -234,15 +234,22 @@
                 $('.stat-bar').animate({'height':'40px'});
                 $('.stat-bar').css('width','1000px');
                 $('.stat-bar').draggable(false);
+                $('.stat-bar').css('left',0);
             
             }
             else {
                 $('.stat-bar').animate({'height':'100px'});
                 $('.stat-bar').css('width','5000px');
                 $('.stat-bar').draggable({axis:'x'  });
+                console.log(getVideoByVideoId(history[step-1]._id).length);
+                var leftMove = Math.round(((currentTime)*getVideoByVideoId(history[step-1]._id).length)/$('.stat-bar').width());
+                console.log(leftMove);
+                if(leftMove>500) {
+                    $('.stat-bar').animate({'left':-(leftMove-600)});
+                }
             }
             
-            drawEvents();
+            setTimeout(function() {drawEvents()},200);
             _ui_state.stat_zoom = !_ui_state.stat_zoom;
         });
         
