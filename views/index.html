@@ -10,6 +10,9 @@
 
 	<script type="text/javascript" src="js/jquery.tmpl.js"></script>
 	
+	<script type="text/javascript" src="js/popcorn.js"></script>
+	<script type="text/javascript" src="js/popcorn._MediaElementProto.js"></script>
+	<script type="text/javascript" src="js/popcorn.HTMLVimeoVideoElement.js"></script>
 
 	<!--<script type="text/javascript" src="js/data.js"></script> --> <!-- to be replaced by data driven data-->
 	
@@ -139,12 +142,29 @@
             $('.stat-bar').progressbar({value: false,max:100});
             
             //currentlyPlayingId = 'vid1';
-            $('#iframe-container').html('<iframe id="player1" src="'+initialVideo.vimeo_url+'?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1" width="600px" height="400px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+           
+           // $('#iframe-container').html('<iframe id="player1" src="'+initialVideo.vimeo_url+'?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1" width="600px" height="400px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+           
            // history[step]={'step':step,'id':'vid1','title':'Jean-Daniel Nicoud', 'vimeo_url':'http://player.vimeo.com/video/45371204'};
            history[step]={'step':step,'_id':initialVideo['_id'],'title':initialVideo.title, 'vimeo_url':initialVideo.vimeo_url};
            
             step++;
     
+            var video = Popcorn.HTMLVimeoVideoElement('#iframe-container');
+            video.src = initialVideo.vimeo_url;
+            var popcorn = Popcorn(video);
+    
+            
+             popcorn.footnote({
+                start: 1,
+                end: 5,
+                text: "Works with vimeo!",
+                target: ".transcript-section"
+              });
+      
+      
+             
+             /*   
             iframe = $('#player1')[0];
             console.log(iframe);
             player = $f(iframe);
@@ -210,7 +230,7 @@
 
                 });
 
-                */
+                
                 
                 // for marking events on .stat-bar not working.
                 
@@ -223,7 +243,7 @@
                 
                 
             });
-
+            */
 
         });  // get json 
         

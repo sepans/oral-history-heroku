@@ -17,7 +17,7 @@
 		.main-video-section { width: 1030px;/* height: 600px; border: 1px solid black;*/}
 		.main-video-section h2 { font-size: 18px;}
 		.main-video-container { width: 1020px;  postition: relative;  display: inline-block; margin-left: 10px;	}
-		.main-video-container #iframe-container {width: 610px; display: inline; }
+		.main-video-container #iframe-container {width: 610px; height: 410px; display: inline-block; }
 		.main-video-container .video-feature {  position: absolute; border: 1px solid black; padding: 2px;}
 		.small-feature { display: block; width: 50px; height: 50px;  font-size: 10px;}
 		.ralated-video-list { width: 380px; float:right; display: inline-block; margin-left: 5px; max-height: 400px; overflow-y: scroll;}
