@@ -241,11 +241,9 @@
                 $('.stat-bar').animate({'height':'100px'});
                 $('.stat-bar').css('width','5000px');
                 $('.stat-bar').draggable({axis:'x'  });
-                console.log(getVideoByVideoId(history[step-1]._id).length);
-                var leftMove = Math.round(((currentTime)*getVideoByVideoId(history[step-1]._id).length)/$('.stat-bar').width());
-                console.log(leftMove);
+                var leftMove = Math.round(((currentTime)*$('.stat-bar').width())/getVideoByVideoId(history[step-1]._id).length);
                 if(leftMove>500) {
-                    $('.stat-bar').animate({'left':-(leftMove-600)});
+                    $('.stat-bar').animate({'left':-(leftMove-400)});
                 }
             }
             
