@@ -14,9 +14,9 @@
 		#video_title { width: 600px;}
 		
 		
-		.main-video-section { width: 1015px;/* height: 600px; border: 1px solid black;*/}
+		.main-video-section { width: 1030px;/* height: 600px; border: 1px solid black;*/}
 		.main-video-section h2 { font-size: 18px;}
-		.main-video-container { width: 1000px;  postition: relative;  display: inline-block; margin-left: 10px;	}
+		.main-video-container { width: 1020px;  postition: relative;  display: inline-block; margin-left: 10px;	}
 		.main-video-container #iframe-container {width: 610px; display: inline; }
 		.main-video-container .video-feature {  position: absolute; border: 1px solid black; padding: 2px;}
 		.small-feature { display: block; width: 50px; height: 50px;  font-size: 10px;}
@@ -61,25 +61,33 @@
 		
 		/*.stat-bar-cont { display: inline;}*/
 		
-		.stat-bar { display: inline-block; height: 20px; margin-top: 20px; position: relative; height: 35px; width: 1000px; }
+		.stat-bar {  height: 20px; margin-top: 10px; position: relative; height: 40px; width: 1000px; }
 		.stat { position: absolute; right: 0; padding: 10px 2px;}
-		.stat-bar .event { position: absolute; width: 2px; height: 100%;background-color: rgb(100,100,100);
-		     background-color: rgba(100,100,100,0.5); z-index: 10; cursor: pointer;}
+		.stat-common .event { position: absolute; width: 2px; height: 95%;background-color: rgb(255,255,255);
+		     background-color: rgba(255,255,255,0.7); z-index: 10; cursor: pointer;}
+		     
+		.event-video {border: 1px solid #F00;}
+		
+		.big-stat-bar { width: 5000px; height: 100px; border: 1px solid #888; position: absolute; top: 500px; left: 0px;}
+		
+		.stat-common { display: inline-block; } 
+		
+		.zoom { /*width: 12px; display: inline-block; word-wrap: break-word; */margin: 0; padding: 2px 1px; line-height: 9px; margin-top: -2px;}
 		/*
 		.stat-bar { width: 100%; border: 1px solid #BBB; margin: 5px 0; height: 30px; color: #888; display: block;}
 		.stat-progress { background-color: #76CFD1; height: 100%; width: 0px; overflow: visible; }
 		.stat { }
 		
 		
-		.ui-progressbar .ui-progressbar-value {background-color:rgb(248,181,74); background-color:rgba(248,181,74,0.5);}
 		
 		.ui-widget-header {background: none;}
 		
 		*/
+		.ui-progressbar .ui-progressbar-value {background-color:rgb(248,181,74); background-color:rgba(248,181,74,0.5);}
 		
 		.ui-progressbar .ui-progressbar-value { position: absolute;}
 		
-		#edit-controls { width: 1000px;}
+		#edit-controls { width: 100%; overflow: hidden; margin-top: 10px;}
 		
 		button { border: 1px solid #444; background-color: #e78f08; color: #FFF; display:inline;cursor: pointer; margin: 5px 5px 0 0; font-size: 10px;}
 		
@@ -95,6 +103,8 @@
 		.create-controls label {vertical-align: middle;}
 		
 		.window_panel { position: absolute;}
+		
+		body .ui-tooltip { background: #FFF; border-width: 1px; border-radius: 0; box-shadow: 0 0 0 0; font-family: arial; }
 		
 		
 		.ui-widget-content { background: none;}

@@ -3,12 +3,13 @@
 <head>
 	<title>Video Hyper-Links prototype 2</title>
 		
-	<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
-	<script type="text/javascript" src="js/jquery.window.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.8.22.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 	<script type="text/javascript" src="js/froogaloop.js"></script>
+	<script type="text/javascript" src="js/jquery.window.min.js"></script>
 
 	<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+	
 
 	<!--<script type="text/javascript" src="js/data.js"></script> --> <!-- to be replaced by data driven data-->
 	
@@ -44,9 +45,20 @@
 		</div>
 	</script>
 
+	<script id="event_tooltip_template" type="text/x-jquery-tmpl">
+		<div class='event_tooltip_cont' class="tooltip_${related_objects[0]._type}">
+		    <div>timestamp: ${timestamp}</div> 
+		    <div>duration: ${duration}</div> 
+		    <div>type: ${related_objects[0]._type}</div>
+		    <div>${related_objects[0].text}</div>
+		
+		</div>
+	</script>
+
 	
 	<link rel="stylesheet" href="css/jquery.window.css" type="text/css">
 
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css" type="text/css">
 	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.22.custom.css" type="text/css">
 
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -74,7 +86,7 @@
 	
 	var videoInfo = {};
 	
-	
+	var _ui_state = { stat_zoom: false}
 	
 
  
@@ -93,6 +105,9 @@
  
 
 	$(document).ready(function() {
+	
+	
+
 	
 	    // just for testing mongodb/nodejs integration
 	    
@@ -130,7 +145,7 @@
            
             step++;
     
-           iframe = $('#player1')[0];
+            iframe = $('#player1')[0];
             console.log(iframe);
             player = $f(iframe);
             stat = $('.stat');
@@ -142,7 +157,7 @@
             console.log(history);
     
     // When the player is ready, add listeners for pause, finish, and playProgress
-            player.addEvent('ready', function() {
+            player.addEvent('ready', function(readyObject) {
                 console.log('player ready');
                 stat.text('ready');
                 
@@ -158,22 +173,49 @@
                     pendingSeektoTime = 0;
                 }
                 
+                drawEvents();
+                /*
                 
                 var currentId = history[step-1]._id;
                 var events = getVideoByVideoId(currentId).events;
+
+
+                player.api('getDuration', function (value, player_id) {
+
+                        getVideoByVideoId(currentId)['length'] = value;
+                        
+                        //setting events
+
+                        for(var i=0;i<events.length;i++ ) {
+                            var event = events[i];
+        
+                            
+                            var video_lenght = getVideoByVideoId(currentId).length;
+                            console.log('length '+video_lenght);
+                            console.log('width '+$('.stat-bar').width());
+                            console.log('tome '+event.timestamp );
+                            var left = (event.timestamp * $('.stat-bar').width()) / video_lenght;
+                            
+                       //     var big_left = (event.timestamp * $('.big-stat-bar').width()) / video_lenght;
+                            
+                            console.log('left '+left );
+                      //      console.log('left '+big_left );
+                            var eventHtml = '<div id="event-'+event._id+'" class="event" style="left:'+left+'"></div>';
+                            $('.stat-bar').append(eventHtml);
+
+                      //      var bigeventHtml = '<div id="event-'+event._id+'" class="event" style="left:'+big_left+'"></div>';
+                      //      $('.big-stat-bar').append(eventHtml);
+
+                        }
+
+                });
+
+                */
                 
                 // for marking events on .stat-bar not working.
                 
-                /*
-                for(var i=0;i<events.length;i++ ) {
-                    var event = events[i];
-                    
-                    
-                    var left = i*i*20;
-                    var eventHtml = '<div id="event-'+event._id+'" class="event" style="left:'+left+'"></div>';
-                    $('.stat-bar').append(eventHtml);
-                }
-                */
+                
+                
                 
                 
                 
@@ -185,9 +227,85 @@
 
         });  // get json 
         
+        
+        $('.zoom').click(function()   {
+        
+            if(_ui_state.stat_zoom) {
+                $('.stat-bar').animate({'height':'40px'});
+                $('.stat-bar').css('width','1000px');
+                $('.stat-bar').draggable(false);
+            
+            }
+            else {
+                $('.stat-bar').animate({'height':'100px'});
+                $('.stat-bar').css('width','5000px');
+                $('.stat-bar').draggable({axis:'x'  });
+            }
+            
+            drawEvents();
+            _ui_state.stat_zoom = !_ui_state.stat_zoom;
+        });
+        
 		
 
 	}); // ready
+	
+	
+	function drawEvents() {
+	
+        var currentId = history[step-1]._id;
+        var events = getVideoByVideoId(currentId).events;
+
+
+        player.api('getDuration', function (value, player_id) {
+
+                getVideoByVideoId(currentId)['length'] = value;
+                
+                //setting events
+
+                for(var i=0;i<events.length;i++ ) {
+                    var event = events[i];
+
+                    
+                    var video_lenght = getVideoByVideoId(currentId).length;
+                    var left = Math.round((event.timestamp * $('.stat-bar').width()) / video_lenght);
+
+                    var event_width = Math.round((event.duration * $('.stat-bar').width()) / video_lenght);
+                    
+                    
+                    var id = 'event-'+event._id+'-'+i;
+                    var eventHtml = '<div id="'+id+'" class="event event-'+event.related_objects[0]._type+'" title="some title" ></div>';
+                    $('.stat-bar').append(eventHtml);
+                    
+                    $('#'+id).css('left',left);
+                    $('#'+id).css('width',event_width);
+                    
+                    $('#'+id).tooltip({ 
+                        content: function() {
+                            var element = $( this );
+                            
+                            var event_id = element[0].id.substring(6,29);
+                            var event_index =  element[0].id.substring(31);
+                            
+                            var vid_events = getVideoByVideoId(currentId).events;
+                            
+                            var tooltip = $('#event_tooltip_template').tmpl(vid_events[event_index]);
+                            console.log(tooltip);
+                            
+                            return tooltip;
+                            
+                          }
+                    });
+                    
+                   // $('#'+id).tooltip('open');
+
+                }
+
+        });
+
+ 
+	
+	}
 	
 	
 	function openSearchResults() {
@@ -729,9 +847,11 @@ function processEvents(events,currentTime, previousTime, animate) {
         
                 </ul>
                 <div id="edit-controls">
-                    <div class="stat-bar">
+                    <button class='zoom'>zoom</button>
+                    <div class="stat-bar stat-common">
                             <div type="text" class="stat">no stat</div>
                     </div>
+                    <!--<div class="big-stat-bar stat-common"></div>-->
                     <button type="button" class="sm-button back-30" onclick="forwardRewind(-30); return false;"><30s</button>
                     <button type="button" class="sm-button back-10" onclick="forwardRewind(-10); return false;"><10s</button>
                     <button type="button" class="sm-button back-1" onclick="forwardRewind(-1); return false;"><1s</button>
@@ -746,7 +866,7 @@ function processEvents(events,currentTime, previousTime, animate) {
                         <button type="button" class="md-button" onclick="saveEvent();return false;">save</button>    
                         <button type="button" class="md-button" onclick="$('.create-controls').slideToggle(); return false;">discard</button>    
                         
-                        <label>start time:</label><input type="text" id="start-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#start-time'); return false;" label="capture time">capture</button>
+                        <label>start time:</label><input  title="starttime" type="text" id="start-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#start-time'); return false;" label="capture time">capture</button>
                         <label>end time:</label><input type="text" id="end-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#end-time'); return false;" label="capture time">capture</button>
                         <br/><br/>
                         <label>categories:</label>
@@ -806,53 +926,7 @@ function processEvents(events,currentTime, previousTime, animate) {
 		</div>
 	</div>
 	
-	
-	<!--
-	<span id="related_template_container" style="display: none;">
-	
-		<li class="related_list_item">
-			<a href="#" onclick="openVideo()">
-				<span class="prim-info">
-					<div class="rel-thumb"></div>					
-					<span class="rel-title">Related Vid 1</span>
-					<span class="rel-rel">80%</span>					
-				</span>
-				<span class="sec-info">
-					Some highlight of the transcript or word cloud of the related video or keywords which both videos share
-				</span>
-			</a>
-		</li>
 
-	
-	
-	
-	</span>
-	
-	
-	
-	<div id="video-search-result" style="display: none">
-	
-				<ul class="ralated-video-list">
-				<li style="margin-left: 50px; ">
-					<a href="#" onclick="openVideo()">
-						<span class="prim-info">
-							<div class="rel-thumb"></div>					
-							<span class="rel-title">Related Vid 1</span>
-							<span class="rel-rel">80%</span>					
-						</span>
-						<span class="sec-info">
-							Some highlight of the transcript or word cloud of the related video or keywords which both videos share
-						</span>
-					</a>
-				</li>
-			
-				
-			</ul>
-	</div>
-	
--->
-	
-	
 
 </body>
 	
