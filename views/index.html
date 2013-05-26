@@ -50,7 +50,7 @@
 
 	<script id="event_tooltip_template" type="text/x-jquery-tmpl">
 		<div class='event_tooltip_cont' class="tooltip_${related_objects[0]._type}">
-		    <div>timestamp: ${Math.round(timestamp)}</div> 
+		    <div>timestamp: ${toMinAndSec(timestamp)}</div> 
 		    <div>duration: ${Math.round(duration)}</div> 
 		    <div>type: ${related_objects[0]._type}</div>
 		    <div>${related_objects[0].text}</div>
@@ -78,7 +78,7 @@
 
     //var currentlyPlayingId; using history is enough?
 	
-	var iframe,player,stat;
+	var iframe,player;
 	
 	var history = [];
 	var step = 0;
@@ -91,7 +91,7 @@
 	
 	var _ui_state = { stat_zoom: false}
 	
-
+    var popcorn;
  
  
  window.navigator.sayswho= (function(){
@@ -130,7 +130,6 @@
            console.log(videoInfo);
             
             var initialVideo;// = videoInfo.first();
-           // for (first in videoInfo) break;
            
             initialVideo = firstVideo(); //videoInfo['517b00a50c98266a20000003'];
             
@@ -141,26 +140,44 @@
             
             $('.stat-bar').progressbar({value: false,max:100});
             
-            //currentlyPlayingId = 'vid1';
-           
-           // $('#iframe-container').html('<iframe id="player1" src="'+initialVideo.vimeo_url+'?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1" width="600px" height="400px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
-           
-           // history[step]={'step':step,'id':'vid1','title':'Jean-Daniel Nicoud', 'vimeo_url':'http://player.vimeo.com/video/45371204'};
            history[step]={'step':step,'_id':initialVideo['_id'],'title':initialVideo.title, 'vimeo_url':initialVideo.vimeo_url};
            
             step++;
     
             var video = Popcorn.HTMLVimeoVideoElement('#iframe-container');
             video.src = initialVideo.vimeo_url;
-            var popcorn = Popcorn(video);
-    
+            popcorn = Popcorn(video);
             
-             popcorn.footnote({
-                start: 1,
-                end: 5,
-                text: "Works with vimeo!",
-                target: ".transcript-section"
-              });
+            
+            popcorn.on('loadedmetadata',function() {
+            
+                console.log('metadata');
+                drawEvents();
+                pushEventsToPopcorn();
+                    
+            });
+            
+            popcorn.on('timeupdate',function () {
+                onPlayProgress();
+            });
+
+            popcorn.on('pause',function () {
+                onPause();
+            });
+
+            popcorn.on('finish',function () {
+                onFinish();
+            });
+
+            popcorn.on('seek',function () {
+                onSeek();
+            });
+            
+
+    
+    
+
+            
       
       
              
@@ -275,6 +292,30 @@
 
 	}); // ready
 	
+	function pushEventsToPopcorn() {
+	    var currentId = history[step-1]._id;
+        var events = getVideoByVideoId(currentId).events;
+
+
+                
+                
+       // var footnotes = [];        
+        for(var i=0;i<events.length;i++ ) {
+            var event = events[i];
+            if(event.related_objects[0]._type=='transcript') {
+                popcorn.footnote({
+                                start: Math.round(event.timestamp),
+                                end: Math.round(event.timestamp+event.duration),
+                                text: event.related_objects[0].text,
+                                target: ".transcript-section"
+                           });
+            }
+        }
+       // popcorn.footnote(footnotes);
+
+	
+	}
+	
 	
 	function drawEvents() {
 	
@@ -284,22 +325,21 @@
         var events = getVideoByVideoId(currentId).events;
 
 
-        player.api('getDuration', function (value, player_id) {
 
-                getVideoByVideoId(currentId)['length'] = value;
+                getVideoByVideoId(currentId)['length'] = popcorn.duration();;
                 
                 //setting events
-
+                
+                
                 for(var i=0;i<events.length;i++ ) {
                     var event = events[i];
 
                     
-                    var video_lenght = getVideoByVideoId(currentId).length;
+                    var video_lenght = popcorn.duration(); //getVideoByVideoId(currentId).length;
                     var left = Math.round((event.timestamp * $('.stat-bar').width()) / video_lenght);
 
                     var event_width = Math.round((event.duration * $('.stat-bar').width()) / video_lenght);
-                    
-                    
+                                        
                     var id = 'event-'+event._id+'-'+i;
                     var eventHtml = '<div id="'+id+'" class="event event-'+event.related_objects[0]._type+'" title="some title" ></div>';
                     $('.stat-bar').append(eventHtml);
@@ -317,18 +357,28 @@
                             var vid_events = getVideoByVideoId(currentId).events;
                             
                             var tooltip = $('#event_tooltip_template').tmpl(vid_events[event_index]);
-                            console.log(tooltip);
+                           // console.log(tooltip);
                             
                             return tooltip;
                             
                           }
                     });
+                    /*
+                    if(event.type=='transcript') {
+                        popcorn.footnote({
+                            start: Math.round(event.timestamp),
+                            end: Math.round(event.timestamp+event.duration),
+                            text: event.related_objects[0].text,
+                            target: ".transcript-section"
+                       });
+                    }
+                    */
+
                     
                    // $('#'+id).tooltip('open');
 
                 }
 
-        });
 
  
 	
@@ -356,9 +406,6 @@
 	}
 
 // Call the API when a button is pressed
-$('button').bind('click', function() {
-    player.api($(this).text().toLowerCase());
-});
 
 function onPause(id) {
   //  stat.text('paused');
@@ -411,11 +458,12 @@ function toMinAndSec(secs,decimal) {
 }
 
 function onPlayProgress(data, id) {
-   		stat.text(toMinAndSec(data.seconds,1));
-   		currentTime = data.seconds;
+
+   		 $('.stat').text(toMinAndSec(popcorn.currentTime(),1));
+   		currentTime = popcorn.currentTime();
    		//console.log(data);
    		
-   		playTime = parseFloat(data.seconds);
+   		playTime = parseFloat(popcorn.currentTime());
    		
    		
    		var thisInterval = currentTime-previousTime;
@@ -424,20 +472,14 @@ function onPlayProgress(data, id) {
           
             
             
-            var progress = data.percent*100;
+            var progress = (popcorn.currentTime()/popcorn.duration())*100;
            
             $('.stat-bar').progressbar( "option", { value: progress });
 
 
    		    var currentId = history[step-1]._id;
    			var events = getVideoByVideoId(currentId).events;
-   		/*	
-   			console.log(currentId);
-   			console.log(getVideoByVideoId(currentId));
-   			
-   			console.log('events');
-   			console.log(getVideoByVideoId(currentId).events);
-        */
+
 
    		//	for(var event in events) { 
    		
@@ -536,7 +578,7 @@ function processEvents(events,currentTime, previousTime, animate) {
 						    
 						}
 						else if(rel_object._type=='transcript') {
-						    $('.transcript-section').text(rel_object.text);
+					//	    $('.transcript-section').text(rel_object.text);
 						
 						}
 
@@ -588,33 +630,7 @@ function processEvents(events,currentTime, previousTime, animate) {
 		
         
 
-        
-     //   console.log(player);
-        
-
-
-
-		// for opening in new window
-		/*
-		var content = $( "#video_box_template" ).tmpl( info );
-		console.log(content);
-		
-		$.window({
-			showModal: false,
-			title: 'video preview',
-			modalOpacity: 0.4,
-			content: $("#video-box").html(),
-			x: 150+videoWindowCount*5,
-			y: 50+videoWindowCount*5,
-			width: 620,
-			height: 500,
-			scrollable: false,
-			showFooter: false,
-			maximizable: false
-		});
-		videoWindowCount++;
-		
-		*/
+ 
 		
 		return false;
 		
@@ -629,7 +645,6 @@ function processEvents(events,currentTime, previousTime, animate) {
 	    if(window.navigator.sayswho[0]=='Firefox') {   // firefox needs this to restart flash and do player initialization // or maybe not?!
 	    
 		    $('#player1').attr('src',vimeo_url);
-	    // $('#iframe-container').html('<iframe id="player1" src="'+vimeo_url+'?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1" width="600px" height="400px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
         }
         else if(window.navigator.sayswho[0]=='Chrome') {  // chrome works with HTML5 and has a bug when redoing iframe
 	
@@ -649,19 +664,7 @@ function processEvents(events,currentTime, previousTime, animate) {
 		}
 
         
-        // needed? 
-       
-        /*
-        console.log(player);
-        
-        player.addEvent('ready', function() {
-			stat.text('ready');
-			
-			player.addEvent('pause', onPause);
-			player.addEvent('finish', onFinish);
-			player.addEvent('playProgress', onPlayProgress);
-		});
-        */
+
         
         $('.ralated-video-list').html('');
         
@@ -878,7 +881,7 @@ function processEvents(events,currentTime, previousTime, animate) {
                 <div id="edit-controls">
                     <button class='zoom'>zoom</button>
                     <div class="stat-bar stat-common">
-                            <div type="text" class="stat">no stat</div>
+                            <div type="text" class="stat"></div>
                     </div>
                     <!--<div class="big-stat-bar stat-common"></div>-->
                     <button type="button" class="sm-button back-30" onclick="forwardRewind(-30); return false;"><30s</button>
@@ -948,7 +951,7 @@ function processEvents(events,currentTime, previousTime, animate) {
                     </div>
     			</div>
                 <div class="transcript-section">
-                    Transcript
+                    
                     <!--The <a href="#" onclick="openSearchResults();">transcript</a> of the current section of the video with some keywords <a href="#" onclick="openSearchResults();">highlighted</a>. Clicking on the words brings videos that are most relevant to that word.-->
                 </div>
     		</div>
