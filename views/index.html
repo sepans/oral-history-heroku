@@ -91,28 +91,27 @@
 	
 	var _ui_state = { stat_zoom: false}
 	
-    var popcorn;
+	var VIMEO_PARAMS = '?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1';
+
+	
+    var popcorn,video;
  
  
- window.navigator.sayswho= (function(){
-  var N= window.navigator.appName, ua= window.navigator.userAgent, tem;
-  var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
-  if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
-  M= M? [M[1], M[2]]: [N, window.navigator.appVersion,'-?'];
-  return M;
- })();
+     window.navigator.sayswho= (function(){
+          var N= window.navigator.appName, ua= window.navigator.userAgent, tem;
+          var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+          if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+          M= M? [M[1], M[2]]: [N, window.navigator.appVersion,'-?'];
+          return M;
+     })();
  
  
 // alert('saywho '+window.navigator.sayswho[0]);
 
  
 
-	$(document).ready(function() {
+    $(document).ready(function() {
 	
-	
-
-	
-	    // just for testing mongodb/nodejs integration
 	    
 	    $( "#event-tabs" ).tabs({ selected: 2 });
 	    
@@ -133,9 +132,6 @@
            
             initialVideo = firstVideo(); //videoInfo['517b00a50c98266a20000003'];
             
-            
-            
-           
             console.log(initialVideo);
             
             $('.stat-bar').progressbar({value: false,max:100});
@@ -144,124 +140,10 @@
            
             step++;
     
-            var video = Popcorn.HTMLVimeoVideoElement('#iframe-container');
-            video.src = initialVideo.vimeo_url;
-            popcorn = Popcorn(video);
+            video = Popcorn.HTMLVimeoVideoElement('#iframe-container');
             
+            switchToVideo(initialVideo.title, initialVideo.vimeo_url,0);
             
-            popcorn.on('loadedmetadata',function() {
-            
-                console.log('metadata');
-                drawEvents();
-                pushEventsToPopcorn();
-                    
-            });
-            
-            popcorn.on('timeupdate',function () {
-                onPlayProgress();
-            });
-
-            popcorn.on('pause',function () {
-                onPause();
-            });
-
-            popcorn.on('finish',function () {
-                onFinish();
-            });
-
-            popcorn.on('seek',function () {
-                onSeek();
-            });
-            
-
-    
-    
-
-            
-      
-      
-             
-             /*   
-            iframe = $('#player1')[0];
-            console.log(iframe);
-            player = $f(iframe);
-            stat = $('.stat');
-    
-            console.log(player);
-            console.log(stat);
-            
-            
-            console.log(history);
-    
-    // When the player is ready, add listeners for pause, finish, and playProgress
-            player.addEvent('ready', function(readyObject) {
-                console.log('player ready');
-                stat.text('ready');
-                
-                player.addEvent('pause', onPause);
-                player.addEvent('finish', onFinish);
-                player.addEvent("seek",onSeek);
-                player.addEvent('playProgress', onPlayProgress);
-                
-                console.log('seek? '+pendingSeektoTime);
-                if(pendingSeektoTime!=0) {
-                    console.log('seeking '+pendingSeektoTime);
-                    player.api('seekTo',pendingSeektoTime);
-                    pendingSeektoTime = 0;
-                }
-                
-                drawEvents();
-                /*
-                
-                var currentId = history[step-1]._id;
-                var events = getVideoByVideoId(currentId).events;
-
-
-                player.api('getDuration', function (value, player_id) {
-
-                        getVideoByVideoId(currentId)['length'] = value;
-                        
-                        //setting events
-
-                        for(var i=0;i<events.length;i++ ) {
-                            var event = events[i];
-        
-                            
-                            var video_lenght = getVideoByVideoId(currentId).length;
-                            console.log('length '+video_lenght);
-                            console.log('width '+$('.stat-bar').width());
-                            console.log('tome '+event.timestamp );
-                            var left = (event.timestamp * $('.stat-bar').width()) / video_lenght;
-                            
-                       //     var big_left = (event.timestamp * $('.big-stat-bar').width()) / video_lenght;
-                            
-                            console.log('left '+left );
-                      //      console.log('left '+big_left );
-                            var eventHtml = '<div id="event-'+event._id+'" class="event" style="left:'+left+'"></div>';
-                            $('.stat-bar').append(eventHtml);
-
-                      //      var bigeventHtml = '<div id="event-'+event._id+'" class="event" style="left:'+big_left+'"></div>';
-                      //      $('.big-stat-bar').append(eventHtml);
-
-                        }
-
-                });
-
-                
-                
-                // for marking events on .stat-bar not working.
-                
-                
-                
-                
-                
-                
-                
-                
-                
-            });
-            */
-
         });  // get json 
         
         
@@ -324,8 +206,6 @@
         var currentId = history[step-1]._id;
         var events = getVideoByVideoId(currentId).events;
 
-
-
                 getVideoByVideoId(currentId)['length'] = popcorn.duration();;
                 
                 //setting events
@@ -379,9 +259,6 @@
 
                 }
 
-
- 
-	
 	}
 	
 	
@@ -433,6 +310,9 @@ function addRelatedVideoToHtmlList(relatedObject) {
 
 function onSeek(timeInfo, id) {
 
+// not needed
+
+/*
     console.log('on seek');
 
     var currentId = history[step-1]._id;
@@ -450,7 +330,7 @@ function onSeek(timeInfo, id) {
     
     playTime = parseFloat(timeInfo.seconds);
 
-    
+ */   
     
 }
 function toMinAndSec(secs,decimal) {
@@ -492,6 +372,8 @@ function onPlayProgress(data, id) {
     
 }
 
+// need to be changed to popcorn
+
 function processEvents(events,currentTime, previousTime, animate) {
 
    			for(var i=0;i<events.length;i++) {
@@ -515,7 +397,7 @@ function processEvents(events,currentTime, previousTime, animate) {
                             //var relatedVideo = getVideoByOldVideoId(rel_object.temp_rel_video);
     
                             var relatedVideo = videoInfo[rel_object._related_video];
-                            console.log(relatedVideo);
+                           // console.log(relatedVideo);
     
                             var listId= 'video_'+relatedVideo._id;
                             var listElement = $('.ralated-video-list #'+listId);
@@ -525,7 +407,7 @@ function processEvents(events,currentTime, previousTime, animate) {
                             rel_object.width = rel_object.relatedness*listWidth ;
                             rel_object.relatedness_percent = rel_object.relatedness * 100;
                             
-                            console.log(relatedVideo);
+                          //  console.log(relatedVideo);
                             rel_object.title = relatedVideo.title;
     
                             rel_object.thumbnail = relatedVideo.thumbnail;
@@ -587,9 +469,8 @@ function processEvents(events,currentTime, previousTime, animate) {
 	   				
 	   			}
 	   		}
-}
+    }
 	
-	var videoWindowCount = 0;
 	
 	function removeElement(element) {
 		console.log(element);
@@ -598,7 +479,6 @@ function processEvents(events,currentTime, previousTime, animate) {
 		console.log(element);
 	}
 	
-	var vimeo_params = '?title=0&portrait=0&byline=0&color=FFA200&api=1&player_id=player1';
 
 	function openVideo(id,seek_point) {
 	
@@ -621,57 +501,87 @@ function processEvents(events,currentTime, previousTime, animate) {
         
         console.log(history);
 
-		switchToVideo(info.title,info.vimeo_url+vimeo_params);
+		switchToVideo(info.title,info.vimeo_url,seek_point);
 		
-		console.log('seek_point '+seek_point);
+		console.log('setting seek_point '+seek_point);
 		if(seek_point!=0) {
 		    pendingSeektoTime = seek_point;
 		}
-		
-        
+	/*	
+        console.log('before timeout');
 
- 
-		
-		return false;
-		
-		
+		setTimeout(function() {
+            console.log('pending? '+pendingSeektoTime);
+            if(pendingSeektoTime!=0) {
+                    console.log('seeking '+pendingSeektoTime);
+                    popcorn.play();
+                    popcorn.currentTime(pendingSeektoTime);
+                    pendingSeektoTime = 0;
+            }
+        },5000);
+	*/	
+ 		return false;
 	
 	}
 	
-	function switchToVideo(title, vimeo_url) {
+	function switchToVideo(title, vimeo_url, seek_point) {
 	
-    	console.log('title '+title);
+       
+       console.log('switch');
+       
+    
+    
+         //   console.log(popcorn);
+        
+        
+        
+        video.src = vimeo_url;
+        popcorn = Popcorn(video);
+        
+                    
+        
+        
+       console.log('switch, setting events');
+       
+       
+       //popcorn.off('loadedmetadata');
+        
+       popcorn.on('loadstart',function() {
+        
+            console.log('metadata');
+            
+            console.log('pending? '+pendingSeektoTime);
+            popcorn.currentTime(pendingSeektoTime);
+            popcorn.play();
 
-	    if(window.navigator.sayswho[0]=='Firefox') {   // firefox needs this to restart flash and do player initialization // or maybe not?!
-	    
-		    $('#player1').attr('src',vimeo_url);
-        }
-        else if(window.navigator.sayswho[0]=='Chrome') {  // chrome works with HTML5 and has a bug when redoing iframe
-	
-		    $('#player1').attr('src',vimeo_url);
-		
-		}
-		
-		iframe = $('#player1')[0];
-        player = $f(iframe);
+            
+            drawEvents();
+            pushEventsToPopcorn();
+                
+        });
         
-        // this is also done in ready function but when back button is clicked the player may not get initialized in html5 player?      
-        console.log('switch seek? '+pendingSeektoTime);
-		if(pendingSeektoTime!=0) {
-			    console.log('seeking '+pendingSeektoTime);
-			    player.api('seekTo',pendingSeektoTime);
-			    pendingSeektoTime = 0;
-		}
+        popcorn.on('timeupdate',function () {
+            onPlayProgress();
+        });
 
+        popcorn.on('pause',function () {
+            onPause();
+        });
+
+        popcorn.on('finish',function () {
+            onFinish();
+        });
+
+        popcorn.on('seek',function () {
+            onSeek();
+        });
+        
         
 
-        
-        $('.ralated-video-list').html('');
-        
-        previousTime = 0;
-		currentTime = 0;
-		
 		$('#video_title').text(title);
+		drawEvents();
+		
+	//	},3000);
 
 	}
 	
@@ -685,26 +595,15 @@ function processEvents(events,currentTime, previousTime, animate) {
 			
             pendingSeektoTime = history[step-1].last_time;
 
-			switchToVideo(history[step-1].title,history[step-1].vimeo_url);  
+			switchToVideo(history[step-1].title,history[step-1].vimeo_url,0);  
 
-           // console.log('before settimeout');
-         
-            
             var events = videoInfo[history[step-1]._id].events;
 
-    			
     		processEvents(events,history[step-1].last_time, 0,false);
 			
-		
-			
 			if(step==1) {
-			//		$('.navigation a.prev').css('color','#BBB');
-			 //       $('.navigation a.prev').css('cursor','default');
 			    $('.navigation a.prev').removeClass('active');
 			}
-
-			
-
 		}
 		return false;
 	
@@ -719,11 +618,9 @@ function processEvents(events,currentTime, previousTime, animate) {
 	}
 	
 	function forwardRewind(seconds) {
-	    console.log(playTime);
-	    console.log(seconds);
-	    console.log(playTime+seconds);
 	
-		player.api('seekTo',playTime+seconds);
+		//player.api('seekTo',playTime+seconds);
+		popcorn.currentTime(popcorn.currentTime()+seconds);
 
 	
 	}
@@ -741,7 +638,7 @@ function processEvents(events,currentTime, previousTime, animate) {
 	}
 	
 	
-		function turnToKeydMap(videos) {
+    function turnToKeydMap(videos) {
         var obj = {};
         var len = videos.length;
         for (var i = 0; i < len; i++) {
@@ -749,8 +646,6 @@ function processEvents(events,currentTime, previousTime, animate) {
         }
         
         return obj;
-
-
     }
 
 	
@@ -761,52 +656,15 @@ function processEvents(events,currentTime, previousTime, animate) {
 	    
 	}
 
-    // for temp_rel_video only will be removed
-
-//    var vidToMongoMapping = null;
     
 	function getVideoByOldVideoId(id) {
 	    return videoInfo[id];
-	/*
-	    if(vidToMongoMapping==null)
-	        makevidToMongoMapping();
-	   console.log(vidToMongoMapping[id]);
-	   console.log(videoInfo[vidToMongoMapping[id]]);
-	   return videoInfo[vidToMongoMapping[id]];
-	   
-	*/
 	    
 	}
-/*	
-	function makevidToMongoMapping() {
-	    vidToMongoMapping = {};
-	    var i = 1;
-	    for(key in videoInfo) {
-	        vidToMongoMapping['vid'+i]= key;
-	        i++;
-	    }
-	    console.log(vidToMongoMapping);
-	}
-
-*/	
-	// not being used
-	function findById(source, id) {
-      for (var i = 0; i < source.length; i++) {
-        if (source[i]['id'] === id) {
-          return source[i];
-        }
-      }
-      return null;
-      //throw "Couldn't find object with id: " + id;
-    }
 	
 	
 	function saveEvent() {
 	
-//	    console.log(history[step-1]._id);
-//	    console.log('#'+$('#event-type').val()+'-tab .tab-text');
-//	    console.log($('#'+$('#event-type').val()+'-tab .tab-text'));
-//	    console.log($('#'+$('#event-type').val()+'-tab .tab-text').val());
 	    var text_content = $('#'+$('#event-type').val()+'-tab .tab-text').val();
 	    var eventData = { 'vid_id': history[step-1]._id,'vid_title': history[step-1].title,'start-time': $('#start-time').val(), 'end-time': $('#end-time').val(), 'text': text_content, //$('#text-comments').val(),
 	                 'event-type': $('#event-type').val()};
