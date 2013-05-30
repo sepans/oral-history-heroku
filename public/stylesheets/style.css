@@ -11,7 +11,7 @@
 		a, a:visited {color: #000; text-decoration: none;}
 		ul {list-style: none; margin: 0; padding: 0;}
 		
-		#video_title { width: 600px;}
+		#video_title { width: 482px; display: inline-block; color: #666;}
 		
 		
 		.main-video-section { width: 1030px;/* height: 600px; border: 1px solid black;*/}
@@ -93,7 +93,7 @@
 		
 		#edit-controls { width: 100%; overflow: hidden; margin-top: 10px;}
 		
-		button { border: 1px solid #444; background-color: #e78f08; color: #FFF; display:inline;cursor: pointer; margin: 5px 5px 0 0; font-size: 10px;}
+		button { border: 1px solid #777; background-color: #e78f08; color: #FFF; display:inline;cursor: pointer; margin: 5px 5px 0 0; font-size: 10px;}
 		
 		.sm-button {width: 35px; height: 35px; }
 		.create-controls .sm-button {height: 25px; width: 50px; font-size: 9px; }
@@ -123,3 +123,10 @@
 		
 		/*.back-10, back-30 {float: left;}
 		.forward-10, forward-30 {float: right;}*/
+		
+		#video_selection { position: absolute; top: 100px; left: 200px; border: 1px solid #CCC; background: #FFF; z-index: 100; padding: 15px;}
+        #video_selection h3 { font-weight: normal;  margin: 8px 0;}
+		#video_selection ul { max-height: 550px; overflow-y: auto;}
+		#video_selection ul li { margin: 5px 0;}
+		#video_selection ul li .rel-title { margin-left: 5px; color: #555;}
+		#showVideos { display: inline-block;}
