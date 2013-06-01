@@ -124,7 +124,7 @@
 		/*.back-10, back-30 {float: left;}
 		.forward-10, forward-30 {float: right;}*/
 		
-		#video_selection { position: absolute; top: 100px; left: 200px; border: 1px solid #CCC; background: #FFF; z-index: 100; padding: 15px;}
+		#video_selection { position: absolute; top: 150px; left: 10px; border: 1px solid #CCC; background: #FFF; z-index: 100; padding: 15px;}
         #video_selection h3 { font-weight: normal;  margin: 8px 0;}
 		#video_selection ul { max-height: 550px; overflow-y: auto;}
 		#video_selection ul li { margin: 5px 0;}
