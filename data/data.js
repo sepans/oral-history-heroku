@@ -3,7 +3,7 @@ module.exports = {
 
      videoInfo :  {
                     'vid1':{'id':'vid1', 'title': 'Jean-Daniel Nicoud', 'url': '/vid1.mp4', 'vimeo_url': 'http://player.vimeo.com/video/45371204',
-                    'thumbnail': 'http://b.vimeocdn.com/ts/342/891/342891695_100.jpg', 'events': [ 
+                    'thumbnail': 'http://b.vimeocdn.com/ts/315/495/315495102_100.jpg', 'events': [ 
                             {'id':'e1', 'timestamp': '0', 'related_objects' : [
                                 {'temp_rel_video': 'vid2', '_type':'video', 'seek_point' : 31, 'relatedness' : '0.8' },
                                 {'temp_rel_video': 'vid3', '_type':'video', 'seek_point' : 151, 'relatedness' : '0.6' },
