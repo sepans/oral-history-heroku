@@ -186,7 +186,7 @@
             console.log(ui.value);
                         console.log( $("#relevance-value"));
 
-            $("#relevance-value").text( ui.value );
+            $("#relevance-value").text( ui.value+'%' );
           }
         });
         
@@ -760,8 +760,18 @@ function processEvents(events,currentTime, previousTime, animate) {
 	function saveEvent() {
 	
 	    var text_content = $('#'+$('#event-type').val()+'-tab .tab-text').val();
-	    var eventData = { 'vid_id': _ui_state.history[_ui_state.step-1]._id,'vid_title': _ui_state.history[_ui_state.step-1].title,'start-time': $('#start-time').val(), 'end-time': $('#end-time').val(), 'text': text_content, //$('#text-comments').val(),
+	    var eventData = { 'vid_id': _ui_state.history[_ui_state.step-1]._id,'vid_title': _ui_state.history[_ui_state.step-1].title,'start-time': $('#start-time').val(), 'end-time': $('#end-time').val(), //$('#text-comments').val(),
 	                 'event-type': $('#event-type').val()};
+	                 
+	    switch(eventData['event-type']) {
+	        case 'transcript':
+                eventData['text']= text_content; 
+                break;
+	        case 'link':
+	        
+	            break;
+	    }
+	                 
 	                 
         validateEventData(eventData);    	
 	    console.log(eventData);
@@ -796,7 +806,7 @@ function processEvents(events,currentTime, previousTime, animate) {
 <body>
 	<div id="container">
 	    <div id="header">
-    	    <h1 class="page-title">ORAL _ui_state.history OF ROBOTICS</h1>
+    	    <h1 class="page-title">ORAL HISTORY OF ROBOTICS</h1>
     	    <div class="neh-logos">
     	        <!--Sponsored by:-->
     	        <img class="neh" src="images/neh_logo.jpg" title="National Endowment for Humanities">
@@ -887,8 +897,8 @@ function processEvents(events,currentTime, previousTime, animate) {
                                 </div>
                                 </ul>
                                 <div class="form-box">
-                                    <label>Relevance:</label><br/>
-                                    <div id="relevance-slider"></div><span id="relevance-value"></span>
+                                    <label>Relevance:</label> <span id="relevance-value">100%</span><br/>
+                                    <div id="relevance-slider"></div>
                                     <br/>
                                     <label>Entry point (seconds):</label><br/>
                                     <input type="text" id="entry-point"></input>
