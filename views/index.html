@@ -176,6 +176,20 @@
             _ui_state.stat_zoom = !_ui_state.stat_zoom;
         });
         
+        
+        $( "#relevance-slider" ).slider({
+          value:100,
+          min: 0,
+          max: 100,
+          step: 10,
+          slide: function( event, ui ) {
+            console.log(ui.value);
+                        console.log( $("#relevance-value"));
+
+            $("#relevance-value").text( ui.value );
+          }
+        });
+        
 		
 
 	}); // ready
@@ -188,8 +202,26 @@
 	        var videoItem = $('#video_selection_item_template').tmpl(videoInfo[key]);
 	        console.log(videoItem);
 	        videoItem.appendTo( "#video_selection ul" );
+            
+            // also added to link select	        
+	        var cloned = videoItem.clone();
+
+	        cloned.find('a').removeAttr("onclick");
+	        cloned.find('a').click(function() {return false;});
+
+	        cloned.appendTo( "#link-select" );
 
 	    }
+	    
+	    $( "#link-select" ).selectable({
+        stop: function() {
+           // var result = $( "#select-result" ).empty();
+            $( ".ui-selected", this ).each(function() {
+              var index = $( "#link-select li" ).index( this );
+              console.log( " #" + ( index + 1 ) );
+            });
+          }
+        });
 	    callback();
 
 	}
@@ -806,8 +838,8 @@ function processEvents(events,currentTime, previousTime, animate) {
                         <button type="button" class="md-button" onclick="saveEvent();return false;">save</button>    
                         <button type="button" class="md-button" onclick="$('.create-controls').slideToggle(); return false;">discard</button>    
                         
-                        <label>start time:</label><input  title="starttime" type="text" id="start-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#start-time'); return false;" label="capture time">capture</button>
-                        <label>end time:</label><input type="text" id="end-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#end-time'); return false;" label="capture time">capture</button>
+                        <label>start time:</label><input  title="starttime" type="text" id="start-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#start-time'); return false;" label="capture time">set in</button>
+                        <label>end time:</label><input type="text" id="end-time" class="time"/><button type="button" class="sm-button" onclick="captureTime('#end-time'); return false;" label="capture time">set out</button>
                         <br/><br/>
                         <label>categories:</label>
                         <input type="checkbox" name="category" value="robot">Robots</input>
@@ -849,8 +881,24 @@ function processEvents(events,currentTime, previousTime, animate) {
                                 <textarea id="text-transcript" class="tab-text"></textarea>                       
                             </div>
                             <div id="link-tab">
-                                <label>input:</label><br/>
-                                <textarea id="text-link" class="tab-text"></textarea>                       
+                                <div class="form-box">
+                                    <label>Link to media:</label><br/>
+                                    <ul id="link-select">
+                                </div>
+                                </ul>
+                                <div class="form-box">
+                                    <label>Relevance:</label><br/>
+                                    <div id="relevance-slider"></div><span id="relevance-value"></span>
+                                    <br/>
+                                    <label>Entry point (seconds):</label><br/>
+                                    <input type="text" id="entry-point"></input>
+                                </div>                                
+                                <div class="form-box">
+                                    <label>link information:</label><br/>
+                                    <textarea id="text-link" class="tab-text"></textarea> 
+                                </div>
+
+
                             </div>
                         </div>
                         

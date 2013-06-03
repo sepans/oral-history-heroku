@@ -130,3 +130,13 @@
 		#video_selection ul li { margin: 5px 0;}
 		#video_selection ul li .rel-title { margin-left: 5px; color: #555;}
 		#showVideos { display: inline-block;}
+		
+		#link-select { width: 250px; display: inline-block; height: 300px; overflow-y: auto; border: 1px solid #EEE;}
+		#link-select li { padding: 5px;}
+		#link-select .ui-selected { background-color: #EEE; border: 1px solid #CCC;}
+		
+		#relevance-slider {width: 200px; display: inline-block; margin: 5px 10px 5px 0;}
+		
+		.form-box {display: inline-block; vertical-align: top; margin: 5px; }
+		
+		input[type=text] {height: 18px;}
