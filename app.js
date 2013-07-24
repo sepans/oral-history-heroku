@@ -12,7 +12,19 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , mongoose = require('mongoose')
-  , extend = require('mongoose-schema-extend');
+  , extend = require('mongoose-schema-extend'),
+
+
+
+        passport = require("passport"),
+   LocalStrategy = require('passport-local').Strategy,
+    // FacebookStrategy = require('passport-facebook').Strategy,
+    // TwitterStrategy = require('passport-twitter').Strategy,
+   hash = require("./pass").hash,
+   flash = require("connect-flash"),
+   ObjectID = require("./node_modules/mongoose/node_modules/mongodb").ObjectID;
+
+
 
 
 
@@ -26,7 +38,6 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
 //  app.use(require('connect').bodyParser());
   app.use(express.methodOverride());
 
@@ -35,8 +46,19 @@ app.configure(function(){
  app.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
  //app.enable("jsonp callback");
 
-  app.use(app.router);
  
+  // authenticate
+    app.use(express.static(path.join(__dirname, 'public')));
+ 
+    app.use(express.cookieParser());
+  app.use(express.bodyParser());
+    app.use(express.session({ secret: 'keyboard cat' }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    app.use(flash());
+
+  app.use(app.router);
+
 });
 
 
@@ -132,6 +154,18 @@ console.log(mongodb_url);
     
 
     var Video = mongoose.model('Video', VideoSchema);
+    
+    
+    //authentication
+        
+    var LocalUserSchema = new mongoose.Schema({
+        username: String,
+        salt: String,
+        hash: String
+    });
+
+    var Users = mongoose.model('userauths', LocalUserSchema);
+
 /*
     var Event = mongoose.model('Event', VideoSchema);
 */
@@ -143,7 +177,70 @@ console.log(mongodb_url);
 
 */
 
-    app.get('/', function(req,res){
+
+
+passport.use(new LocalStrategy(function(username, password,done){
+    Users.findOne({ username : username},function(err,user){
+        if(err) { return done(err); }
+        if(!user){
+            return done(null, false, { message: 'Incorrect username.' });
+        }
+
+        hash( password, user.salt, function (err, hash) {
+            if (err) { return done(err); }
+            if (hash == user.hash) return done(null, user);
+            done(null, false, { message: 'Incorrect password.' });
+        });
+    });
+}));
+
+
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+
+passport.deserializeUser(function(id, done) {
+  
+            Users.findById(id, function(err,user){
+                if(err) done(err);
+                done(null,user);
+            });
+
+    
+    
+});
+
+
+
+/*
+* authenticate Helpers
+*/
+function isAuthenticated(req, res, next){
+    if(req.isAuthenticated()){
+        next();
+    }else{
+        res.redirect("/login");
+    }
+}
+
+function userExist(req, res, next) {
+    Users.count({
+        username: req.body.username
+    }, function (err, count) {
+        if (count === 0) {
+            next();
+        } else {
+            res.redirect("/singup");
+        }
+    });
+}
+
+
+
+
+    app.get('/', isAuthenticated,function(req,res){
        /* Video.find({}, function(error, data){
             res.json(data);
         });
@@ -349,6 +446,53 @@ console.log(mongodb_url);
         });
         */
     });
+
+
+app.get("/login", function(req, res){ 
+    res.render("login");
+});
+
+app.post("/login" 
+    ,passport.authenticate('local',{
+        successRedirect : "/",
+        failureRedirect : "/login",
+    }) 
+);
+
+app.get("/signup", function (req, res) {
+    res.render("signup");
+});
+
+app.post("/signup", userExist, function (req, res, next) {
+    var user = new Users();
+    hash(req.body.password, function (err, salt, hash) {
+        if (err) throw err;
+        var user = new Users({
+            username: req.body.username,
+            salt: salt,
+            hash: hash,
+            _id : new ObjectID
+        }).save(function (err, newUser) {
+            if (err) throw err;
+            req.login(newUser, function(err) {
+              if (err) { return next(err); }
+              return res.redirect('/');
+            });
+        });
+    });
+});
+
+
+
+app.get("/profile", isAuthenticated, function(req, res){ 
+    res.render("profile", { user : req.user});
+});
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/login');
+});
+
 
 
 http.createServer(app).listen(app.get('port'), function(){
