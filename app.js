@@ -246,7 +246,8 @@ function userExist(req, res, next) {
         });
         
         */
-         res.render('index.html');
+        // res.render('index.html');
+        res.render('index');
     });
     /*
     app.get('/getAllVideoInfo', function(req,res){

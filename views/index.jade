@@ -1,5 +1,173 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+!!! 5
+html
+  head
+    title Video Hyper-Links prototype 2
+    script(type='text/javascript', src='js/jquery-1.9.1.js')
+    script(type='text/javascript', src='js/jquery-ui-1.10.3.custom.min.js')
+    script(type='text/javascript', src='js/froogaloop.js')
+    script(type='text/javascript', src='js/jquery.window.min.js')
+    script(type='text/javascript', src='js/jquery.tmpl.js')
+    script(type='text/javascript', src='js/popcorn.js')
+    script(type='text/javascript', src='js/popcorn._MediaElementProto.js')
+    script(type='text/javascript', src='js/popcorn.HTMLVimeoVideoElement.js')
+    //
+      <script type="text/javascript" src="js/data.js"></script> 
+    //
+       to be replaced by data driven data
+    script#related_video_list_item_template(type='text/x-jquery-tmpl')
+      <li class="related_list_item" id="video_${rel_video_id}"  >
+      <a href="#" onclick="openVideo('${rel_video_id}',${seek_point})">
+      <span class="prim-info">
+      <img class='rel-thumb' src='${thumbnail}'>
+      <span class="rel-title">${title}</span>
+      </span>
+      <span class="sec-info">
+      Some highlight of the transcript or word cloud of the related video or keywords which both videos share
+      </span>
+      <span class="rel-rel">${relatedness_percent}%</span>
+      <span class="rel_bar" style="width: 0;"></span>
+      </a>
+      </li>
+    script#video_box_template(type='text/x-jquery-tmpl')
+      <div id="video-box" style="display: none;">
+      <h2 style="width: 200px;">${title}</h2>
+      <div class="main-video-container">
+      <video width="600" height="400" controls="controls">
+      <source src="${url}" type="video/mp4">
+      </video>
+      </div>
+      <a href="#" class="reg-link right-btn">open this video in main window</a>
+      <a href="#" class="reg-link right-btn">open this video in a new tab</a>
+      </div>
+    script#event_tooltip_template(type='text/x-jquery-tmpl')
+      <div class='event_tooltip_cont' class="tooltip_${related_objects[0]._type}">
+      <div>timestamp: ${toMinAndSec(timestamp)}</div>
+      <div>duration: ${Math.round(duration)}</div>
+      <div>type: ${related_objects[0]._type}</div>
+      <div>${related_objects[0].text}</div>
+      </div>
+    script#video_selection_item_template(type='text/x-jquery-tmpl')
+      <li id="video_${_id}"  >
+      <a href="#" onclick="selectVideo('${_id}')">
+      <span class="prim-info">
+      <img class='rel-thumb' src='${thumbnail}'>
+      <span class="rel-title">${title}</span>
+      </span>
+      </a>
+      </li>
+    link(rel='stylesheet', href='css/jquery.window.css', type='text/css')
+    link(rel='stylesheet', href='css/jquery-ui-1.10.3.custom.css', type='text/css')
+    link(rel='stylesheet', href='css/ui-lightness/jquery-ui-1.8.22.custom.css', type='text/css')
+    link(rel='stylesheet', href='css/style.css', type='text/css')
+    //
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    style(type='text/css')
+    script(type='text/javascript')
+  body
+    #container
+      #header
+        h1.page-title ORAL HISTORY OF ROBOTICS
+        .neh-logos
+          //
+            Sponsored by:
+          img.neh(src='images/neh_logo.jpg', title='National Endowment for Humanities')
+          //
+             <img class="odh" src="images/odh.gif" title="National Endowment for Humanities ODH">
+      .main-video-section
+        h2#video_title Select a video to start:
+        button#showVideos(onclick='selectVideoDialog();') Select another Video
+        .navigation
+          a.prev(href='#', onclick='prevVideo()')  
+          a.next(href='#', onclick='nextVideo()')
+        .main-video-container
+          #iframe-container
+          ul.ralated-video-list
+          #edit-controls(style='display: none;')
+            button.zoom zoom
+            .stat-bar.stat-common
+              .stat(type='text')
+            //
+              <div class="big-stat-bar stat-common"></div>
+            button.sm-button.back-30(type='button', onclick='forwardRewind(-30); return false;')
+              30s
+            button.sm-button.back-10(type='button', onclick='forwardRewind(-10); return false;')
+              10s
+            button.sm-button.back-1(type='button', onclick='forwardRewind(-1); return false;')
+              1s
+            button.md-button(type='button', onclick='create_event(); return false;') create event
+            button.sm-button.forward-1(type='button', onclick='forwardRewind(1); return false;') 1s
+            button.sm-button.forward-10(type='button', onclick='forwardRewind(10); return false;') 10s
+            button.sm-button.forward-30(type='button', onclick='forwardRewind(30); return false;') 30s
+            .create-controls
+              button.md-button(type='button', onclick='saveEvent();return false;') save
+              button.md-button(type='button', onclick='$(\'.create-controls\').slideToggle(); return false;') discard
+              label start time:
+              input#start-time.time(title='starttime', type='text')
+              button.sm-button(type='button', onclick='captureTime(\'#start-time\'); return false;', label='capture time') set in
+              label end time:
+              input#end-time.time(type='text')
+              button.sm-button(type='button', onclick='captureTime(\'#end-time\'); return false;', label='capture time') set out
+              br
+              br
+              label categories:
+              input(type='checkbox', name='category', value='robot')
+              | Robots
+              input(type='checkbox', name='category', value='institution')
+              | Institutions
+              input(type='checkbox', name='category', value='people')
+              | People
+              br
+              br
+              label tags:
+              input#tags(type='text')
+              br
+              br
+              input#event-type(type='hidden', value='transcript')
+              #event-tabs
+                ul
+                  li
+                    a(href='#comment-tab') Comment
+                  li
+                    a(href='#bookmark-tab') Bookmark
+                  li
+                    a(href='#transcript-tab') Transcript
+                  li
+                    a(href='#link-tab') Link
+                #comment-tab
+                                                    
+                  label comment:
+                  br
+                  textarea#text-comments.tab-text
+                #bookmark-tab
+                  label bookmark note:
+                  br
+                  textarea#text-bookmark.tab-text
+                #transcript-tab
+                  label transcript text:
+                  br
+                  textarea#text-transcript.tab-text
+                #link-tab
+                  .form-box
+                    label Link to media:
+                    br
+                    ul#link-select
+                  .form-box
+                    label Relevance:
+                    span#relevance-value 100%
+                    br
+                    #relevance-slider
+                    br
+                    label Entry point (seconds):
+                    br
+                    input#entry-point(type='text')
+                  .form-box
+                    label link information:
+                    br
+                    textarea#text-link.tab-text
+          .transcript-section
+            //
+              The <a href="#" onclick="openSearchResults();">transcript</a> of the current section of the video with some keywords <a href="#" onclick="openSearchResults();">highlighted</a>. Clicking on the words brings videos that are most relevant to that word.
+          #video_selection(style='display: none;')
+            h3 Available Media:
+            ul
+    script(type='text/javascript', src='js/oral-history.js')
