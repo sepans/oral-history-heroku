@@ -450,7 +450,7 @@ function userExist(req, res, next) {
 
 
 app.get("/login", function(req, res){ 
-    res.render("login");
+    res.render("Login");
 });
 
 app.post("/login" 
