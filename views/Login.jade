@@ -1,12 +1,36 @@
-form(action='/login', method='post')
-    div
-        label Username:
-        input(type='text', name='username')
-      div
-        label Password:
-        input(type='password', name='password')
-      div
-        input(type='submit', value='Log In')
+!!! 5
+html
+  head
+    title Video Hyper-Links prototype 2
+    script(type='text/javascript', src='js/jquery-1.9.1.js')
+    script(type='text/javascript', src='js/jquery-ui-1.10.3.custom.min.js')
+    script(type='text/javascript', src='js/froogaloop.js')
+    script(type='text/javascript', src='js/jquery.window.min.js')
+    script(type='text/javascript', src='js/jquery.tmpl.js')
+    script(type='text/javascript', src='js/popcorn.js')
+    script(type='text/javascript', src='js/popcorn._MediaElementProto.js')
+    script(type='text/javascript', src='js/popcorn.HTMLVimeoVideoElement.js')
 
-a(href="/signup") Sign up
+    
+    link(rel='stylesheet', href='css/jquery.window.css', type='text/css')
+    link(rel='stylesheet', href='css/jquery-ui-1.10.3.custom.css', type='text/css')
+    link(rel='stylesheet', href='css/ui-lightness/jquery-ui-1.8.22.custom.css', type='text/css')
+    link(rel='stylesheet', href='css/style.css', type='text/css')
+
+    include includes/tmpl
+
+  body
+    #container
+      include includes/header
+      form(action='/login', method='post')
+            div
+                label Username:
+                input(type='text', name='username')
+              div
+                label Password:
+                input(type='password', name='password')
+              div
+                input(type='submit', value='Log In')
+
+      a(href="/signup") Sign up
 
