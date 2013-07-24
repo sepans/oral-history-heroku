@@ -159,6 +159,8 @@ console.log(mongodb_url);
     //authentication
         
     var LocalUserSchema = new mongoose.Schema({
+    	name: String,
+    	email: String,
         username: String,
         salt: String,
         hash: String
@@ -470,6 +472,8 @@ app.post("/signup", userExist, function (req, res, next) {
         if (err) throw err;
         var user = new Users({
             username: req.body.username,
+            name: req.body.name,
+            email: req.body.email,
             salt: salt,
             hash: hash,
             _id : new ObjectID

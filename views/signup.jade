@@ -23,9 +23,18 @@ html
     #container
       include includes/header
       form(id="singup", method="POST", action="/signup")
-        lable(for='username') User Name
-        input#username(type='text', name='username')
-        lable(for='password') Password
-        input#password(type='text', name='password')
-        input(type="submit", value="Sign up")
+        div
+          label(for='name') Name:
+          input#name(type='text', name='name')
+        div
+          label(for='email') Email:
+          input#email(type='text', name='email')
+        div
+          label(for='username') Username:
+          input#username(type='text', name='username')
+        div
+          label(for='password') Password:
+          input#password(type='password', name='password')
+        div  
+          input.login-submit(type="submit", value="Sign up")
 

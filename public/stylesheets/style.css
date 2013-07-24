@@ -93,7 +93,7 @@
 		
 		#edit-controls { width: 100%; overflow: hidden; margin-top: 10px;}
 		
-		button { border: 1px solid #777; background-color: #e78f08; color: #FFF; display:inline;cursor: pointer; margin: 5px 5px 0 0; font-size: 10px;}
+		button, input[type=submit] { border: 1px solid #777; background-color: #e78f08; color: #FFF; display:inline;cursor: pointer; margin: 5px 5px 0 0; font-size: 10px;}
 		
 		.sm-button {width: 35px; height: 35px; }
 		.create-controls .sm-button {height: 25px; width: 50px; font-size: 9px; }
@@ -142,3 +142,11 @@
 		.form-box {display: inline-block; vertical-align: top; margin: 5px; }
 		
 		input[type=text] {height: 18px;}
+		input[type=password] {height: 18px;}
+		
+		.login input[type=text], .login input[type=password] {width: 180px;}
+		.login a {color: #888; text-decoration: underline;}
+		.login form { width: 300px;}
+		.login form div {padding: 5px 0;}
+		.login form label { width: 100px; display: inline-block;}
+		.login form .login-submit {float: right; margin-right: 15px;}
