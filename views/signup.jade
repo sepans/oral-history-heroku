@@ -19,7 +19,7 @@ html
 
     include includes/tmpl
 
-  body
+  body.login
     #container
       include includes/header
       form(id="singup", method="POST", action="/signup")
@@ -27,5 +27,5 @@ html
         input#username(type='text', name='username')
         lable(for='password') Password
         input#password(type='text', name='password')
-        input(type="submit", value="Sing UP")
+        input(type="submit", value="Sign up")
 
