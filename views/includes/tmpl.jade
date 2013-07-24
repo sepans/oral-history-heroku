@@ -1,0 +1,41 @@
+script#related_video_list_item_template(type='text/x-jquery-tmpl')
+  <li class="related_list_item" id="video_${rel_video_id}"  >
+  <a href="#" onclick="openVideo('${rel_video_id}',${seek_point})">
+  <span class="prim-info">
+  <img class='rel-thumb' src='${thumbnail}'>
+  <span class="rel-title">${title}</span>
+  </span>
+  <span class="sec-info">
+  Some highlight of the transcript or word cloud of the related video or keywords which both videos share
+  </span>
+  <span class="rel-rel">${relatedness_percent}%</span>
+  <span class="rel_bar" style="width: 0;"></span>
+  </a>
+  </li>
+script#video_box_template(type='text/x-jquery-tmpl')
+  <div id="video-box" style="display: none;">
+  <h2 style="width: 200px;">${title}</h2>
+  <div class="main-video-container">
+  <video width="600" height="400" controls="controls">
+  <source src="${url}" type="video/mp4">
+  </video>
+  </div>
+  <a href="#" class="reg-link right-btn">open this video in main window</a>
+  <a href="#" class="reg-link right-btn">open this video in a new tab</a>
+  </div>
+script#event_tooltip_template(type='text/x-jquery-tmpl')
+  <div class='event_tooltip_cont' class="tooltip_${related_objects[0]._type}">
+  <div>timestamp: ${toMinAndSec(timestamp)}</div>
+  <div>duration: ${Math.round(duration)}</div>
+  <div>type: ${related_objects[0]._type}</div>
+  <div>${related_objects[0].text}</div>
+  </div>
+script#video_selection_item_template(type='text/x-jquery-tmpl')
+  <li id="video_${_id}"  >
+  <a href="#" onclick="selectVideo('${_id}')">
+  <span class="prim-info">
+  <img class='rel-thumb' src='${thumbnail}'>
+  <span class="rel-title">${title}</span>
+  </span>
+  </a>
+  </li>
