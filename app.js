@@ -65,9 +65,9 @@ res.render('index.html');
 //    var mongodb_url ='mongodb://127.0.0.1:27017/vidtest2';
 
 //process.env.MONGOLAB_URI= 'mongodb://sepans:sepans@ds027308.mongolab.com:27308/heroku_app1557193';
-//process.env.MONGOLAB_URI= 'mongodb://sepans:sepans@alex.mongohq.com:10058/app15571931'; //'mongodb://heroku:29c490d2588c7ffdc4a8945f069597ca@alex.mongohq.com:10058/app15571931';
+process.env.MONGOLAB_URI= 'mongodb://sepans:sepans@alex.mongohq.com:10058/app15571931'; //'mongodb://heroku:29c490d2588c7ffdc4a8945f069597ca@alex.mongohq.com:10058/app15571931';
 
-process.env.MONGOLAB_URI = 'mongodb://127.0.0.1:27017/vidtest2';
+//process.env.MONGOLAB_URI = 'mongodb://127.0.0.1:27017/vidtest2';
 //'mongodb://heroku:29c490d2588c7ffdc4a8945f069597ca@alex.mongohq.com:10058/app15571931';
 
 var mongodb_url = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL;
