@@ -10,6 +10,7 @@ html
     script(type='text/javascript', src='js/popcorn.js')
     script(type='text/javascript', src='js/popcorn._MediaElementProto.js')
     script(type='text/javascript', src='js/popcorn.HTMLVimeoVideoElement.js')
+    script(type='text/javascript', src='js/popcorn.HTMLYouTubeVideoElement.js')
 
     
     link(rel='stylesheet', href='css/jquery.window.css', type='text/css')
@@ -25,9 +26,10 @@ html
       .main-video-section
         h2#video_title Select a video to start:
         button#showVideos(onclick='selectVideoDialog();') Select Media
+        button#showVideos(onclick='addVideoDialog();') Add New Video
         .navigation
           a.prev(href='#', onclick='prevVideo()')  
-          a.next(href='#', onclick='nextVideo()')
+          a.next(href='#', onclick='nextVideoDialog()')
         .main-video-container
           #iframe-container
           ul.ralated-video-list
@@ -114,7 +116,31 @@ html
           .transcript-section
             //
               The <a href="#" onclick="openSearchResults();">transcript</a> of the current section of the video with some keywords <a href="#" onclick="openSearchResults();">highlighted</a>. Clicking on the words brings videos that are most relevant to that word.
-          #video_selection(style='display: none;')
+          #video_selection.modal_box(style='display: none;')
             h3 Available Media:
             ul
+          #add_video.modal_box.form(style='display: none;')
+            h3 Add New Media:
+            form(id="add_video_form", method="POST", action="/addVideo")
+              div.success_message(style='display:none') Media was added successfully!
+              div
+                label(for='title') Title:
+                input#title(type='text', name='title')
+              div
+                label(for='url') URL:
+                input#url(type='text', name='url')
+              div
+                label(for='thumbnail') Thumbnail URL:
+                input#thumbnail(type='text', name='thumbnail')
+              div
+                label(for='type') Media Type:
+                select(name='type')
+                  option(value='hosted_video') HTML5 Video
+                  option(value='youtybe') Youtube
+                  option(value='vimeo') Vimeo
+                  option(value='hosted_audio') HTML5 Audio
+                  option(value='soundcloud') Soundcloud
+                    
+              div  
+                input.login-submit(type="submit", value="Add")
     script(type='text/javascript', src='js/oral-history.js')

@@ -51,11 +51,11 @@
             
            console.log(videoInfo);
            
-           video = Popcorn.HTMLVimeoVideoElement('#iframe-container');
+//           video = Popcorn.HTMLVimeoVideoElement('#iframe-container');
            
            initializeVideoDialog(function() {
                 
-                selectVideoDialog();
+                 $('#video_selection').slideToggle();
            
            });
             
@@ -102,6 +102,38 @@
           }
         });
         
+        
+      //  $("#add_video_form").ajaxForm({url: '/addVideo', type: 'post'})
+        
+        $("#add_video_form .login-submit").click(function() {
+        	
+        	console.log('button clicked');
+
+   			 var url = "addVideo";
+   			 
+   			 var videoData = $("#add_video_form").serialize();
+   			 console.log(videoData); 
+
+    		$.ajax({
+           		type: "POST",
+           		url: url,
+           		data: videoData, // serializes the form's elements.
+           		success: function(data)
+           		{
+           			$('#add_video_form .success_message').slideDown(500);
+           			setTimeout(function() {
+           				$('#add_video_form .success_message').slideUp(500);
+						$('#add_video').slideUp(function() {
+			           		$('#add_video_form').find("input[type=text], textarea").val("");
+						});
+           				
+           			},2000);
+           		}
+        	});
+
+    		return false; // avoid to execute the actual submit of the form.
+		});
+        
 		
 
 	}); // ready
@@ -139,26 +171,44 @@
 	}
 	
 	function selectVideoDialog() {
+		
+		initializeVideoDialog(function() {
+	
+		    $('#video_selection').slideToggle();
+			
+		});
 	    
         
-	    $('#video_selection').slideToggle();
 
+	}
+	
+	function addVideoDialog() {
+		
+		$('#video_selection').slideUp(function() {
+			
+		    $('#add_video').slideToggle();
+			
+		});
+
+		
 	}
 	
 	function selectVideo(id) {
 	        var initialVideo;// = videoInfo.first();
-           
+	        
+	        
+           //load video details here
             initialVideo = videoInfo[id]; //videoInfo['517b00a50c98266a20000003'];
             
             console.log(initialVideo);
             
             
-            _ui_state.history[_ui_state.step]={'_ui_state.step':_ui_state.step,'_id':initialVideo['_id'],'title':initialVideo.title, 'vimeo_url':initialVideo.vimeo_url};
+            _ui_state.history[_ui_state.step]={'_ui_state.step':_ui_state.step,'_id':initialVideo['_id'],'title':initialVideo.title, 'url':initialVideo.url};
            
             _ui_state.step++;
     
             
-            switchToVideo(initialVideo.title, initialVideo.vimeo_url,0);
+            switchToVideo(initialVideo.title, initialVideo.url,0);
             
             if(_ui_state.step==1) {
                $('#edit-controls').slideToggle();
@@ -488,7 +538,7 @@ function processEvents(events,currentTime, previousTime, animate) {
         _ui_state.history[_ui_state.step-1].last_time=currentTime; 
         console.log(currentTime);    
         console.log(_ui_state.history);   
-        _ui_state.history[_ui_state.step]={'_ui_state.step':_ui_state.step,'_id':info._id,'title': info.title,'vimeo_url':info.vimeo_url};
+        _ui_state.history[_ui_state.step]={'_ui_state.step':_ui_state.step,'_id':info._id,'title': info.title,'url':info.url};
         //console.log('-------_ui_state.history');
         //console.log(_ui_state.history);
         _ui_state.step++;
@@ -499,7 +549,7 @@ function processEvents(events,currentTime, previousTime, animate) {
         
         console.log(_ui_state.history);
 
-		switchToVideo(info.title,info.vimeo_url,seek_point);
+		switchToVideo(info.title,info.url,seek_point);
 		
 		console.log('setting seek_point '+seek_point);
 		if(seek_point!=0) {
@@ -522,18 +572,53 @@ function processEvents(events,currentTime, previousTime, animate) {
 	
 	}
 	
-	function switchToVideo(title, vimeo_url, seek_point) {
+	function switchToVideo(title, url, seek_point) {
 	
        
        console.log('switch');
        
     
+       console.log('url '+url);
     
+
+       console.log(video);
+       console.log((typeof video));
+        console.log('vimeo '+(video instanceof Popcorn.HTMLVimeoVideoElement));
+        console.log('youtube '+(video instanceof Popcorn.HTMLYouTubeVideoElement));
          //   console.log(popcorn);
         
+        if(url.indexOf('youtube')>-1) {
+        	console.log('youtube');
+        	//if(!(video instanceof Popcorn.HTMLYouTubeVideoElement)) {
+        	if(video==undefined || video.currentSrc.indexOf('youtube')<0) {
+        		
+        		$('#iframe-container iframe').remove()
+        		console.log('reset to tuib')
+        		video = Popcorn.HTMLYouTubeVideoElement('#iframe-container');
+        	}
+
+        }
+        else if(url.indexOf('vimeo')>-1) {
+//        	if(!(video instanceof Popcorn.HTMLVimeoVideoElement)) {
+        	if(video==undefined || video.currentSrc.indexOf('vimeo')<0) {
+
+        		$('#iframe-container iframe').remove()
+        		console.log('reset to vimeo')
+	        	video = Popcorn.HTMLVimeoVideoElement('#iframe-container');
+	        }
+	
+        }
+        else  {
+        	console.log('else');
+        //	if(!(video instanceof Popcorn.HTMLMediaElement)) {
+
+        		$('#iframe-container iframe').remove()
+	        	video = Popcorn.HTMLMediaElement('#iframe-container');
+	    //    }
+
+        }
         
-        
-        video.src = vimeo_url;
+        video.src = url;
         popcorn = Popcorn(video);
         
                     
@@ -605,7 +690,7 @@ function processEvents(events,currentTime, previousTime, animate) {
 			
             pendingSeektoTime = _ui_state.history[_ui_state.step-1].last_time;
 
-			switchToVideo(_ui_state.history[_ui_state.step-1].title,_ui_state.history[_ui_state.step-1].vimeo_url,0);  
+			switchToVideo(_ui_state.history[_ui_state.step-1].title,_ui_state.history[_ui_state.step-1].url,0);  
 
             var events = videoInfo[_ui_state.history[_ui_state.step-1]._id].events;
 

@@ -120,12 +120,16 @@
 		
 		.tab-text { width: 300px; height: 100px;}
 		
+		.success_message { color: #00AF07;}
+		
 		
 		/*.back-10, back-30 {float: left;}
 		.forward-10, forward-30 {float: right;}*/
+		.modal_box { border: 1px solid #CCC; background: #FFF; z-index: 100; padding: 15px;}
+        .modal_box h3 { font-weight: normal;  margin: 8px 0;}
+		#add_video { position: absolute; top: 150px; left: 335px;}
 		
-		#video_selection { position: absolute; top: 150px; left: 10px; border: 1px solid #CCC; background: #FFF; z-index: 100; padding: 15px;}
-        #video_selection h3 { font-weight: normal;  margin: 8px 0;}
+		#video_selection { position: absolute; top: 150px; left: 10px; }
 		#video_selection ul { max-height: 550px; overflow-y: auto;}
 		#video_selection ul li { margin: 5px 0;}
 		#video_selection ul li .rel-title { margin-left: 5px; color: #555;}
@@ -144,9 +148,9 @@
 		input[type=text] {height: 18px;}
 		input[type=password] {height: 18px;}
 		
-		.login input[type=text], .login input[type=password] {width: 180px;}
-		.login a {color: #888; text-decoration: underline;}
-		.login form { width: 300px;}
-		.login form div {padding: 5px 0;}
-		.login form label { width: 100px; display: inline-block;}
-		.login form .login-submit {float: right; margin-right: 15px;}
+		.form input[type=text], .login input[type=password] {width: 180px;}
+		.form a {color: #888; text-decoration: underline;}
+		.form form { width: 300px;}
+		.form form div {padding: 5px 0;}
+		.form form label { width: 100px; display: inline-block;}
+		.form form .login-submit {float: right; margin-right: 15px;}
