@@ -38,8 +38,12 @@
 		.ralated-video-list li a .prim-info  .rel-rel { font-size: 14px; width: 50px; }
 		
 		
+		#video_selection .rel-thumb {width: 100px;} /*for select media drop down*/
+
 		.ralated-video-list .rel-thumb { width: 60px; height: 40px; display: inline-block; margin: 5px;   }
 		
+		
+		 
 		
 		.transcript-section { width: 600px; margin: 20px 10px; font-size: 15px; }
 		.transcript-section a, .transcript-section a:visited, a.reg-link {color: #555; text-decoration: underline;}

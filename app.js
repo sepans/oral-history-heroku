@@ -2,7 +2,11 @@
  * Module dependencies.
  */
 
+var EVENT_TYPE_LINK = 'link';
+
 var dataFile = require('./data/data_lite.js');
+
+//require('./server/schema.js'); not working
 
 var express = require('express'), routes = require('./routes'), user = require('./routes/user'), http = require('http'), path = require('path'), mongoose = require('mongoose'), extend = require('mongoose-schema-extend'), passport = require("passport"), LocalStrategy = require('passport-local').Strategy,
 // FacebookStrategy = require('passport-facebook').Strategy,
@@ -65,7 +69,8 @@ res.render('index.html');
 //    var mongodb_url ='mongodb://127.0.0.1:27017/vidtest2';
 
 //process.env.MONGOLAB_URI= 'mongodb://sepans:sepans@ds027308.mongolab.com:27308/heroku_app1557193';
-process.env.MONGOLAB_URI= 'mongodb://sepans:sepans@alex.mongohq.com:10058/app15571931'; //'mongodb://heroku:29c490d2588c7ffdc4a8945f069597ca@alex.mongohq.com:10058/app15571931';
+process.env.MONGOLAB_URI = 'mongodb://sepans:sepans@alex.mongohq.com:10058/app15571931';
+//'mongodb://heroku:29c490d2588c7ffdc4a8945f069597ca@alex.mongohq.com:10058/app15571931';
 
 //process.env.MONGOLAB_URI = 'mongodb://127.0.0.1:27017/vidtest2';
 //'mongodb://heroku:29c490d2588c7ffdc4a8945f069597ca@alex.mongohq.com:10058/app15571931';
@@ -85,6 +90,16 @@ mongoose.connect(mongodb_url, {
 // mongoose.createConnection(mongodb_url, { server: { poolSize: 4 },db: { safe: true }});
 
 var Schema = mongoose.Schema, ObjectId = Schema.ObjectID;
+
+var LocalUserSchema = new mongoose.Schema({
+	name : String,
+	email : String,
+	username : String,
+	salt : String,
+	hash : String
+});
+
+var Users = mongoose.model('userauths', LocalUserSchema);
 
 var VideoSchema = new Schema({
 	_id : {
@@ -106,9 +121,17 @@ var VideoSchema = new Schema({
 	thumbnail : {
 		type : String
 	},
+	_owner : {
+		type : Schema.ObjectId,
+		ref : 'Users'
+	},
 	events : [{
 		timestamp : Number,
 		duration : Number,
+		_creator : {
+			type : Schema.ObjectId,
+			ref : 'Users'
+		},
 		related_objects : [{
 			_type : {
 				type : String,
@@ -127,10 +150,15 @@ var VideoSchema = new Schema({
 				type : Schema.ObjectId,
 				ref : 'Video'
 			},
-			temp_rel_video : String// temporary for data.js files. will be removed and use _related_video
-			,
-			seek_point : Number,
-			relatedness : Number
+			temp_rel_video : String, // temporary for data.js files. will be removed and use _related_video
+			link_entry_point : Number,
+			link_relevance_value : Number
+
+			/*
+			 * evnetData['link-entry-point'] = $('entry-point').val();
+			 eventData['link-relevance-value'] = $('relevance-value').val();
+			 eventData['link-relevant-video']=$('#link-select .ui-selected').attr('id');
+			 */
 
 		}]
 	}]
@@ -169,16 +197,6 @@ var VideoSchema = new Schema({
 var Video = mongoose.model('Video', VideoSchema);
 
 //authentication
-
-var LocalUserSchema = new mongoose.Schema({
-	name : String,
-	email : String,
-	username : String,
-	salt : String,
-	hash : String
-});
-
-var Users = mongoose.model('userauths', LocalUserSchema);
 
 /*
  var Event = mongoose.model('Event', VideoSchema);
@@ -281,24 +299,24 @@ app.get('/getAllVideoInfo', function(req, res) {
 });
 
 /*
-app.get('/addvideo/:title/:url', function(req, res) {
-	var video_data = {
-		title : req.params.title,
-		url : req.params.vimeo_url
-	};
+ app.get('/addvideo/:title/:url', function(req, res) {
+ var video_data = {
+ title : req.params.title,
+ url : req.params.vimeo_url
+ };
 
-	var video = new Video(video_data);
+ var video = new Video(video_data);
 
-	video.save(function(error, data) {
-		if (error) {
-			res.json(error);
-		} else {
-			res.json(data);
-		}
-	});
-});
+ video.save(function(error, data) {
+ if (error) {
+ res.json(error);
+ } else {
+ res.json(data);
+ }
+ });
+ });
 
-*/
+ */
 
 app.get('/addallvideos', function(req, res) {
 
@@ -309,7 +327,7 @@ app.get('/addallvideos', function(req, res) {
 		var video = new Video({
 			title : videoData.title,
 			url : videoData.url,
-		//	vimeo_url : videoData.vimeo_url,
+			//	vimeo_url : videoData.vimeo_url,
 			thumbnail : videoData.thumbnail
 		});
 		//console.log(video);
@@ -408,50 +426,98 @@ app.post('/addcomment', function(req, res) {
 
 		console.log('--- vid ');
 		console.log(video);
+		/*
+		 *
+		 * 	var eventData = {
+		 'vid_id' : _ui_state.history[_ui_state.step - 1]._id,
+		 'vid_title' : _ui_state.history[_ui_state.step - 1].title,
+		 'start-time' : $('#start-time').val(),
+		 'end-time' : $('#end-time').val(), //$('#text-comments').val(),
+		 'event-type' : $('#event-type').val(),
+		 'tags' : $('#tags').val(),
+		 'text' : text_content
+		 };
 
-		/*    console.log('video title '+video.title);
-		console.log('video events '+video.events);
-		console.log('video events '+video['events']);
-		*/
+		 switch(eventData['event-type']) {
 
-		// var event = new Event({timestamp:req.body['start-time'], duration : req.body['end-time']-req.body['start-time'] });
+		 case 'link':
+		 eventData['link-entry-point'] = $('#entry-point').val();
+		 eventData['link-relevance-value'] = $('#relevance-value').text().replace('%','');
+		 eventData['link-relevant-video']=$('#link-select .ui-selected').attr('id').replace('video_','');
+		 break;
+		 }
+		 */
+
 		var event = {
 			timestamp : req.body['start-time'],
 			duration : req.body['end-time'] - req.body['start-time'],
+			_creator : req.user,
 			related_objects : [{
 				text : req.body['text'],
+				tags : req.body['tags'],
 				_type : req.body['event-type']
 			}]
 		};
-		console.log('--- event ');
-		console.log(event);
+		//console.log(event['_type'] + ' '+event['_type']==EVENT_TYPE_LINK)
+		if (req.body['event-type'] == EVENT_TYPE_LINK) {
+			console.log('link');
+			var rel_obj = event.related_objects[0];
+			rel_obj['link_relevance_value'] = req.body['link-relevance-value'];
+			rel_obj['link_entry_point'] = req.body['link-entry-point'];
+			Video.findOne({
+				'_id' : req.body['link-relevant-video']
+			}, function(error, rel_video) {
+				console.log('related video from db:');
+				console.log(video);
+				rel_obj['_related_video'] = rel_video;
 
-		//done inline
-		/*
-		 var transcript= new Transcript({text:req.body['text']} );
-		 console.log('trans '+transcript);
-		 //transcript.text = req.body['text'];
+				console.log('--- event ');
+				console.log(event);
 
-		 var rel = new Array();
-		 rel.push(transcript);
-		 event.related_objects = rel;
-		 */
+				//done inline
 
-		video.events.push(event);
+				video.events.push(event);
 
-		console.log('---- vid with new event ');
-		console.log(video);
+				console.log('---- vid with new event ');
+				//console.log(video);
 
-		video.save(function(error, data) {
-			if (error) {
-				console.log('error ' + error);
-				res.json(error);
-			} else {
-				console.log('---- data ');
-				console.log(data);
-				res.json(data);
-			}
-		});
+				video.save(function(error, data) {
+					if (error) {
+						console.log('error ' + error);
+						res.json(error);
+					} else {
+						//	console.log('---- data ');
+						//	console.log(data);
+						res.json(data);
+					}
+				});
+
+			});
+
+		} else {
+
+			console.log('--- event ');
+			console.log(event);
+
+			//done inline
+
+			video.events.push(event);
+
+			console.log('---- vid with new event ');
+			//console.log(video);
+
+			video.save(function(error, data) {
+				if (error) {
+					console.log('error ' + error);
+					res.json(error);
+				} else {
+					//	console.log('---- data ');
+					//	console.log(data);
+					res.json(data);
+				}
+			});
+
+		}
 	});
 
 	/*   var person_data = {
