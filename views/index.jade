@@ -33,7 +33,7 @@ html
         .main-video-container
           #iframe-container
           ul.ralated-video-list
-          #edit-controls(style='display: none;')
+          #console(style='display: none;')
             button.zoom zoom
             .stat-bar.stat-common
               .stat(type='text')
@@ -43,13 +43,13 @@ html
               10s
             button.sm-button.back-1(type='button', onclick='forwardRewind(-1); return false;')
               1s
-            button.md-button(type='button', onclick='create_event(); return false;') create event
+            //- button.md-button(type='button', onclick='create_event(); return false;') create event
             button.sm-button.forward-1(type='button', onclick='forwardRewind(1); return false;') 1s
             button.sm-button.forward-10(type='button', onclick='forwardRewind(10); return false;') 10s
             button.sm-button.forward-30(type='button', onclick='forwardRewind(30); return false;') 30s
             .create-controls
               button.md-button(type='button', onclick='saveEvent();return false;') save
-              button.md-button(type='button', onclick='$(\'.create-controls\').slideToggle(); return false;') discard
+              // button.md-button(type='button', onclick='$(\'.create-controls\').slideToggle(); return false;') discard
               label start time:
               input#start-time.time(title='starttime', type='text')
               button.sm-button(type='button', onclick='captureTime(\'#start-time\'); return false;', label='capture time') set in
@@ -57,18 +57,19 @@ html
               input#end-time.time(type='text')
               button.sm-button(type='button', onclick='captureTime(\'#end-time\'); return false;', label='capture time') set out
               br
-              br
-              label categories:
-              input.cat-checkbox(type='checkbox', name='category', value='robot')
-              | Robots
-              input.cat-checkbox(type='checkbox', name='category', value='institution')
-              | Institutions
-              input.cat-checkbox(type='checkbox', name='category', value='people')
-              | People
+              //
+                br
+                label categories:
+                input.cat-checkbox(type='checkbox', name='category', value='robot')
+                | Robots
+                input.cat-checkbox(type='checkbox', name='category', value='institution')
+                | Institutions
+                input.cat-checkbox(type='checkbox', name='category', value='people')
+                | People
               br
               br
               label tags:
-              input#tags(type='text')
+              input#tags(type='text')  
               br
               br
               input#event-type(type='hidden', value='transcript')
@@ -76,8 +77,8 @@ html
                 ul
                   li
                     a(href='#comment-tab') Comment
-                  li
-                    a(href='#bookmark-tab') Bookmark
+                  //li
+                   // a(href='#bookmark-tab') Bookmark
                   li
                     a(href='#transcript-tab') Transcript
                   li
@@ -87,10 +88,10 @@ html
                   label comment:
                   br
                   textarea#text-comments.tab-text
-                #bookmark-tab
-                  label bookmark note:
-                  br
-                  textarea#text-bookmark.tab-text
+                //#bookmark-tab
+                //  label bookmark note:
+                //  br
+                //  textarea#text-bookmark.tab-text
                 #transcript-tab
                   label transcript text:
                   br
@@ -113,9 +114,11 @@ html
                     label link information:
                     br
                     textarea#text-link.tab-text
-          .transcript-section
-            //
-              The <a href="#" onclick="openSearchResults();">transcript</a> of the current section of the video with some keywords <a href="#" onclick="openSearchResults();">highlighted</a>. Clicking on the words brings videos that are most relevant to that word.
+            .transcript-section
+              span Transcript:
+              .content
+              //
+                The <a href="#" onclick="openSearchResults();">transcript</a> of the current section of the video with some keywords <a href="#" onclick="openSearchResults();">highlighted</a>. Clicking on the words brings videos that are most relevant to that word.
           #video_selection.modal_box(style='display: none;')
             h3 Available Media:
             ul

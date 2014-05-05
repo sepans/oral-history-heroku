@@ -5,6 +5,8 @@
 //var history = [];
 //var step = 0;
 
+
+
 var pendingSeektoTime = 0;
 
 var playTime = 0;
@@ -243,7 +245,7 @@ function selectVideo(id) {
 	switchToVideo(initialVideo.title, initialVideo.url, 0);
 
 	if (_ui_state.step == 1) {
-		$('#edit-controls').slideToggle();
+		$('#console').slideToggle();
 
 	}
 
@@ -263,7 +265,7 @@ function pushEventsToPopcorn() {
 				start : Math.round(event.timestamp),
 				end : Math.round(event.timestamp + event.duration),
 				text : event.related_objects[0].text,
-				target : ".transcript-section"
+				target : ".transcript-section .content"
 			});
 		}
 	}
@@ -731,7 +733,7 @@ function forwardRewind(seconds) {
 
 function create_event() {
 
-	$('.create-controls').slideToggle();
+	//$('.create-controls').slideToggle();
 	$('.create-controls #start-time').val(playTime);
 
 }
@@ -807,7 +809,7 @@ function saveEvent() {
 		 drawEvents();
 	 	//     postEventsToPopcorn();  or just add new event
 	
-	 	$('.create-controls').slideToggle();
+	 	//$('.create-controls').slideToggle();
 
 	 });
 

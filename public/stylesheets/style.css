@@ -11,7 +11,7 @@
 		a, a:visited {color: #000; text-decoration: none;}
 		ul {list-style: none; margin: 0; padding: 0;}
 		
-		#video_title { width: 482px; display: inline-block; color: #666;}
+		#video_title { width: 434px; display: inline-block; color: #666;}
 		
 		
 		.main-video-section { width: 1030px;/* height: 600px; border: 1px solid black;*/}
@@ -45,7 +45,8 @@
 		
 		 
 		
-		.transcript-section { width: 600px; margin: 20px 10px; font-size: 15px; }
+		.transcript-section { width: 38%; margin: 20px 0px; font-size: 15px; border: 1px solid #e78f08; padding: 5px; font-size: 14px; min-height: 50px;} 
+		.transcript-section .content { }
 		.transcript-section a, .transcript-section a:visited, a.reg-link {color: #555; text-decoration: underline;}
 		
 		.right-btn { float: right; margin-right: 20px;}
@@ -95,20 +96,21 @@
 		
 		.ui-progressbar .ui-progressbar-value { position: absolute;}
 		
-		#edit-controls { width: 100%; overflow: hidden; margin-top: 10px;}
+		#console { width: 100%; overflow: hidden; margin-top: 10px;}
 		
 		button, input[type=submit] { border: 1px solid #777; background-color: #e78f08; color: #FFF; display:inline;cursor: pointer; margin: 5px 5px 0 0; font-size: 10px;}
 		
 		.sm-button {width: 35px; height: 35px; }
+		.create-controls { width: 55%; float: right; margin: 20px 0;  border: 1px solid #e78f08; padding: 10px; margin-right: 18px;}
 		.create-controls .sm-button {height: 25px; width: 50px; font-size: 9px; }
 		.md-button {width: 80px; height: 35px; }
 		.create-controls .md-button {height: 25px; width: 80px; font-size: 9px; float: right;}
 		
-		.create-controls { margin: 20px 0; display: none; border: 1px solid #e78f08; padding: 10px;}
 		.create-controls .time { margin: 0 5px; width: 60px;}
 		.create-controls #tags { margin: 0 5px; width: 150px;}
 		.create-controls .text-comments { width: 400px; height: 50px; margin-top: 10px;}
 		.create-controls label {vertical-align: middle;}
+		.create-controls textarea { width: 100%;}
 		
 		.window_panel { position: absolute;}
 		
