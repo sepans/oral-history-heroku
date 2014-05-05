@@ -37,16 +37,17 @@ html
             button.zoom zoom
             .stat-bar.stat-common
               .stat(type='text')
-            button.sm-button.back-30(type='button', onclick='forwardRewind(-30); return false;')
-              30s
-            button.sm-button.back-10(type='button', onclick='forwardRewind(-10); return false;')
-              10s
-            button.sm-button.back-1(type='button', onclick='forwardRewind(-1); return false;')
-              1s
-            //- button.md-button(type='button', onclick='create_event(); return false;') create event
-            button.sm-button.forward-1(type='button', onclick='forwardRewind(1); return false;') 1s
-            button.sm-button.forward-10(type='button', onclick='forwardRewind(10); return false;') 10s
-            button.sm-button.forward-30(type='button', onclick='forwardRewind(30); return false;') 30s
+            .nav_btns
+              button.sm-button.back-30(type='button', onclick='forwardRewind(-30); return false;')
+                30s
+              button.sm-button.back-10(type='button', onclick='forwardRewind(-10); return false;')
+                10s
+              button.sm-button.back-1(type='button', onclick='forwardRewind(-1); return false;')
+                1s
+              //- button.md-button(type='button', onclick='create_event(); return false;') create event
+              button.sm-button.forward-1(type='button', onclick='forwardRewind(1); return false;') 1s
+              button.sm-button.forward-10(type='button', onclick='forwardRewind(10); return false;') 10s
+              button.sm-button.forward-30(type='button', onclick='forwardRewind(30); return false;') 30s
             .create-controls
               button.md-button(type='button', onclick='saveEvent();return false;') save
               // button.md-button(type='button', onclick='$(\'.create-controls\').slideToggle(); return false;') discard
